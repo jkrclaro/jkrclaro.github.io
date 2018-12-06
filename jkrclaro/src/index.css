@@ -1,0 +1,35 @@
+/* Creates a sticky footer */
+:root {
+    --space: 1.5em 0;
+    --space: 2em 0;
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+.sub-body {
+    flex: 1 0 auto;
+    padding: var(--space) var(--space) 0;
+    width: 100%;
+}
+
+.sub-body:after {
+    content: '\00a0';
+    display: block;
+    margin-top: var(--space);
+    height: 0;
+    visibility: hidden;
+}
+
+/* Layout */
+.jkrclaro-bg {
+    background-color: #111111;
+}
+
+* { 
+    font-family: 'Work Sans';
+    color: #ffffff;
+}
