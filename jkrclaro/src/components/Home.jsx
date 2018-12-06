@@ -1,9 +1,5 @@
 import React from 'react';
 
-const textUnderlineStyle = {
-    textDecoration: 'underline'
-}
-
 class Home extends React.Component {
 
     render() {
@@ -24,14 +20,14 @@ class Home extends React.Component {
                         I currently live in Dublin, Ireland.
                     </p>
                     <p>
-                        <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
-                        <ul>
-                            <li><p>via <a href='mailto:jkrclaro@gmail.com' style={textUnderlineStyle}>email</a></p></li>
-                            <li><p>send me a message on <a href='https://www.github.com/jkrclaro' style={textUnderlineStyle} target="_blank">github</a></p></li>
-                            <li><p>reach out to me on <a href='https://www.twitter.com/jkrclaro' style={textUnderlineStyle} target="_blank">twitter</a></p></li>
-                            <li><p>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' style={textUnderlineStyle} target="_blank">linkedin</a></p></li>
-                        </ul>
+                        If you want to contact me, you can reach me via one of the following communication channels:
                     </p>
+                    <ul>
+                        <li>via <a href='mailto:jkrclaro@gmail.com'>email</a></li>
+                        <li>send me a message on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer">github</a></li>
+                        <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer">twitter</a></li>
+                        <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer">linkedin</a></li>
+                    </ul>
                 </div>
                 <div className='col-sm-2'></div>
             </div>

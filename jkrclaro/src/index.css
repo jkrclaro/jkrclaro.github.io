@@ -16,14 +16,6 @@
     width: 100%;
 }
 
-.sub-body:after {
-    content: '\00a0';
-    display: block;
-    margin-top: var(--space);
-    height: 0;
-    visibility: hidden;
-}
-
 /* Layout */
 .jkrclaro-bg {
     background-color: #111111;
