@@ -1,5 +1,10 @@
 import React from 'react';
 
+
+const underlineStyle = {
+    textDecoration: 'underline'
+}
+
 class Home extends React.Component {
 
     render() {
@@ -23,10 +28,10 @@ class Home extends React.Component {
                         If you want to contact me, you can reach me via one of the following communication channels:
                     </p>
                     <ul>
-                        <li>via <a href='mailto:jkrclaro@gmail.com'>email</a></li>
-                        <li>send me a message on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer">github</a></li>
-                        <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer">twitter</a></li>
-                        <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer">linkedin</a></li>
+                        <li>via <a href='mailto:jkrclaro@gmail.com' style={underlineStyle}>email</a></li>
+                        <li>send me a message on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>github</a></li>
+                        <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>twitter</a></li>
+                        <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>linkedin</a></li>
                     </ul>
                 </div>
                 <div className='col-sm-2'></div>

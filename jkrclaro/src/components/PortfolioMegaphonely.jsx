@@ -25,7 +25,7 @@ class PortfolioMegaphonely extends React.Component {
                                 <p>
                                     Django, HTML, Bootstrap, Javascript, Twitter API, 
                                     LinkedIn API, Facebook API, Python, AWS Lambda, 
-                                    AWS Elastic Beanstalk, Stripe API
+                                    AWS Elastic Beanstalk, Stripe API, CSS
                                 </p>
                             </li>
                         </ul>

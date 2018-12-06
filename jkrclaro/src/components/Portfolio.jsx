@@ -15,7 +15,6 @@ class Portfolio extends React.Component {
     render() {
         return (
             <div>
-                <h1>Websites</h1>
                 <div className='row text-center'>
                     <div className='col-lg-4 mb-3'>
                         <Link to='/portfolios/gravitywebinar'>

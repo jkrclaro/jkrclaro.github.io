@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import gravitywebinar from '../imgs/gravitywebinar.png';
 
@@ -28,7 +29,7 @@ class PortfolioGravityWebinar extends React.Component {
                             <li>
                                 <p>
                                     ReactJS, NodeJS, WebSockets, WebRTC, Flask, Python,
-                                    Javascript, STUN, TURN, Bootstrap, HTML
+                                    Javascript, Bootstrap, HTML, CSS, Docker
                                 </p>
                             </li>
                         </ul>

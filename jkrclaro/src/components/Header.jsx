@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const underlineStyle = {
+    textDecoration: 'underline'
+}
+
 class Header extends React.Component {
 
     render() {
