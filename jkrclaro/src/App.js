@@ -11,7 +11,9 @@ class App extends Component {
             <HashRouter>
                 <div className='main-body jkrclaro-bg'>
                     <div className='sub-body'>
-                        <Header />
+                        <div className='App-header'>
+                            <Header />
+                        </div>
                         <div className='container'>
                             <Body />
                         </div>
