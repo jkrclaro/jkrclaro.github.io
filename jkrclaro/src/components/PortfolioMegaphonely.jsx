@@ -18,18 +18,14 @@ class PortfolioMegaphonely extends React.Component {
                         Users were able to instantly or schedule contents to be posted
                         to various social platforms in one click.
                     </p>
-                    <p>
-                        <b>Technology</b>
-                        <ul>
-                            <li>
-                                <p>
-                                    Django, HTML, Bootstrap, Javascript, Twitter API, 
-                                    LinkedIn API, Facebook API, Python, AWS Lambda, 
-                                    AWS Elastic Beanstalk, Stripe API, CSS
-                                </p>
-                            </li>
-                        </ul>
-                    </p>
+                    <b>Technology</b>
+                    <ul>
+                        <li>
+                            Django, HTML, Bootstrap, Javascript, Twitter API, 
+                            LinkedIn API, Facebook API, Python, AWS Lambda, 
+                            AWS Elastic Beanstalk, Stripe API, CSS
+                        </li>
+                    </ul>
                 </div>
                 <div className='col-lg-2'></div>
             </div>

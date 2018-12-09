@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import gravitywebinar from '../imgs/gravitywebinar.png';
 import megaphonely from '../imgs/megaphonely.png';
+import workout from '../imgs/workout.png';
+import eirand from '../imgs/eirand.png';
 
 
 const grayBorderStyle = {
@@ -17,16 +19,25 @@ class Portfolio extends React.Component {
             <div>
                 <div className='row text-center'>
                     <div className='col-lg-4 mb-3'>
+                        <Link to='/portfolios/eirand'>
+                            <img src={eirand} alt='eirand' className='img-fluid rounded' style={grayBorderStyle}/>
+                        </Link>
+                    </div>
+                    <div className='col-lg-4 mb-3'>
+                        <Link to='/portfolios/workout'>
+                            <img src={workout} alt='workout' className='img-fluid rounded' style={grayBorderStyle}/>
+                        </Link>
+                    </div>
+                    <div className='col-lg-4 mb-3'>
                         <Link to='/portfolios/gravitywebinar'>
                             <img src={gravitywebinar} alt='gravitywebinar' className='img-fluid rounded' style={grayBorderStyle}/>
                         </Link>
                     </div>
-                    <div className='col-lg-4'>
+                    <div className='col-lg-4 mb-3'>
                         <Link to='/portfolios/megaphonely'>
                             <img src={megaphonely} alt='megaphonely' className='img-fluid rounded'/>
                         </Link>
                     </div>
-                    <div className='col-lg-4'></div>
                 </div>
             </div>
         )
