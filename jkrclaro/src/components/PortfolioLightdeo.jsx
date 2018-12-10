@@ -1,6 +1,6 @@
 import React from 'react';
 
-import gravitywebinar from '../imgs/gravitywebinar.png';
+import lightdeo from '../imgs/lightdeo.png';
 
 
 const grayBorderStyle = {
@@ -8,16 +8,16 @@ const grayBorderStyle = {
 }
 
 
-class PortfolioGravityWebinar extends React.Component {
+class PortfolioLightdeo extends React.Component {
 
     render() {
         return (
             <div className='row'>
                 <div className='col-lg-2'></div>
                 <div className='col-lg-8'>
-                    <img src={gravitywebinar} alt='gravitywebinar' style={grayBorderStyle} className='img-fluid rounded mb-3' />
+                    <img src={lightdeo} alt='lightdeo' style={grayBorderStyle} className='img-fluid rounded mb-3' />
                     <p>
-                        <b>Gravity Webinar</b> is a web conferencing application for B2B technology companies. 
+                        <b>Lightdeo</b> is a web conferencing application for B2B technology companies. 
                         Users are able to conduct video calls using their webcam and microphone from their laptop to 
                         someone from a different internet network.
                     </p>
@@ -35,4 +35,4 @@ class PortfolioGravityWebinar extends React.Component {
     }
 }
 
-export default PortfolioGravityWebinar;
+export default PortfolioLightdeo;
