@@ -15,7 +15,7 @@ class PortfolioEirand extends React.Component {
             <div className='row'>
                 <div className='col-lg-2'></div>
                 <div className='col-lg-8'>
-                    <img src={eirand} alt='gravitywebinar' style={grayBorderStyle} className='img-fluid rounded mb-3' />
+                    <img src={eirand} alt='lightdeo' style={grayBorderStyle} className='img-fluid rounded mb-3' />
                     <p>
                         <b>Eirand</b> is an on-demand platform for freelancing
                         photographers to get photography work.

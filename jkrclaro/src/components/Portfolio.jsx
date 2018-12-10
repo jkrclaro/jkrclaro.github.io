@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import gravitywebinar from '../imgs/gravitywebinar.png';
+import lightdeo from '../imgs/lightdeo.png';
 import megaphonely from '../imgs/megaphonely.png';
 import workout from '../imgs/workout.png';
 import eirand from '../imgs/eirand.png';
@@ -29,8 +29,8 @@ class Portfolio extends React.Component {
                         </Link>
                     </div>
                     <div className='col-lg-4 mb-3'>
-                        <Link to='/portfolios/gravitywebinar'>
-                            <img src={gravitywebinar} alt='gravitywebinar' className='img-fluid rounded' style={grayBorderStyle}/>
+                        <Link to='/portfolios/lightdeo'>
+                            <img src={lightdeo} alt='lightdeo' className='img-fluid rounded' style={grayBorderStyle}/>
                         </Link>
                     </div>
                     <div className='col-lg-4 mb-3'>
