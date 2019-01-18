@@ -97,21 +97,25 @@ class Workout extends React.Component {
     render() {
         return (
             <div className='container mt-3 mb-3'>
-                <h1 className='mb-5'>Generates random workout depending on day</h1>
-                {
-                    this.state.workout.map((workout, workoutIndex) =>
-                        <div key={workoutIndex}>
-                            <h1>{workout.muscleToDo}</h1>
-                            <ul>
-                                {
-                                    workout.exercisesToDo.map((exerciseToDo, exerciseToDoIndex) =>
-                                        <li key={exerciseToDoIndex}>{exerciseToDo}</li>
-                                    )
-                                }
-                            </ul>
-                        </div>
-                    )
-                }
+                <div className='mb-5'>
+                    <b>Refresh page to generate a random workout</b>
+                </div>
+                <div>
+                    {
+                        this.state.workout.map((workout, workoutIndex) =>
+                            <div key={workoutIndex}>
+                                <h1>{workout.muscleToDo}</h1>
+                                <ul>
+                                    {
+                                        workout.exercisesToDo.map((exerciseToDo, exerciseToDoIndex) =>
+                                            <li key={exerciseToDoIndex}>{exerciseToDo}</li>
+                                        )
+                                    }
+                                </ul>
+                            </div>
+                        )
+                    }
+                </div>
             </div>
         )
     }
