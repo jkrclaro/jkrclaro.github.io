@@ -9,7 +9,7 @@ import WebFont from 'webfontloader';
 WebFont.load({
     google: {
       families: [
-          'Work Sans:300', 'sans-serif',
+          'Work Sans:400', 'sans-serif',
       ]
     }
 });
