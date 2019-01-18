@@ -8,10 +8,6 @@ class Workout extends React.Component {
             workout: this.generateWorkout()
         };
     }
-    
-    componentDidMount() {
-        this.generateWorkout()
-    }
 
     random(max) {
         return Math.floor(Math.random() * max)
