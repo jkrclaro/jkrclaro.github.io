@@ -7,6 +7,9 @@ class Workout extends React.Component {
         this.state = {
             workout: this.generateWorkout()
         };
+        this.random = this.random.bind(this);
+        this.generateWorkout = this.generateWorkout.bind(this);
+        this.randomWorkout = this.randomWorkout.bind(this);
     }
 
     random(max) {
@@ -22,6 +25,14 @@ class Workout extends React.Component {
         const CORE = 'core';
 
         const calendar = {
+            '0': { // ALL
+                '0': [CHEST, ARMS, BACK, CORE, LEGS, SHOULDERS],
+                '1': [CHEST, ARMS, BACK, CORE, LEGS, SHOULDERS],
+                '2': [CHEST, ARMS, BACK, CORE, LEGS, SHOULDERS],
+                '3': [CHEST, ARMS, BACK, CORE, LEGS, SHOULDERS],
+                '4': [CHEST, ARMS, BACK, CORE, LEGS, SHOULDERS],
+                '5': [CHEST, ARMS, BACK, CORE, LEGS, SHOULDERS],
+            },
             '1': {
                 '0': [CHEST, ARMS],
                 '1': [BACK, CORE],
@@ -69,7 +80,7 @@ class Workout extends React.Component {
             'back': {
                 'lower': ['Superman'],
                 'middle': ['One-Arm Dumbbell Row', 'Bent Over Two-Dumbbell Row With Palms In', 'Bent Over Two-Dumbbell Row'],
-                'lats': ['Pullups', 'Chin-Up', 'Wide-Grip Pull-Up', 'V-Bar Pullup', 'Wide-Grip Rear Pull-Up', '']
+                'lats': ['Pullups', 'Chin-Up', 'Wide-Grip Pull-Up', 'V-Bar Pullup', 'Wide-Grip Rear Pull-Up']
             }
         }
 
@@ -77,11 +88,13 @@ class Workout extends React.Component {
         const month = today.getMonth() + 1;  // 1 - 12 (Jan to Dec)
         const day = today.getDay();  // 0 - 5 (Sun to Mon)
         
-        const date = calendar[month][day];
+        const date = calendar['0'][day];
         let workoutsToDo = [];
         for (var muscleIndex in date) {
             const muscle = date[muscleIndex];
+            console.log(muscle);
             const targetMuscles = muscles[muscle];
+            console.log(targetMuscles);
             let workoutToDo = {'muscleToDo': muscle, 'exercisesToDo': []};
             for (var targetMuscle in targetMuscles) {
                 const exercises = targetMuscles[targetMuscle];
@@ -94,11 +107,16 @@ class Workout extends React.Component {
         return workoutsToDo;
     }
 
+    randomWorkout() {
+        const workouts = this.generateWorkout();
+        this.setState({workout: workouts})
+    }
+
     render() {
         return (
             <div className='container mt-3 mb-3'>
                 <div className='mb-5'>
-                    <b>Refresh page to generate a random workout</b>
+                    <span onClick={this.randomWorkout} className='btn btn-primary'>Generate</span>
                 </div>
                 <div>
                     {
