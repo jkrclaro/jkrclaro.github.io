@@ -25,6 +25,9 @@ class Home extends React.Component {
                         I currently live in Dublin, Ireland.
                     </p>
                     <p>
+                        I worked for Ireland's leading online media company from 2016-2018 as a Python Software Developer.
+                    </p>
+                    <p>
                         If you want to contact me, you can reach me via one of the following communication channels:
                     </p>
                     <ul>
