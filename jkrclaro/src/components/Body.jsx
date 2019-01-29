@@ -10,8 +10,8 @@ class Body extends React.Component {
     render() {
         return (
             <div>
-                <Route exact path='/' component={Home} />
-                <Route path='/workout' component={Workout} />
+                <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
+                <Route path={process.env.PUBLIC_URL + '/workout'} component={Workout} />
             </div>
         )
     }
