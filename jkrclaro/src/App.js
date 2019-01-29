@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import Header from './components/Header';
 import Body from './components/Body';
@@ -8,7 +8,7 @@ class App extends Component {
 
     render() {
         return(
-            <HashRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <div className='main-body jkrclaro-bg'>
                     <div className='sub-body'>
                         <div className='App-header'>
@@ -19,7 +19,7 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
-            </HashRouter>
+            </BrowserRouter>
         )
     }
 }
