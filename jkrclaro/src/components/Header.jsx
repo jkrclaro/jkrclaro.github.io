@@ -6,7 +6,7 @@ class Header extends React.Component {
     render() {
         return (
             <div className='container mt-3 mb-3'>
-                <ul className="nav justify-content-center">
+                <ul className="nav justify-content">
                     <li className="nav-item"><Link className='nav-link' to='/'>About</Link></li>
                     <li className="nav-item"><Link className='nav-link' to='/workout'>Workout</Link></li>
                     <li className="nav-item"><a className='nav-link' href='mailto:support@jkrclaro.com?subject='>Contact</a></li>
