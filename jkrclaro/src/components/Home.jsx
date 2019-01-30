@@ -37,7 +37,7 @@ class Home extends React.Component {
                             <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>linkedin</a></li>
                         </ul>
                     </div>
-                    <div className='col-lg-2'>
+                    <div className='col-lg-2 mb-3'>
                         <img src={me} className='img-fluid'/>
                     </div>
                 </div>
