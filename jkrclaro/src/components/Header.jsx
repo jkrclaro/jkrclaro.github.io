@@ -8,7 +8,7 @@ class Header extends React.Component {
             <div className='container mt-3'>
                 <ul className="nav justify-content">
                     <li className="nav-item"><Link className='nav-link' to='/'>About</Link></li>
-                    <li className="nav-item"><Link className='nav-link' to='/workout'>Workout</Link></li>
+                    <li className="nav-item"><Link className='nav-link' to='/book'>Books</Link></li>
                 </ul>
             </div>
         )
