@@ -41,7 +41,7 @@ class Home extends React.Component {
                         </ul>
                     </div>
                     <div className='col-lg-2 mb-3'>
-                        <img src={me} className='img-fluid'/>
+                        <img src={me} alt='me' className='img-fluid'/>
                     </div>
                 </div>
             </div>

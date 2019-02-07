@@ -85,7 +85,7 @@ class Workout extends React.Component {
         }
 
         const today = new Date();
-        const month = today.getMonth() + 1;  // 1 - 12 (Jan to Dec)
+        // const month = today.getMonth() + 1;  // 1 - 12 (Jan to Dec)
         const day = today.getDay();  // 0 - 5 (Sun to Mon)
         
         const date = calendar['0'][day];
