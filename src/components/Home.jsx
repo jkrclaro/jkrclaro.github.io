@@ -28,7 +28,7 @@ class Home extends React.Component {
                             I worked for Ireland's leading online media company from 2016-2018 as a Python Sofware Engineer on the Data team.
                         </p>
                         <p>
-                            I'm currently working on <a href='https://humblepage.com'>Humblepage</a>.
+                            I'm currently working on <a href='https://pxdcast.com'>Pxdcast</a>.
                         </p>
                         <p>
                             If you want to contact me, you can reach me via one of the following communication channels:
