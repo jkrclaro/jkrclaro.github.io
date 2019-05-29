@@ -25,7 +25,7 @@ class Home extends React.Component {
                             I live in Dublin, Ireland.
                         </p>
                         <p>
-                            I worked for Ireland's leading online media company from 2016-2018 as a Python Software Developer.
+                            I worked for Ireland's leading online media company from 2016-2018 as a Python Sofware Engineer on the Data team.
                         </p>
                         <p>
                             I'm currently working on <a href='https://humblepage.com'>Humblepage</a>.
