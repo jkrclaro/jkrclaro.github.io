@@ -19,7 +19,7 @@ class Home extends React.Component {
                             software engineering and tons of other stuff. 
                         </p>
                         <p>
-                            I graduated with Applied Computing in Waterford Institute of Technology from 2012-2016.
+                            I graduated with a BSc Applied Computing in Waterford Institute of Technology from 2012-2016.
                         </p>
                         <p>
                             I live in Dublin, Ireland.
