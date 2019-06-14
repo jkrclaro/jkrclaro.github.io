@@ -18,21 +18,11 @@ class Home extends React.Component {
                             I'm a passionate developer interested in web development, 
                             software engineering and tons of other stuff. 
                         </p>
-                        <p>
-                            I graduated with a BSc Applied Computing in Waterford Institute of Technology from 2012-2016.
-                        </p>
-                        <p>
-                            I live in Dublin, Ireland.
-                        </p>
-                        <p>
-                            I worked for Ireland's leading online media company from 2016-2018 as a Python Sofware Engineer on the Data team.
-                        </p>
-                        <p>
-                            I'm currently working on <a href='https://pxdcast.com'>Pxdcast</a>.
-                        </p>
-                        <p>
-                            If you want to contact me, you can reach me via one of the following communication channels:
-                        </p>
+                        <p>I graduated with a BSc Applied Computing in Waterford Institute of Technology from 2012-2016.</p>
+                        <p>I live in Dublin, Ireland.</p>
+                        <p>I worked for DoneDeal.ie which is Ireland's largest classified ads website from 2016-2018 as a Data Engineer.</p>
+                        <p>I'm currently working on <a href='https://netprechaun.com'>Netprechaun</a>, simple marketplace management software.</p>
+                        <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
                             <li>via <a href='mailto:jkrclaro@gmail.com' style={underlineStyle}>email</a></li>
                             <li>send me a message on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>github</a></li>
