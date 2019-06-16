@@ -19,9 +19,9 @@ class Home extends React.Component {
                             software engineering and tons of other stuff. 
                         </p>
                         <p>I graduated with a BSc Applied Computing in Waterford Institute of Technology from 2012-2016.</p>
-                        <p>I live in Dublin, Ireland.</p>
-                        <p>I worked at DoneDeal.ie which is Ireland's biggest classifieds website from 2016-2018 as a Data Engineer.</p>
-                        <p>I then left to work on a cool idea, <a href='https://channelry.com'>Channelry</a>.</p>
+                        <p>I now live in Dublin, Ireland.</p>
+                        <p>After graduating, I worked at DoneDeal.ie which is Ireland's biggest classifieds website from 2016-2018 as a Data Engineer.</p>
+                        <p>I then left to work on an idea to help sellers, <a href='https://channelry.com'>Channelry</a>.</p>
                         <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
                             <li>via <a href='mailto:john@channelry.com' style={underlineStyle}>email</a></li>
