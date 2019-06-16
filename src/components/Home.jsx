@@ -23,7 +23,7 @@ class Home extends React.Component {
                         <p>I left DistilledSCH to work on a cool idea that helps sellers, <a href='https://channelry.com'>Channelry</a>.</p>
                         <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
-                            <li>via <a href='mailto:john@channelry.com' style={underlineStyle}>john@channelry.com</a></li>
+                            <li>email via <a href='mailto:john@channelry.com' style={underlineStyle}>john@channelry.com</a></li>
                             <li>send me a message on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>github</a></li>
                             <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>twitter</a></li>
                             <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>linkedin</a></li>
