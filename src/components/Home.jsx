@@ -20,11 +20,11 @@ class Home extends React.Component {
                         </p>
                         <p>I graduated with a BSc Applied Computing in Waterford Institute of Technology from 2012-2016.</p>
                         <p>I live in Dublin, Ireland.</p>
-                        <p>I worked for DoneDeal.ie which is Ireland's largest classified ads website from 2016-2018 as a Data Engineer.</p>
-                        <p>I'm currently working on <a href='https://channelry.com'>Channelry</a>.</p>
+                        <p>I worked at DoneDeal.ie which is Ireland's biggest classifieds website from 2016-2018 as a Data Engineer.</p>
+                        <p>I then left to work on a cool idea, <a href='https://channelry.com'>Channelry</a>.</p>
                         <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
-                            <li>via <a href='mailto:jkrclaro@gmail.com' style={underlineStyle}>email</a></li>
+                            <li>via <a href='mailto:john@channelry.com' style={underlineStyle}>email</a></li>
                             <li>send me a message on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>github</a></li>
                             <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>twitter</a></li>
                             <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>linkedin</a></li>
