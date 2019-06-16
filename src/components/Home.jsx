@@ -13,10 +13,7 @@ class Home extends React.Component {
             <div className='col-lg-12'>
                 <div className='row'>
                     <div className='col-lg-10'>
-                        <p>
-                            My name is John Claro, I'm a passionate developer interested in web development, 
-                            software engineering and tons of other stuff. 
-                        </p>
+                        <p>My name is John Claro, I'm a passionate developer interested in software engineering and economics.</p>
                         <p>I was born in Antipolo, Philippines then moved to Waterford, Ireland when I was 9 years old.</p>
                         <p>I studied Applied Computing in Waterford Institute of Technology and did work placement at Ireland's biggest classifieds website, DoneDeal.ie.</p>
                         <p>I got a job after graduating at Ireland's leader for online marketplaces, DistilledSCH in Dublin as a Data Engineer.</p>
