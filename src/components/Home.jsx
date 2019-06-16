@@ -18,10 +18,10 @@ class Home extends React.Component {
                             I'm a passionate developer interested in web development, 
                             software engineering and tons of other stuff. 
                         </p>
-                        <p>I graduated with a BSc Applied Computing in Waterford Institute of Technology from 2012-2016.</p>
-                        <p>I now live in Dublin, Ireland.</p>
-                        <p>After graduating, I worked at DoneDeal.ie which is Ireland's biggest classifieds website from 2016-2018 as a Data Engineer.</p>
-                        <p>I then left to work on an idea to help sellers, <a href='https://channelry.com'>Channelry</a>.</p>
+                        <p>I was born in Manila, Philippines but raised in Waterford, Ireland since I was 10 years old.</p>
+                        <p>I graduated with a BSc Applied Computing in Waterford Institute of Technology from 2012-2016 and did work placement for DoneDeal.ie which is Ireland's biggest classifieds website.</p>
+                        <p>After graduating, I moved to Dublin to work at DistilledSCH (owns DoneDeal.ie, Adverts.ie and Daft.ie) which is Ireland's leading online media company from 2016-2018 as a Data Engineer.</p>
+                        <p>I left DistilledSCH to work on an idea that helps sellers, <a href='https://channelry.com'>Channelry</a>.</p>
                         <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
                             <li>via <a href='mailto:john@channelry.com' style={underlineStyle}>email</a></li>
