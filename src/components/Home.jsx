@@ -17,9 +17,9 @@ class Home extends React.Component {
                             My name is John Claro, I'm a passionate developer interested in web development, 
                             software engineering and tons of other stuff. 
                         </p>
-                        <p>I was born in Manila, Philippines but raised in Waterford, Ireland since I was 10 years old.</p>
-                        <p>I graduated with a BSc Applied Computing in Waterford Institute of Technology from 2012-2016 and did work placement at Ireland's biggest classifieds website, DoneDeal.ie.</p>
-                        <p>After graduating, I moved to Dublin to work at Ireland's leader in online marketplaces, DistilledSCH from 2016-2018 as a Data Engineer.</p>
+                        <p>I was born in Manila, Philippines but moved to Waterford, Ireland in 2004.</p>
+                        <p>I studied BSc Applied Computing in Waterford Institute of Technology and did work placement at Ireland's biggest classifieds website, DoneDeal.ie.</p>
+                        <p>After graduating, I moved to Dublin to work at Ireland's leader in online marketplaces, DistilledSCH as a Data Engineer.</p>
                         <p>I left DistilledSCH to work on a cool idea that helps sellers, <a href='https://channelry.com'>Channelry</a>.</p>
                         <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
