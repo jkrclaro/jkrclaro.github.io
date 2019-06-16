@@ -17,10 +17,10 @@ class Home extends React.Component {
                             My name is John Claro, I'm a passionate developer interested in web development, 
                             software engineering and tons of other stuff. 
                         </p>
-                        <p>I was born in Manila, Philippines but moved to Waterford, Ireland when I was 9 years old.</p>
+                        <p>I was born in Antipolo, Philippines then moved to Waterford, Ireland when I was 9 years old.</p>
                         <p>I studied Applied Computing in Waterford Institute of Technology and did work placement at Ireland's biggest classifieds website, DoneDeal.ie.</p>
-                        <p>After graduating, I moved to Dublin to work at Ireland's leader in online marketplaces, DistilledSCH as a Data Engineer.</p>
-                        <p>I left DistilledSCH to work on a cool idea that helps sellers, <a href='https://channelry.com'>Channelry</a>.</p>
+                        <p>I got a job after graduating at Ireland's leader for online marketplaces, DistilledSCH in Dublin as a Data Engineer.</p>
+                        <p>I left DistilledSCH to work on <a href='https://channelry.com'>Channelry</a>.</p>
                         <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
                             <li>email via <a href='mailto:john@channelry.com' style={underlineStyle}>john@channelry.com</a></li>
