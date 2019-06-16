@@ -14,8 +14,7 @@ class Home extends React.Component {
                 <div className='row'>
                     <div className='col-lg-10'>
                         <p>
-                            My name is John Claro, I'm 24 years old and 
-                            I'm a passionate developer interested in web development, 
+                            My name is John Claro, I'm a passionate developer interested in web development, 
                             software engineering and tons of other stuff. 
                         </p>
                         <p>I was born in Manila, Philippines but raised in Waterford, Ireland since I was 10 years old.</p>
