@@ -33,7 +33,7 @@ class Workout extends React.Component {
                 '4': [CHEST, ARMS, BACK, CORE, LEGS, SHOULDERS],
                 '5': [CHEST, ARMS, BACK, CORE, LEGS, SHOULDERS],
             },
-            '1': {
+            '1': {  // January
                 '0': [CHEST, ARMS],
                 '1': [BACK, CORE],
                 '2': [CORE, LEGS],
@@ -41,13 +41,93 @@ class Workout extends React.Component {
                 '4': [LEGS, ARMS],
                 '5': [SHOULDERS, LEGS]
             },
-            '12': {
+            '2': { // February
+                '0': [CHEST, CORE],
+                '1': [BACK, LEGS],
+                '2': [CORE, CORE],
+                '3': [ARMS, LEGS],
+                '4': [LEGS, CORE],
+                '5': [SHOULDERS, ARMS],
+            },
+            '3': { // March
+                '0': [CHEST, SHOULDERS],
+                '1': [LEGS, BACK],
+                '2': [ARMS, CORE],
+                '3': [CHEST, LEGS],
+                '4': [SHOULDERS, BACK],
+                '5': [CORE, ARMS],
+            },
+            '4': { // April
                 '0': [CHEST, SHOULDERS],
                 '1': [LEGS, BACK],
                 '2': [CORE, ARMS],
                 '3': [CHEST, LEGS],
                 '4': [SHOULDERS, BACK],
-                '5': [CORE, ARMS]
+                '5': [CORE, ARMS],
+            },
+            '5': { // May
+                '0': [CHEST, ARMS],
+                '1': [BACK, LEGS],
+                '2': [CORE, BACK],
+                '3': [ARMS, LEGS],
+                '4': [LEGS, ARMS],
+                '5': [SHOULDERS, BACK],
+            },
+            '6': { // June
+                '0': [CHEST, CORE],
+                '1': [BACK, LEGS],
+                '2': [CORE, CORE],
+                '3': [ARMS, LEGS],
+                '4': [LEGS, CORE],
+                '5': [SHOULDERS, ARMS],
+            },
+            '7': { // July
+                '0': [CHEST, SHOULDERS],
+                '1': [LEGS, BACK],
+                '2': [CORE, CORE],
+                '3': [ARMS, LEGS],
+                '4': [LEGS, CORE],
+                '5': [SHOULDERS, ARMS],
+            },
+            '8': { // August
+                '0': [CHEST, SHOULDERS],
+                '1': [LEGS, BACK],
+                '2': [CORE, ARMS],
+                '3': [CHEST, LEGS],
+                '4': [SHOULDERS, BACK],
+                '5': [CORE, ARMS],
+            },
+            '9': { // September
+                '0': [CHEST, ARMS],
+                '1': [BACK, LEGS],
+                '2': [CORE, BACK],
+                '3': [ARMS, LEGS],
+                '4': [LEGS, ARMS],
+                '5': [SHOULDERS, BACK],
+            },
+            '10': { // October
+                '0': [CHEST, CORE],
+                '1': [BACK, CORE],
+                '2': [CORE, CORE],
+                '3': [ARMS, LEGS],
+                '4': [LEGS, CORE],
+                '5': [SHOULDERS, ARMS],
+            },
+            '11': { // November
+                '0': [CHEST, CORE],
+                '1': [BACK, LEGS],
+                '2': [CORE, CORE],
+                '3': [ARMS, LEGS],
+                '4': [LEGS, CORE],
+                '5': [SHOULDERS, ARMS],
+            },
+            '12': { // December
+                '0': [CHEST, SHOULDERS],
+                '1': [LEGS, BACK],
+                '2': [CORE, ARMS],
+                '3': [CHEST, LEGS],
+                '4': [SHOULDERS, BACK],
+                '5': [CORE, ARMS],
             }
         }
 
@@ -85,10 +165,10 @@ class Workout extends React.Component {
         }
 
         const today = new Date();
-        // const month = today.getMonth() + 1;  // 1 - 12 (Jan to Dec)
+        const month = today.getMonth() + 1;  // 1 - 12 (Jan to Dec)
         const day = today.getDay();  // 0 - 5 (Sun to Mon)
         
-        const date = calendar['0'][day];
+        const date = calendar[month][day];
         let workoutsToDo = [];
         for (var muscleIndex in date) {
             const muscle = date[muscleIndex];
