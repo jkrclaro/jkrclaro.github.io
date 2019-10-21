@@ -16,8 +16,8 @@ class Home extends React.Component {
                         <p>My name is John Claro, I'm interested in software engineering, economics and health.</p>
                         <p>I was born in Antipolo, Philippines then moved to Waterford, Ireland when I was 9 years old.</p>
                         <p>I studied Applied Computing in Waterford Institute of Technology and did work placement at Ireland's biggest classifieds website, DoneDeal.ie.</p>
-                        <p>I got a job after graduating at Ireland's leader for online marketplaces, DistilledSCH at their Dublin office as a Data Engineer.</p>
-                        <p>I left DistilledSCH to work on <a href='https://www.pxdcast.com'>Pxdcast</a> and <a href='https://www.sxftware.com'>Sxftware</a>.</p>
+                        <p>I worked as a Data Engineer for DistilledSCH.</p>
+                        <p>I then left to work on <a href='https://www.scrapeguin.com'>Scrapeguin</a>.</p>
                         <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
                             <li>via <a href='mailto:jkrclaro@gmail.com' style={underlineStyle}>email</a></li>
