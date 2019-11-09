@@ -17,7 +17,7 @@ class Home extends React.Component {
                         <p>I was born in Antipolo, Philippines then moved to Waterford, Ireland when I was 9 years old.</p>
                         <p>I studied Applied Computing in Waterford Institute of Technology and did work placement at Ireland's biggest classifieds website, DoneDeal.ie.</p>
                         <p>I worked as a Data Engineer for DistilledSCH upon graduating.</p>
-                        <p>I then left to work on <a href='https://www.scrapeguin.com'>Scrapeguin</a>.</p>
+                        <p>I'm currently on the lookout for an interesting software job.</p>
                         <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
                             <li>via <a href='mailto:jkrclaro@gmail.com' style={underlineStyle}>email</a></li>
