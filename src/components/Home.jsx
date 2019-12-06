@@ -15,8 +15,7 @@ class Home extends React.Component {
                     <div className='col-lg-10'>
                         <p>My name is John Claro, I'm interested in many aspects of software engineering.</p>
                         <p>I was born in Antipolo, Philippines then moved to Waterford, Ireland when I was 9 years old.</p>
-                        <p>I graduated with Applied Computing in Waterford Institute of Technology and worked for Ireland's largest online marketplace.</p>
-                        <p>I'm currently on the lookout for an interesting software job.</p>
+                        <p>I graduated with Applied Computing in Waterford Institute of Technology and worked for Ireland's largest online marketplace as a data engineer.</p>
                         <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
                         <ul>
                             <li>via <a href='mailto:jkrclaro@gmail.com' style={underlineStyle}>email</a></li>
