@@ -5,6 +5,8 @@ import Home from './Home';
 import Book from './Book';
 import Workout from './Workout';
 import NotFound from './NotFound';
+import BlogList from './Blog/BlogList';
+import Unemployment from './Blog/Unemployment';
 
 
 class Body extends React.Component {
@@ -15,6 +17,8 @@ class Body extends React.Component {
                 <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
                 <Route path={process.env.PUBLIC_URL + '/book'} component={Book} />
                 <Route path={process.env.PUBLIC_URL + '/workout'} component={Workout} />
+                <Route path={process.env.PUBLIC_URL + '/blog'} component={BlogList} />
+                <Route path={process.env.PUBLIC_URL + '/unemployment'} exact component={Unemployment} />
                 <Route component={NotFound} />
             </Switch>
         )
