@@ -4,15 +4,6 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import WebFont from 'webfontloader';
-
-WebFont.load({
-    google: {
-      families: [
-          'Arial:400', 'sans-serif',
-      ]
-    }
-});
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
