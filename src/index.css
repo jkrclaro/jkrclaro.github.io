@@ -17,11 +17,11 @@
 }
 
 /* Layout */
-.jkrclaro-bg {
-    background-color: #fff;
+div, p {
+    color: #444;
 }
 
 * { 
-    font-family: 'Verdana';
-    font-size: 13px;
+    font-family: 'Open Sans';
+    font-size: 16px;
 }
