@@ -1,35 +1,22 @@
 import React from 'react';
 
-const me = require('../imgs/me.png');
-
-const underlineStyle = {
-    textDecoration: 'underline'
-}
 
 class Home extends React.Component {
 
     render() {
         return (
-            <div className='col-lg-12'>
-                <div className='row'>
-                    <div className='col-lg-10'>
-                        <div>My name is John Claro, I'm a passionate software engineer primarily interested in web development and cloud computing.</div>
-                        <div>I was born in Antipolo, Philippines then moved to Waterford, Ireland when I was 9 years old.</div>
-                        <div>I graduated in Applied Computing from Waterford Institute of Technology.</div>
-                        <div>I worked as a graduate data engineer for Ireland's largest online marketplace after graduating.</div>
-                        <br/>
-                        <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
-                        <ul>
-                            <li>via <a href='mailto:jkrclaro@gmail.com' style={underlineStyle}>email</a></li>
-                            <li>send me a message on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>github</a></li>
-                            <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>twitter</a></li>
-                            <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer" style={underlineStyle}>linkedin</a></li>
-                        </ul>
-                    </div>
-                    <div className='col-lg-2 mb-3'>
-                        <img src={me} alt='me' className='img-fluid'/>
-                    </div>
-                </div>
+            <div className='col-lg-5'>
+                <h3><b>John Claro</b></h3>
+                <p>I live in Dublin and I'm a passionate software engineer primarily interested in web development and cloud computing.</p>
+                <p>I was born in the Philippines but grew up in Ireland and studied at WIT.</p>
+                <p>I worked as data engineer for DistilledSCH after graduating and a short stint as a freelance web developer afterwards.</p>
+                <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
+                <ul>
+                    <li>send me an <a href='mailto:jkrclaro@gmail.com'>email</a></li>
+                    <li>see my projects on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer">github</a></li>
+                    <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer">twitter</a></li>
+                    <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer">linkedin</a></li>
+                </ul>
             </div>
         )
     }
