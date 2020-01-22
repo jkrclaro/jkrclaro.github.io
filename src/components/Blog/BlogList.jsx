@@ -5,9 +5,11 @@ class BlogList extends React.Component {
 
     render() {
         return (
-            <ul>
-                <li><a href='hello-world'>Hello World</a></li>
-            </ul>
+            <div className='col-lg-12'>
+                <ul>
+                    <li><a href='hello-world'>Hello World</a></li>
+                </ul>
+            </div>
         )
     }
 }

@@ -6,7 +6,6 @@ import Book from './Book';
 import Workout from './Workout';
 import NotFound from './NotFound';
 import BlogList from './Blog/BlogList';
-import HelloWorld from './Blog/HelloWorld';
 
 
 class Body extends React.Component {
@@ -15,10 +14,9 @@ class Body extends React.Component {
         return (
             <Switch>
                 <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
-                <Route path={process.env.PUBLIC_URL + '/book'} component={Book} />
-                <Route path={process.env.PUBLIC_URL + '/workout'} component={Workout} />
-                <Route path={process.env.PUBLIC_URL + '/blog'} component={BlogList} />
-                <Route path={process.env.PUBLIC_URL + '/hello-world'} exact component={HelloWorld} />
+                <Route exact path={process.env.PUBLIC_URL + '/library'} component={Book} />
+                <Route exact path={process.env.PUBLIC_URL + '/workout'} component={Workout} />
+                <Route exact path={process.env.PUBLIC_URL + '/journal'} component={BlogList} />
                 <Route component={NotFound} />
             </Switch>
         )
