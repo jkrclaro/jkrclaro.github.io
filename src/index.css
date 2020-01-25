@@ -3,7 +3,7 @@
 }
 
 ul li a {
-    color: #111;
+    color: rgba(0,0,0,.54);
 }
 ul li a:hover {
     color: #111;
