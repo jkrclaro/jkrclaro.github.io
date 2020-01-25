@@ -8,7 +8,7 @@ class Books extends React.Component {
     render() {
         return (
             <ul>
-                <li><Link to='/book-1'>Book 1</Link></li>
+                <li><Link to='/mindset'>Mindset</Link></li>
             </ul>
         )
     }
