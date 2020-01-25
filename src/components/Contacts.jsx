@@ -12,9 +12,13 @@ class Contacts extends Component {
                         <div className='col-sm-2 col-3 my-auto'>
                             <img alt='me.png' src='/me.png' height='50' width='50' style={{ borderRadius: '50%'}}></img>
                         </div>
-                        <div className='col-sm-10 col-9'>
+                        <div className='col-sm-10 col-9 my-auto'>
                             <div>John Claro</div>
-                            <span className='text-muted'>{essay.publishedAt} . {essay.readingTime}</span>
+                            <small className='text-muted'>
+                                {essay.publishedAt}
+                                <span className='ml-2 mr-2' style={{ fontSize: 10 }}>&#8226;</span>
+                                {essay.readingTime}
+                            </small>
                         </div>
                     </div>
                 </div>

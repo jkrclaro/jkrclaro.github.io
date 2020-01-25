@@ -7,7 +7,7 @@ import Socials from '../Socials';
 class BenjaminFranklin extends Component {
 
     render() {
-        const essay = {'publishedAt': 'Jan 25, 2019', 'readingTime': '6 min read'}
+        const essay = {'publishedAt': 'Jan 25, 2019', 'readingTime': '32 min read'}
         return (
             <div className='col-lg-12'>
                 <div className='row'>
