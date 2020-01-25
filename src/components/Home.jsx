@@ -12,10 +12,9 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <p>
-                    I live in Dublin and I'm a passionate software engineer primarily interested in web development and cloud computing.
-                </p>
-                <p>
-                    I was born in the Philippines and grew up in Ireland and studied at WIT.
+                    I live in Dublin and 
+                    I'm a software engineer primarily interested in web development and cloud computing.
+                    I was born in the Philippines but grew up in Ireland and studied at WIT.
                 </p>
                 <p>
                     If you want to contact me, you can reach me via one of the following communication channels:
