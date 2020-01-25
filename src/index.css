@@ -9,12 +9,10 @@
 }
 #home li a:after {
     content: '';
-
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: -2.5px;
-
+    bottom: -1px;
     border-width: 0 0 1px;
     border-style: solid;
     border-color: #111;

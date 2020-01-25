@@ -16,15 +16,14 @@ class Home extends React.Component {
                     I'm a software engineer primarily interested in web development and cloud computing.
                     I was born in the Philippines but grew up in Ireland and studied at WIT.
                 </p>
-                <p>
+                <p className='mb-3'>
                     If you want to contact me, you can reach me via one of the following communication channels:
-                    <ul id='home'>
-                        <li>via <a href='mailto:jkrclaro@gmail.com'>email</a></li>
-                        <li>see my projects on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer">github</a></li>
-                        <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer">linkedin</a></li>
-                        <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer">twitter</a></li>
-                    </ul>
                 </p>
+                <ul id='home'>
+                    <li className='mb-1'>via <a href='mailto:jkrclaro@gmail.com'>email</a></li>
+                    <li className='mb-1'>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer">linkedin</a></li>
+                    <li className='mb-1'>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer">twitter</a></li>
+                </ul>
             </div>
         )
     }
