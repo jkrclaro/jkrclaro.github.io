@@ -6,7 +6,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className='col-lg-5'>
-                <div className='row mb-3'>
+                <div className='row mb-4'>
                     <div className='col-sm-2 col-3 my-auto'>
                         <img alt='me.png' src='/me.png' height='50' width='50' style={{ borderRadius: '50%'}}></img>
                     </div>

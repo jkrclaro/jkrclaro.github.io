@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import Contacts from '../Contacts';
+import Socials from '../Socials';
 
 
-class Mindset extends Component {
+class BenjaminFranklin extends Component {
 
     render() {
         const essay = {'publishedAt': 'Jan 25, 2019', 'readingTime': '6 min read'}
@@ -21,6 +22,7 @@ class Mindset extends Component {
                             Fusce sit amet blandit urna. Phasellus scelerisque accumsan tincidunt. 
                             Sed quam lorem amet.
                         </p>
+                        <Socials />
                     </div>
                     <div className='col-lg-2'></div>
                 </div>
@@ -29,4 +31,4 @@ class Mindset extends Component {
     }
 }
 
-export default Mindset;
+export default BenjaminFranklin;
