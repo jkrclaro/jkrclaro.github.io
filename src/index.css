@@ -20,7 +20,6 @@
 
 #books li a {
     color: rgba(0,0,0,.54);
-    font-weight: 700;
 }
 #books li a:hover {
     color: #111;
