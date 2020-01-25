@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Contacts from '../Contacts';
+import Info from '../Info';
 import Socials from '../Socials';
 
 
@@ -14,7 +14,7 @@ class BenjaminFranklin extends Component {
                     <div className='col-lg-2'></div>
                     <div className='col-lg-8'>
                         <h2>Benjamin Franklin: An American Life</h2>
-                        <Contacts essay={essay} />
+                        <Info essay={essay} />
                         <p>
                             Phasellus porta ante vitae lorem sollicitudin convallis. 
                             Nunc iaculis metus neque, dictum posuere diam efficitur ac. 
