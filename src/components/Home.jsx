@@ -26,9 +26,6 @@ class Home extends React.Component {
                 <p>
                     I was born in the Philippines but grew up in Ireland and studied at WIT.
                 </p>
-                <p>
-                    I worked as data engineer for DistilledSCH after graduating and a short stint as a freelance web developer afterwards.
-                </p>
             </div>
         )
     }
