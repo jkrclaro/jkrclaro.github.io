@@ -1,27 +1,29 @@
-/* Creates a sticky footer */
-:root {
-    --space: 1.5em 0;
-    --space: 2em 0;
+* {
+    font-family: 'Lora', serif;
 }
 
-.main-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+ul li a {
+    color: #111;
 }
-  
-.sub-body {
-    flex: 1 0 auto;
-    padding: var(--space) var(--space) 0;
-    width: 100%;
+ul li a:hover {
+    color: #111;
+    text-decoration: none;
 }
 
-/* Layout */
-div, p {
-    color: #444;
+.nav a {
+    color: rgba(0,0,0,.54);
+    text-transform: uppercase;
+}
+.nav a:hover {
+    color: #111;
+    text-decoration: none;
 }
 
-* { 
-    font-family: 'Open Sans';
-    font-size: 16px;
+#contacts a {
+    color: #111;
 }
+
+.fab, .fas {
+    font-size: 24px !important;
+}
+

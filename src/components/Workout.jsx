@@ -193,8 +193,8 @@ class Workout extends React.Component {
 
     render() {
         return (
-            <div className='container mt-3 mb-3'>
-                <div className='mb-5'>
+            <div>
+                <div>
                     <span onClick={this.randomWorkout} className='btn btn-primary'>Generate</span>
                 </div>
                 <div>

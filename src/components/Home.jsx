@@ -6,17 +6,29 @@ class Home extends React.Component {
     render() {
         return (
             <div className='col-lg-5'>
-                <h3><b>John Claro</b></h3>
-                <p>I live in Dublin and I'm a passionate software engineer primarily interested in web development and cloud computing.</p>
-                <p>I was born in the Philippines but grew up in Ireland and studied at WIT.</p>
-                <p>I worked as data engineer for DistilledSCH after graduating and a short stint as a freelance web developer afterwards.</p>
-                <p>If you want to contact me, you can reach me via one of the following communication channels:</p>
-                <ul>
-                    <li>send me an <a href='mailto:jkrclaro@gmail.com'>email</a></li>
-                    <li>see my projects on <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer">github</a></li>
-                    <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer">twitter</a></li>
-                    <li>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer">linkedin</a></li>
-                </ul>
+                <div className='row mb-3'>
+                    <div className='col-sm-2 col-3 my-auto'>
+                        <img alt='me.png' src='/me.png' height='50' width='50' style={{ borderRadius: '50%'}}></img>
+                    </div>
+                    <div className='col-sm-10 col-9'>
+                        <div>John Claro</div>
+                        <div id='contacts'>
+                            <a href='mailto:jkrclaro@gmail.com'><i className='fas fa-envelope mr-3'></i></a>
+                            <a href='https://www.github.com/jkrclaro' target="_blank" rel="noopener noreferrer"><i className='fab fa-github mr-3'></i></a>
+                            <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer"><i className='fab fa-linkedin mr-3'></i></a>
+                            <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer"><i className='fab fa-twitter mr-3'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    I live in Dublin and I'm a passionate software engineer primarily interested in web development and cloud computing.
+                </p>
+                <p>
+                    I was born in the Philippines but grew up in Ireland and studied at WIT.
+                </p>
+                <p>
+                    I worked as data engineer for DistilledSCH after graduating and a short stint as a freelance web developer afterwards.
+                </p>
             </div>
         )
     }
