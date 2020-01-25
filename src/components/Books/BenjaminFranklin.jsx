@@ -13,7 +13,7 @@ class BenjaminFranklin extends Component {
                 <div className='row'>
                     <div className='col-lg-2'></div>
                     <div className='col-lg-8'>
-                        <h2>Maecenas molestie eros id tempor viverra. Suspendisse potenti orci aliquam.</h2>
+                        <h2>Benjamin Franklin: An American Life</h2>
                         <Contacts essay={essay} />
                         <p>
                             Phasellus porta ante vitae lorem sollicitudin convallis. 

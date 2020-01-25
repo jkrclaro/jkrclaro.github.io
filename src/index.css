@@ -2,10 +2,27 @@
     font-family: 'Lora', serif;
 }
 
-ul li a {
+#home li a {
+    color: rgba(0,0,0,.54);
+    text-decoration: none;
+    position: relative;
+}
+#home li a:after {
+    content: '';
+
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+
+    border-width: 0 0 1px;
+    border-style: solid;
+}
+
+#books li a {
     color: rgba(0,0,0,.54);
 }
-ul li a:hover {
+#books li a:hover {
     color: #111;
     text-decoration: none;
 }

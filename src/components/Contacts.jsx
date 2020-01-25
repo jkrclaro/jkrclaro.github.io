@@ -6,7 +6,7 @@ class Contacts extends Component {
     render() {
         const { essay } = this.props;
         return (
-            <div className='row mb-3 mt-3'>
+            <div className='row mb-3 mt-4'>
                 <div className='col-sm-7 mb-3'>
                     <div className='row'>
                         <div className='col-sm-2 col-3 my-auto'>
