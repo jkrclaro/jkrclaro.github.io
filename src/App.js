@@ -22,8 +22,8 @@ class App extends Component {
                         <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
                         <Route exact path={process.env.PUBLIC_URL + '/articles'} component={Articles} />
                         <Route exact path={process.env.PUBLIC_URL + '/books'} component={Books} />
-                        <Route exact path={process.env.PUBLIC_URL + '/books/benjamin-franklin'} component={BenjaminFranklin} />
-                        <Route exact path={process.env.PUBLIC_URL + '/articles/hello-world'} component={HelloWorld} /> 
+                        <Route exact path={process.env.PUBLIC_URL + '/benjamin-franklin'} component={BenjaminFranklin} />
+                        <Route exact path={process.env.PUBLIC_URL + '/hello-world'} component={HelloWorld} /> 
                         <Route component={NotFound} />
                     </Switch>
                 </div>

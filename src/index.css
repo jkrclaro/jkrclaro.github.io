@@ -2,12 +2,12 @@
     font-family: 'Lora', serif;
 }
 
-#home li a, .link-active {
+#home li a {
     color: rgba(0,0,0,.54);
     text-decoration: none;
     position: relative;
 }
-#home li a:after, .link-active:after {
+#home li a:after {
     content: '';
     width: 100%;
     position: absolute;
@@ -27,15 +27,30 @@
 }
 
 .nav a {
+    color: rgba(0,0,0,.54);
     font-family: 'Open Sans';
     font-size: 12px;
-    color: rgba(0,0,0,.54);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 .nav a:hover {
     color: #111;
     text-decoration: none;
+}
+.link-active {
+    color: #111 !important;
+    text-decoration: none;
+    position: relative;
+}
+.link-active:after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -1.5px;
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: #111;
 }
 
 #contacts a {
