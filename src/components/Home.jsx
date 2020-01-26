@@ -7,16 +7,16 @@ class Home extends React.Component {
         return (
             <div className='row'>
                 <div className='col-lg-5'>
-                <img className='mb-3' alt='me.png' src='/me.png' height='75' width='75' style={{ borderRadius: '50%'}}></img>
-                <p>I live in Dublin and I'm a software engineer primarily interested in web development and cloud computing.</p>
-                <p>I was born in the Philippines but grew up in Ireland and studied at WIT.</p>
-                <p className='mb-3'>My contacts are below if you want to get in touch:</p>
-                <ul id='home'>
-                    <li className='mb-1'>via <a href='mailto:jkrclaro@gmail.com'>email</a></li>
-                    <li className='mb-1'>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer">linkedin</a></li>
-                    <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer">twitter</a></li>
-                </ul>
-            </div>
+                    <img className='mb-3' alt='me.png' src='/me.png' height='75' width='75' style={{ borderRadius: '50%'}}></img>
+                    <p>I live in Dublin and I'm a software engineer primarily interested in web development and cloud computing.</p>
+                    <p>I was born in the Philippines but grew up in Ireland and studied at WIT.</p>
+                    <p className='mb-3'>My contacts are below if you want to get in touch:</p>
+                    <ul id='home'>
+                        <li className='mb-1'>via <a href='mailto:jkrclaro@gmail.com'>email</a></li>
+                        <li className='mb-1'>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer">linkedin</a></li>
+                        <li>reach out to me on <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer">twitter</a></li>
+                    </ul>
+                </div>
             </div>
         )
     }
