@@ -14,7 +14,7 @@ class Articles extends React.Component {
                     <div key={index}>
                         {article.category === 'articles' ? (
                             <span>
-                                <span className='bulletpoint mr-2'>&#8226;</span>
+                                <span className='bulletpoint mr-2'>-</span>
                                 <a href={article.url}>{article.title}</a>
                             </span>
                         ) : (null)}

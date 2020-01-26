@@ -16,7 +16,7 @@ class Info extends Component {
                             <div>John Claro</div>
                             <small className='text-muted'>
                                 {essay.publishedAt}
-                                <span className='ml-2 mr-2' style={{ fontSize: 10 }}>&#8226;</span>
+                                <span className='ml-2 mr-2' style={{ fontSize: 10 }}>-</span>
                                 {essay.readingTime}
                             </small>
                         </div>
