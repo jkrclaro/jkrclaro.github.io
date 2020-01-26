@@ -14,8 +14,6 @@ class Home extends React.Component {
                 <p>
                     I live in Dublin and I'm a software engineer 
                     interested in web development and cloud computing.
-                </p>
-                <p>
                     I was born in the Philippines but grew up in Ireland and studied at WIT.
                 </p>
                 <p className='mb-3'>
