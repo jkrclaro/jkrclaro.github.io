@@ -17,6 +17,9 @@
     border-style: solid;
     border-color: #111;
 }
+#home li a:hover {
+    color: #111;
+}
 
 #books a, #articles a {
     color: #888;
