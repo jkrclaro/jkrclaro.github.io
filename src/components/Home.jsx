@@ -12,15 +12,14 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <p>
-                    I live in Dublin and I'm a software engineer primarily 
+                    I live in Dublin and I'm a software engineer 
                     interested in web development and cloud computing.
                 </p>
                 <p>
                     I was born in the Philippines but grew up in Ireland and studied at WIT.
                 </p>
                 <p className='mb-3'>
-                    If you want to contact me, you can reach me via one of the following communication channels:
-                </p>
+                    My contacts are below if you want to get in touch:</p>
                 <ul id='home'>
                     <li className='mb-1'>via <a href='mailto:jkrclaro@gmail.com'>email</a></li>
                     <li className='mb-1'>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer">linkedin</a></li>
