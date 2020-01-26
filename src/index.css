@@ -54,3 +54,7 @@ b {
     font-family: 'Georgia';
     font-weight: 900;
 }
+
+.bulletpoint {
+    color: #111;
+}
