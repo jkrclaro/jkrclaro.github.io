@@ -5,12 +5,16 @@ class Navbar extends React.Component {
 
     render() {
         const pathname = new URL(window.location.href).pathname;
-        const books = [
-            '/benjamin-franklin'
-        ]
-        const articles = [
-            '/hello-world'
-        ]
+        const posts = require('../posts.json')
+        let articles = [];
+        let books = []
+        for (const post of posts) {
+            if (post.category === 'articles') {
+                articles.push(post.url);
+            } else if (post.category === 'books') {
+                books.push(post.url);
+            }
+        }
         return (
             <div className='nav mt-3 mb-3'>
                 <div className='mr-4'><a className={pathname === '/' ? 'link-active' : ''} href='/'>About</a></div>

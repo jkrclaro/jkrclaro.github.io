@@ -9,7 +9,7 @@ import Books from './components/Books';
 
 import BenjaminFranklin from './components/Books/BenjaminFranklin';
 
-import HelloWorld from './components/Articles/HelloWorld';
+import Seed from './components/Articles/Seed';
 
 class App extends Component {
 
@@ -23,7 +23,7 @@ class App extends Component {
                         <Route exact path={process.env.PUBLIC_URL + '/articles'} component={Articles} />
                         <Route exact path={process.env.PUBLIC_URL + '/books'} component={Books} />
                         <Route exact path={process.env.PUBLIC_URL + '/benjamin-franklin'} component={BenjaminFranklin} />
-                        <Route exact path={process.env.PUBLIC_URL + '/hello-world'} component={HelloWorld} /> 
+                        <Route exact path={process.env.PUBLIC_URL + '/seed'} component={Seed} /> 
                         <Route component={NotFound} />
                     </Switch>
                 </div>

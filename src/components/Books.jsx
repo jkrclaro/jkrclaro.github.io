@@ -3,10 +3,23 @@ import React from 'react';
 
 class Books extends React.Component {
 
+    state = {
+        books: require('../posts.json')
+    }
+
     render() {
         return (
             <div id='books'>
-                <div><span className='bulletpoint mr-2'>&#8226;</span> <a href='/benjamin-franklin'>Benjamin Franklin: An American Life</a></div>
+                {this.state.books.map((book, index) =>
+                    <div key={index}>
+                        {book.category === 'books' ? (
+                            <span>
+                                <span className='bulletpoint mr-2'>&#8226;</span>
+                                <a href={book.url}>{book.title}</a>
+                            </span>
+                        ) : (null)}
+                    </div>
+                )}
             </div>
         )
     }
