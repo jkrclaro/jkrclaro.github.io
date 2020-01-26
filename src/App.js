@@ -15,15 +15,13 @@ class App extends Component {
             <BrowserRouter>
                 <div className='container mb-5'>
                     <Navbar />
-                    <div className='col-lg-12'>
-                        <Switch>
-                            <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
-                            <Route exact path={process.env.PUBLIC_URL + '/books'} component={Books} />
-                            <Route exact path={process.env.PUBLIC_URL + '/workout'} component={Workout} />
-                            <Route exact path={process.env.PUBLIC_URL + '/benjamin-franklin'} component={BenjaminFranklin} /> 
-                            <Route component={NotFound} />
-                        </Switch>
-                    </div>
+                    <Switch>
+                        <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
+                        <Route exact path={process.env.PUBLIC_URL + '/books'} component={Books} />
+                        <Route exact path={process.env.PUBLIC_URL + '/workout'} component={Workout} />
+                        <Route exact path={process.env.PUBLIC_URL + '/benjamin-franklin'} component={BenjaminFranklin} /> 
+                        <Route component={NotFound} />
+                    </Switch>
                 </div>
             </BrowserRouter>
         )

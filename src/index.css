@@ -18,22 +18,22 @@
     border-color: #111;
 }
 
-#books li a {
+#books a {
     color: rgba(0,0,0,.54);
 }
-#books li a:hover {
+#books a:hover {
     color: #111;
     text-decoration: none;
 }
 
-nav a {
+.nav a {
     font-family: 'Open Sans';
     font-size: 12px;
     color: rgba(0,0,0,.54);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-nav a:hover {
+.nav a:hover {
     color: #111;
 }
 
