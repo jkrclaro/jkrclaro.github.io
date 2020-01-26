@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Info from '../Info';
-import Socials from '../Socials';
 
 
 class BenjaminFranklin extends Component {
