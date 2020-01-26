@@ -6,10 +6,8 @@ class Home extends React.Component {
     render() {
         return (
             <div className='col-lg-5'>
-                <div className='col-lg-2 mb-3'>
-                    <img alt='me.png' src='/me.png' height='75' width='75' style={{ borderRadius: '50%'}}></img>
-                </div>
                 <div className='col-lg-12'>
+                    <img className='mb-3' alt='me.png' src='/me.png' height='75' width='75' style={{ borderRadius: '50%'}}></img>
                     <p>
                         I live in Dublin and I'm a software engineer 
                         primarily interested in web development and cloud computing.
