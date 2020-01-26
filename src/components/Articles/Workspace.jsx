@@ -6,7 +6,7 @@ import Info from '../Info';
 class BenjaminFranklin extends Component {
 
     render() {
-        const essay = {'publishedAt': 'Jan 26, 2019', 'readingTime': '9 sec read'}
+        const essay = {'publishedAt': 'Jan 26, 2019', 'readingTime': '1m 9s read'}
         return (
             <div className='row'>
                 <div className='col-lg-2'></div>
@@ -35,7 +35,7 @@ class BenjaminFranklin extends Component {
                     <p>
                         The most popular workplace that I hear most people work from.
                         Depending on the ventilation of the cafe, it can feel a bit stuffy and warm sometimes.
-                        You also have a high chance of finding other people working here, just like you.
+                        You also have a high chance of finding other people working here so you won't feel left out.
                     </p>
                     <h3>Libraries</h3>
                     <p>
