@@ -18,10 +18,10 @@
     border-color: #111;
 }
 
-#books a {
+#books a, #articles a {
     color: rgba(0,0,0,.54);
 }
-#books a:hover {
+#books a:hover, #articles a:hover {
     color: #111;
     text-decoration: none;
 }

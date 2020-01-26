@@ -52,7 +52,6 @@ class BenjaminFranklin extends Component {
                         Fusce sit amet blandit urna. Phasellus scelerisque accumsan tincidunt. 
                         Sed quam lorem amet.
                     </p>
-                    <Socials />
                 </div>
                 <div className='col-lg-2'></div>
             </div>
