@@ -3,7 +3,7 @@
 }
 
 #home li a {
-    color: rgba(0,0,0,.54);
+    color: #888;
     text-decoration: none;
     position: relative;
 }
@@ -19,7 +19,7 @@
 }
 
 #books a, #articles a {
-    color: rgba(0,0,0,.54);
+    color: #888;
 }
 #books a:hover, #articles a:hover {
     color: #111;
@@ -27,7 +27,7 @@
 }
 
 .nav a {
-    color: rgba(0,0,0,.54);
+    color: #888;
     font-family: 'Open Sans';
     font-size: 12px;
     text-transform: uppercase;
