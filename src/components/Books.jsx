@@ -7,9 +7,9 @@ class Books extends React.Component {
 
     render() {
         return (
-                <ul id='books'>
-                    <li><Link to='/benjamin-franklin'>Benjamin Franklin: An American Life</Link></li>
-                </ul>
+            <ul id='books'>
+                <li><Link to='/benjamin-franklin'>Benjamin Franklin: An American Life</Link></li>
+            </ul>
         )
     }
 }
