@@ -21,7 +21,6 @@ class App extends Component {
 
     render() {
         const { articles } = this.state;
-        console.log(articles)
         return(
             <BrowserRouter>
                 <div className='container mb-5'>

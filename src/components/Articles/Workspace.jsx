@@ -7,14 +7,15 @@ class Workspace extends Component {
         return (
             <div>
                 <p>
-                    As a freelance programmer, understanding where to work regularly is important. 
+                    Understanding where to do productive work regularly is important. 
                     One of the perks of coding is that the work can be done anywhere.
-                    Working at home, libraries, cafes or offices has its pros and cons.
-                    Thus, the ideal workplace should foster or kickstart <mark><a href='https://en.wikipedia.org/wiki/Flow_(psychology)'>being in the zone</a></mark>.
+                    Home, cafes, libraries and offices are the most common places where meaningful work happens.
+                    Ideally, this environment should enable restarting or kickstarting the state of <a href='https://en.wikipedia.org/wiki/Flow_(psychology)'>being in the zone</a>.
                 </p>
                 <h6>Home</h6>
                 <p>
-                    Financially speaking, the house is the best choice if you want to save up money.
+                    Meaningful work usually comes from doing something challenging.
+                    There's a high chance that during this time, you'll likely be stressed.
                     Everything is in the palm of your hands if you work at home but having everything within your reach can also be a bad thing.
                     Distraction is the most popular reason why people don't work at home.
                 </p>

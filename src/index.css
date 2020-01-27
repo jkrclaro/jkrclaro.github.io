@@ -4,6 +4,7 @@
 
 #article a {
     color: #888;
+    text-decoration: underline;
 }
 
 #links a {
