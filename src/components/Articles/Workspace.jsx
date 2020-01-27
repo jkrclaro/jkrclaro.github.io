@@ -14,19 +14,17 @@ class BenjaminFranklin extends Component {
                     <h1>Workspace</h1>
                     <Info essay={essay} />
                     <p>
-                       As a freelance programmer, one of the battles you'll eventually face is understanding where you'll be working.
-                       Sure, you can just open your laptop anywhere and get to work, right?
-                       That may work for some people but that's definitely never been the case for me.
-                       I find that I have to draw a line between a personal and working life environment.
-                       Here are some of the places I've tried and my experiences with them.
+                        As a freelance programmer, settling on where to work regularly is important. 
+                        The best part of coding is that the work can be done anywhere but this in itself can be an unproductive factor.
+                        I've outlined my experiences working at home, libraries, cafes and offices.
                     </p>
-                    <h6>House</h6>
+                    <h6>Home</h6>
                     <p>
                         Financially speaking, the house is the best choice if you want to save up money.
                         Everything is in the palm of your hands if you work at home but having everything within your reach can also be a bad thing.
                         Distraction is the most popular reason why people don't work at home.
                     </p>
-                    <h6>Coworking spaces</h6>
+                    <h6>Offices</h6>
                     <p>
                         I've actually never been to one because they require a monthly fee and closed during the weekends.
                         Most of them are usually located in the middle of towns or cities so if you live in the suburbs, you'll essentially be paying for commute and their monthly fee.
