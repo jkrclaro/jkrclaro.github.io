@@ -3,17 +3,14 @@ import React from 'react';
 
 class Articles extends React.Component {
 
-    state = {
-        articles: require('../articles.json')
-    }
-
     render() {
+        const { articles } = this.props;
         return (
             <div id='articles'>
-                {this.state.articles.map((post, index) => 
+                {articles.map((article, index) => 
                     <div key={index}>
                         <span className='bulletpoint mr-2'>-</span>
-                        <a href={post.url}>{post.title}</a>
+                        <a href={article.url}>{article.component.props.title}</a>
                     </div>
                 )}
             </div>

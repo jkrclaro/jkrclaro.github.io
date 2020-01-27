@@ -5,7 +5,8 @@ class Navbar extends React.Component {
 
     render() {
         const pathname = new URL(window.location.href).pathname;
-        const articles = require('../articles.json')
+        const { articles } = this.props;
+        console.log(articles);
         let articleUrls = [];
         for (const article of articles) {
             articleUrls.push(article.url)
