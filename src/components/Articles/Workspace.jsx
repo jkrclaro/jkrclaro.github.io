@@ -14,8 +14,8 @@ class BenjaminFranklin extends Component {
                     <h1>Workspace</h1>
                     <Info essay={essay} />
                     <p>
-                        As a freelance programmer, settling on where to work regularly is important. 
-                        The best part of coding is that the work can be done anywhere but this in itself can be an unproductive factor.
+                        As a freelance programmer, understanding where you'll be working regularly is important. 
+                        One of the best parts of coding is that the work can be done anywhere but this in itself can be an unproductive factor.
                         I've outlined my experiences working at home, libraries, cafes and offices.
                     </p>
                     <h6>Home</h6>
