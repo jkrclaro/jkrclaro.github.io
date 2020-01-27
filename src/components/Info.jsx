@@ -23,9 +23,11 @@ class Info extends Component {
                     </div>
                 </div>
                 <div className='col-sm-5 mb-3 text-sm-right my-auto' id='contacts'>
-                    <a href='mailto:jkrclaro@gmail.com'><i className='far fa-envelope mr-5'></i></a>
-                    <a href='https://www.linkedin.com/in/jkrclaro' target="_blank" rel="noopener noreferrer"><i className='fab fa-linkedin-in mr-5'></i></a>
-                    <a href='https://www.twitter.com/jkrclaro' target="_blank" rel="noopener noreferrer"><i className='fab fa-twitter'></i></a>
+                    <a href='mailto:jkrclaro@gmail.com'><i className='far fa-envelope mr-4'></i></a>
+                    <a href='https://www.linkedin.com/in/jkrclaro' target='_blank' rel='noopener noreferrer'><i className='fab fa-linkedin-in mr-4'></i></a>
+                    <a href='https://www.twitter.com/jkrclaro' target='_blank' rel='noopener noreferrer'><i className='fab fa-twitter mr-4'></i></a>
+                    <a href='https://www.github.com/jkrclaro' target='_blank' rel='noopener noreferrer'><i className='fab fa-github mr-4'></i></a>
+                    <a href='https://getpocket.com/@jkrclaro' target='_blank' rel='noopener noreferrer'><i className='fab fa-get-pocket'></i></a>
                 </div>
             </div>
         )
