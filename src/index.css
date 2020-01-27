@@ -2,12 +2,12 @@
     font-family: 'Lora', serif;
 }
 
-#home li a {
+#links a {
     color: #888;
     text-decoration: none;
     position: relative;
 }
-#home li a:after {
+#links a:after {
     content: '';
     width: 100%;
     position: absolute;
@@ -17,7 +17,7 @@
     border-style: solid;
     border-color: #111;
 }
-#home li a:hover {
+#links a:hover {
     color: #111;
 }
 
