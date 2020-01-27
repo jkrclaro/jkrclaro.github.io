@@ -1,16 +1,16 @@
 import React from 'react';
 
 
-class Essays extends React.Component {
+class Articles extends React.Component {
 
     state = {
-        essays: require('../essays.json')
+        articles: require('../articles.json')
     }
 
     render() {
         return (
-            <div id='essays'>
-                {this.state.essays.map((post, index) => 
+            <div id='articles'>
+                {this.state.articles.map((post, index) => 
                     <div key={index}>
                         <span className='bulletpoint mr-2'>-</span>
                         <a href={post.url}>{post.title}</a>
@@ -21,4 +21,4 @@ class Essays extends React.Component {
     }
 }
 
-export default Essays;
+export default Articles;
