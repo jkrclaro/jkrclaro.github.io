@@ -10,13 +10,14 @@ class BenjaminFranklin extends Component {
         return (
             <div className='row'>
                 <div className='col-lg-2'></div>
-                <div className='col-lg-8'>
+                <div className='col-lg-8' id='article'>
                     <h1>Workspace</h1>
                     <Info essay={essay} />
                     <p>
-                        As a freelance programmer, understanding where you'll be working regularly is important. 
-                        One of the best parts of coding is that the work can be done anywhere but this in itself can be an unproductive factor.
-                        I've outlined my experiences working at home, libraries, cafes and offices.
+                        As a freelance programmer, understanding where to work regularly is important. 
+                        One of the perks of coding is that the work can be done anywhere.
+                        Working at home, libraries, cafes or offices has its pros and cons.
+                        Thus, the ideal workplace should foster or kickstart <mark><a href='https://en.wikipedia.org/wiki/Flow_(psychology)'>being in the zone</a></mark>.
                     </p>
                     <h6>Home</h6>
                     <p>

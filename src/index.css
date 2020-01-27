@@ -2,6 +2,10 @@
     font-family: 'Lora', serif;
 }
 
+#article a {
+    color: #888;
+}
+
 #links a {
     color: #888;
     text-decoration: none;
