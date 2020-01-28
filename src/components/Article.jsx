@@ -34,7 +34,7 @@ class Article extends Component {
                         </div>
                     </div>
                     <Content title={title} />
-                    <span>Got feedback? <a href='mailto:jkrclaro@gmail.com'>Email me</a></span>
+                    <div>Got feedback? <a href='mailto:jkrclaro@gmail.com'>Email me</a></div>
                 </div>
                 <div className='col-lg-3'></div>
             </div>
