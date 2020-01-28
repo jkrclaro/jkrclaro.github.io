@@ -8,9 +8,9 @@ class Workspace extends Component {
             <div>
                 <p>
                     Understanding where to do productive work regularly is important. 
-                    One of the perks of coding is that the work can be done anywhere.
-                    Home, cafes, libraries and offices are the most common places where meaningful work happens.
-                    Ideally, this environment should enable restarting or kickstarting the state of <a href='https://en.wikipedia.org/wiki/Flow_(psychology)'>being in the zone</a>.
+                    One perk of coding is that the work can be done anywhere.
+                    Home, cafes, libraries and offices are common places where most meaningful work happens.
+                    The ideal workspace should therefore foster or kickstart the state of <a href='https://en.wikipedia.org/wiki/Flow_(psychology)'>being in the zone</a>.
                 </p>
                 <h6>Home</h6>
                 <p>
