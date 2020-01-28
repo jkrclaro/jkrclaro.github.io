@@ -2,6 +2,10 @@ import React from 'react';
 
 
 class Articles extends React.Component {
+    
+    componentDidMount() {
+        document.title = 'Articles'
+    }
 
     render() {
         const { articles } = this.props;

@@ -3,9 +3,13 @@ import React from 'react';
 
 class NotFound extends React.Component {
 
+    componentDidMount() {
+        document.title = 'Page not found'
+    }
+
     render() {
         return (
-            <h2>Page not found.</h2>
+            <h2>Page not found!</h2>
         )
     }
 }
