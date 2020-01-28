@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Article extends Component {
 
     componentDidMount() {
-        document.title = `${this.props.title} - John Claro`
+        document.title = this.props.title;
     }
 
     render() {

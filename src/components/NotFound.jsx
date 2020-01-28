@@ -4,7 +4,7 @@ import React from 'react';
 class NotFound extends React.Component {
 
     componentDidMount() {
-        document.title = 'Page not found - John Claro'
+        document.title = 'Page not found';
     }
 
     render() {
