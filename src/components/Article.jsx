@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 class Article extends Component {
 
     render() {
-        const { publishedAt, readingTime, title, content } = this.props;
-        const essay = { publishedAt, readingTime };
+        const { publishedAt, readingTime, title } = this.props;
+        const Content = this.props.content;
         return (
             <div className='row'>
                 <div className='col-lg-3'></div>
@@ -20,9 +20,9 @@ class Article extends Component {
                                 <div className='col-md-9 col-sm-9 col-9 my-auto'>
                                     <div>John Claro</div>
                                     <small className='text-muted'>
-                                        {essay.publishedAt}
+                                        {publishedAt}
                                         <span className='ml-2 mr-2' style={{ fontSize: 10 }}>-</span>
-                                        {essay.readingTime} read
+                                        {readingTime} read
                                     </small>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@ class Article extends Component {
                             <a href='https://www.twitter.com/jkrclaro' target='_blank' rel='noopener noreferrer'><i className='fab fa-twitter mr-4'></i></a>
                         </div>
                     </div>
-                    { content }
+                    <Content title={title} />
                 </div>
                 <div className='col-lg-3'></div>
             </div>
