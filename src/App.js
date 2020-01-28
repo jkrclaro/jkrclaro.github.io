@@ -14,7 +14,7 @@ class App extends Component {
 
     state = {
         articles: [
-            {'url': '/benjamin-franklin', 'component': <Article title='Benjamin Franklin: An American Life' publishedAt='Jan 25, 2019' readingTime='1m 9s' content={BenjaminFranklin} />},
+            // {'url': '/benjamin-franklin', 'component': <Article title='Benjamin Franklin: An American Life' publishedAt='Jan 25, 2019' readingTime='1m 9s' content={BenjaminFranklin} />},
             {'url': '/workspace', 'component': <Article title='Workspace' publishedAt='Jan 25, 2019' readingTime='1m 9s' content={Workspace} />}
         ]
     }
