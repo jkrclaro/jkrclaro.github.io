@@ -4,7 +4,7 @@ import React from 'react';
 class Home extends React.Component {
 
     componentDidMount() {
-        document.title = 'John Claro'
+        document.title = 'About - John Claro'
     }
 
     render() {

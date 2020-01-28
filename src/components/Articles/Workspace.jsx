@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 
 class Workspace extends Component {
 
-    componentDidMount() {
-        document.title = this.props.title;
-    }
-
     render() {
         return (
             <div>

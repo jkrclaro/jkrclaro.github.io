@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 
 class Article extends Component {
 
+    componentDidMount() {
+        document.title = `${this.props.title} - John Claro`
+    }
+
     render() {
         const { publishedAt, readingTime, title } = this.props;
         const Content = this.props.content;
@@ -18,7 +22,7 @@ class Article extends Component {
                             {readingTime} read
                         </span>
                     </div>
-                    <Content title={title} />
+                    <Content />
                 </div>
                 <div className='col-lg-3'></div>
             </div>
