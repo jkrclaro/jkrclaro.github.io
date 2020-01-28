@@ -12,11 +12,11 @@ class Article extends Component {
                 <div className='col-lg-6' id='article'>
                     <div className='mb-3'>
                         <h1>{title}</h1>
-                        <small className='text-muted'>
+                        <span className='text-muted'>
                             {publishedAt}
-                            <span className='ml-2 mr-2' style={{ fontSize: 10 }}>-</span>
+                            <span className='ml-2 mr-2'>-</span>
                             {readingTime} read
-                        </small>
+                        </span>
                     </div>
                     <Content title={title} />
                 </div>
