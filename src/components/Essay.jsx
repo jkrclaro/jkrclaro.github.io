@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Article extends Component {
+class Essay extends Component {
 
     componentDidMount() {
         document.title = `${this.props.title} - John Claro`;
@@ -30,4 +30,4 @@ class Article extends Component {
     }
 }
 
-export default Article;
+export default Essay;

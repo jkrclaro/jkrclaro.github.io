@@ -1,17 +1,17 @@
 import React from 'react';
 
 
-class Articles extends React.Component {
+class Essays extends React.Component {
     
     componentDidMount() {
-        document.title = 'Articles';
+        document.title = 'Essays';
     }
 
     render() {
-        const { articles } = this.props;
+        const { essays } = this.props;
         return (
-            <div id='articles'>
-                {articles.map((article, index) => 
+            <div id='essays'>
+                {essays.map((article, index) => 
                     <div key={index}>
                         <span className='bulletpoint mr-2'>-</span>
                         <a href={article.url}>{article.component.props.title}</a>
@@ -22,4 +22,4 @@ class Articles extends React.Component {
     }
 }
 
-export default Articles;
+export default Essays;

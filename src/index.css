@@ -26,10 +26,10 @@
     color: #111;
 }
 
-#articles a {
+#essays a {
     color: #888;
 }
-#articles a:hover {
+#essays a:hover {
     color: #111;
     text-decoration: none;
 }
