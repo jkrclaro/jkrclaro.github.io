@@ -2,9 +2,16 @@
     font-family: 'Lora', serif;
 }
 
-#article a {
+#note a {
     color: #888;
     text-decoration: underline;
+}
+#notes a {
+    color: #888;
+}
+#notes a:hover {
+    color: #111;
+    text-decoration: none;
 }
 
 #links a {
@@ -24,14 +31,6 @@
 }
 #links a:hover {
     color: #111;
-}
-
-#essays a {
-    color: #888;
-}
-#essays a:hover {
-    color: #111;
-    text-decoration: none;
 }
 
 .nav a {
