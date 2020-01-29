@@ -9,7 +9,6 @@ class Note extends Component {
 
     render() {
         const { publishedAt, readingTime, title } = this.props;
-        const Content = this.props.content;
         return (
             <div className='row'>
                 <div className='col-lg-3'></div>
@@ -22,7 +21,7 @@ class Note extends Component {
                             {readingTime} read
                         </span>
                     </div>
-                    <Content />
+                    {this.props.children}
                 </div>
                 <div className='col-lg-3'></div>
             </div>

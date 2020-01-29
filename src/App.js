@@ -5,7 +5,6 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
 
-import Note from './components/Note';
 import Notes from './components/Notes';
 import ReactJS from './components/Notes/ReactJS';
 
@@ -13,7 +12,7 @@ class App extends Component {
 
     state = {
         notes: [
-            {'url': '/reactjs', 'component': <Note title='ReactJS' publishedAt='Jan 29, 2019' readingTime='1m 9s' content={ReactJS} />}
+            {'url': '/reactjs', 'component': <ReactJS title='ReactJS' publishedAt='Jan 29, 2019' readingTime='1m 9s' />}
         ]
     }
 

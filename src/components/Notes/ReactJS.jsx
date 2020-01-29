@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 
+import Note from '../Note';
+
 
 class ReactJS extends Component {
 
     render() {
+        const { title, publishedAt, readingTime } = this.props;
         return (
-            <div>
+            <Note title={title} publishedAt={publishedAt} readingTime={readingTime}>
                 <h6>History</h6>
                 <p>
                     Created by Jordan Walke.
                 </p>
-            </div>
+            </Note>
         )
     }
 }
