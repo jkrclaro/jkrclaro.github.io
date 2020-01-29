@@ -6,9 +6,8 @@ import Note from '../Note';
 class ReactJS extends Component {
 
     render() {
-        const { title, publishedAt, readingTime } = this.props;
         return (
-            <Note title={title} publishedAt={publishedAt} readingTime={readingTime}>
+            <Note title='ReactJS' publishedAt='Jan 29, 2019' readingTime='1m 9s'>
                 <h6>History</h6>
                 <p>
                     Created by Jordan Walke.

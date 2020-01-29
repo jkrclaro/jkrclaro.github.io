@@ -8,13 +8,15 @@ class Notes extends React.Component {
     }
 
     render() {
-        const { notes } = this.props;
+        const notes = [
+            {'url': '/reactjs', 'title': 'ReactJS'}
+        ]
         return (
             <div id='notes'>
                 {notes.map((note, index) => 
                     <div key={index}>
                         <span className='bulletpoint mr-2'>-</span>
-                        <a href={note.url}>{note.component.props.title}</a>
+                        <a href={note.url}>{note.title}</a>
                     </div>
                 )}
             </div>
