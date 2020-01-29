@@ -7,13 +7,13 @@ import Navbar from './components/Navbar';
 
 import Note from './components/Note';
 import Notes from './components/Notes';
-import Workspace from './components/Notes/Workspace';
+import ReactJS from './components/Notes/ReactJS';
 
 class App extends Component {
 
     state = {
         notes: [
-            {'url': '/workspace', 'component': <Note title='Workspace' publishedAt='Jan 25, 2019' readingTime='1m 9s' content={Workspace} />}
+            {'url': '/reactjs', 'component': <Note title='ReactJS' publishedAt='Jan 29, 2019' readingTime='1m 9s' content={ReactJS} />}
         ]
     }
 
