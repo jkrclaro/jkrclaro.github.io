@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Note extends Component {
+class Essay extends Component {
 
     componentDidMount() {
         document.title = this.props.title;
@@ -11,8 +11,8 @@ class Note extends Component {
         const { publishedAt, readingTime, title } = this.props;
         return (
             <div className='row'>
-                <div className='col-lg-3'></div>
-                <div className='col-lg-6' id='note'>
+                <div className='col-lg-2'></div>
+                <div className='col-lg-8' id='essay'>
                     <div className='mb-3'>
                         <h1>{title}</h1>
                         <span className='text-muted'>
@@ -23,10 +23,10 @@ class Note extends Component {
                     </div>
                     {this.props.children}
                 </div>
-                <div className='col-lg-3'></div>
+                <div className='col-lg-2'></div>
             </div>
         )
     }
 }
 
-export default Note;
+export default Essay;

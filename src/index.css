@@ -2,14 +2,14 @@
     font-family: 'Lora', serif;
 }
 
-#note a {
+#essay a {
     color: #888;
     text-decoration: underline;
 }
-#notes a {
+#essays a {
     color: #888;
 }
-#notes a:hover {
+#essays a:hover {
     color: #111;
     text-decoration: none;
 }

@@ -14,7 +14,7 @@ class Home extends React.Component {
                     <img className='mb-3' alt='me.png' src='/me.png' height='75' width='75' style={{ borderRadius: '50%'}}></img>
                     <p>I live in Dublin and I'm a software developer primarily interested in web development and cloud computing.</p>
                     <p>I was born in the Philippines, grew up in Ireland and previously studied applied computing at WIT.</p>
-                    <p className='mb-3'>Links where you can find or reach me:</p>
+                    <p className='mb-3'>My links:</p>
                     <div id='links'>
                         <div><span className='bulletpoint mr-2'>-</span>send me an <a href='mailto:jkrclaro@gmail.com'>email</a></div>
                         <div><span className='bulletpoint mr-2'>-</span>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target='_blank' rel='noopener noreferrer'>linkedin</a></div>
