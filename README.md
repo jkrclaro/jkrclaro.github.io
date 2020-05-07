@@ -1,4 +1,4 @@
 # jkrclaro
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3bd88ed1-cd2a-416f-9817-d6f6e1e9873d/deploy-status)](https://app.netlify.com/sites/xenodochial-franklin-608289/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5d86487b-16ba-416f-b704-626b32bf5ecb/deploy-status)](https://app.netlify.com/sites/vigorous-roentgen-9b327b/deploys)
 
 My personal website
