@@ -12,7 +12,7 @@ class Home extends React.Component {
             <div className='row'>
                 <div className='col-lg-5'>
                     <img className='mb-3' alt='me.png' src='/me.png' height='75' width='75' style={{ borderRadius: '50%'}}></img>
-                    <p>I live in Dublin and I'm a software developer with interests in data engineering and cloud computing.</p>
+                    <p>I live in Dublin and I'm a software developer with a peculiar interest in data engineering and cloud computing.</p>
                     <p>I was born in the Philippines, grew up in Ireland and previously studied applied computing at WIT.</p>
                     <p className='mb-3'>My links:</p>
                     <div id='links'>
