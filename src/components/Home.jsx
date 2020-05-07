@@ -17,11 +17,10 @@ class Home extends React.Component {
                     <p className='mb-3'>My links:</p>
                     <div id='links'>
                         <div><span className='bulletpoint mr-2'>-</span>send me an <a href='mailto:jkrclaro@gmail.com'>email</a></div>
-                        <div><span className='bulletpoint mr-2'>-</span>connect with me on <a href='https://www.linkedin.com/in/jkrclaro' target='_blank' rel='noopener noreferrer'>linkedin</a></div>
-                        <div><span className='bulletpoint mr-2'>-</span>reach out to me on <a href='https://www.twitter.com/jkrclaro' target='_blank' rel='noopener noreferrer'>twitter</a></div>
-                        <div><span className='bulletpoint mr-2'>-</span>see my projects on <a href='https://www.github.com/jkrclaro' target='_blank' rel='noopener noreferrer'>github</a></div>
-                        <div><span className='bulletpoint mr-2'>-</span>recommended articles on <a href='https://getpocket.com/@jkrclaro' target='_blank' rel='noopener noreferrer'>pocket</a></div>
-                        <div><span className='bulletpoint mr-2'>-</span>track how lazy I am on <a href='https://www.strava.com/athletes/jkrclaro' target='_blank' rel='noopener noreferrer'>strava</a></div>
+                        <div><span className='bulletpoint mr-2'>-</span>connect with me on <a href='https://www.linkedin.com/in/johnclaro' target='_blank' rel='noopener noreferrer'>linkedin</a></div>
+                        <div><span className='bulletpoint mr-2'>-</span>reach out to me on <a href='https://www.twitter.com/johnclaro_' target='_blank' rel='noopener noreferrer'>twitter</a></div>
+                        <div><span className='bulletpoint mr-2'>-</span>see my projects on <a href='https://www.github.com/johnclaro' target='_blank' rel='noopener noreferrer'>github</a></div>
+                        <div><span className='bulletpoint mr-2'>-</span>recommended articles on <a href='https://getpocket.com/@johnclaro' target='_blank' rel='noopener noreferrer'>pocket</a></div>
                      </div>
                 </div>
             </div>
