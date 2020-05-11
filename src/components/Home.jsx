@@ -25,8 +25,8 @@ class Home extends React.Component {
                 <div className='col-lg-7'>
                     <p className='mb-3'>Projects:</p>
                     <div id='links'>
-                        <div><span className='bulletpoint mr-2'>-</span>read my bug-ridden codes on <a href='https://www.github.com/johnclaro' target='_blank' rel='noopener noreferrer'>github</a></div>
                         <div><span className='bulletpoint mr-2'>-</span><a href='https://chess.johnclaro.com'>chess</a></div>
+                        <div><span className='bulletpoint mr-2'>-</span>follow me on <a href='https://www.github.com/johnclaro' target='_blank' rel='noopener noreferrer'>github</a></div>
                      </div>
                 </div>
             </div>
