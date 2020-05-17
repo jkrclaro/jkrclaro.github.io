@@ -16,17 +16,10 @@ class Home extends React.Component {
                     <p>I was born in the Philippines, grew up in Ireland and previously studied applied computing at WIT.</p>
                     <p className='mb-3'>Links:</p>
                     <div id='links'>
-                        <div><span className='bulletpoint mr-2'>-</span>send me an <a href='mailto:jkrclaro@gmail.com'>email</a></div>
-                        <div><span className='bulletpoint mr-2'>-</span>connect with me on <a href='https://www.linkedin.com/in/johnclaro' target='_blank' rel='noopener noreferrer'>linkedin</a></div>
-                        <div><span className='bulletpoint mr-2'>-</span>reach out to me on <a href='https://www.twitter.com/johnclaro_' target='_blank' rel='noopener noreferrer'>twitter</a></div>
-                        <div><span className='bulletpoint mr-2'>-</span>recommended articles on <a href='https://getpocket.com/@johnclaro' target='_blank' rel='noopener noreferrer'>pocket</a></div>
-                     </div>
-                </div>
-                <div className='col-lg-7'>
-                    <p className='mb-3'>Projects:</p>
-                    <div id='links'>
-                        <div><span className='bulletpoint mr-2'>-</span><a href='https://chess.johnclaro.com'>chess</a></div>
-                        <div><span className='bulletpoint mr-2'>-</span>follow me on <a href='https://www.github.com/johnclaro' target='_blank' rel='noopener noreferrer'>github</a></div>
+                        <div><span className='bulletpoint mr-2'>-</span><a href='mailto:jkrclaro@gmail.com'>email</a></div>
+                        <div><span className='bulletpoint mr-2'>-</span><a href='https://www.linkedin.com/in/johnclaro' target='_blank' rel='noopener noreferrer'>linkedin</a></div>
+                        <div><span className='bulletpoint mr-2'>-</span><a href='https://www.twitter.com/johnclaro_' target='_blank' rel='noopener noreferrer'>twitter</a></div>
+                        <div><span className='bulletpoint mr-2'>-</span><a href='https://getpocket.com/@johnclaro' target='_blank' rel='noopener noreferrer'>pocket</a></div>
                      </div>
                 </div>
             </div>
