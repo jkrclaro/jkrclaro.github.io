@@ -19,7 +19,7 @@ class Home extends React.Component {
                         I was born in the Philippines, grew up in Ireland and previously studied applied computing at WIT.
                     </p>
                     <p>
-                        I'm working on <a href='https://www.softwareletters.com' target='_blank' rel='noopener noreferrer'>Software Letters</a>.
+                        I'm working on <a href='https://www.pythonscoop.com' target='_blank' rel='noopener noreferrer'>Python Scoop</a>.
                     </p>
                     <p>
                         You can find or reach me at my <a href='mailto:jkrclaro@gmail.com'>email</a>, <a href='https://www.linkedin.com/in/johnclaro' target='_blank' rel='noopener noreferrer'>linkedin</a>, <a href='https://www.twitter.com/johnclaro_' target='_blank' rel='noopener noreferrer'>twitter</a>, <a href='https://getpocket.com/@johnclaro' target='_blank' rel='noopener noreferrer'>pocket</a> or <a href='https://github.com/johnclaro' target='_blank' rel='noopener noreferrer'>github</a>
