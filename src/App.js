@@ -14,7 +14,7 @@ class App extends Component {
         return(
             <BrowserRouter>
                 <div className='container mb-5'>
-                    {/* <Navbar /> */}
+                    <Navbar />
                     <Switch>
                         <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
                         <Route exact path={process.env.PUBLIC_URL + '/essays'} component={Essays} />

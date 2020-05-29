@@ -1,0 +1,26 @@
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Inter', serif;
+    font-weight: 700;
+    color: #000;
+    font-size: 16px;
+}
+
+p {
+    color: #595959;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+p a {
+    text-decoration: underline !important;
+}
+
+a {
+    color: #595959;
+}
+a:hover {
+    color: #999
+}
+
+.active {
+    text-decoration: underline !important;
+}
