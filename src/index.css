@@ -1,28 +1,29 @@
-* {
-    font-family: 'Inter', sans-serif;
-}
-
 h1,h2,h3,h4,h5,h6 {
-    font-weight: 700;
     color: #000;
-    font-size: 16px;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    font-family: 'Lato', sans-serif;
 }
 
 p {
-    color: #595959;
-    font-size: 16px;
+    font-family: 'Lora', serif;
+    color: #000;
+    font-size: 21px;
+    letter-spacing: -0.1px;
 }
 p a {
+    color: #000;
     text-decoration: underline !important;
 }
 
 a {
-    color: #595959;
+    color: #888;
 }
 a:hover {
-    color: #999
+    color: #000;
+    text-decoration: none;
 }
 
 .active {
-    text-decoration: underline !important;
+    color: #000;
 }
