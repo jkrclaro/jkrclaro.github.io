@@ -18,7 +18,6 @@ class Essays extends React.Component {
             <div id='essays'>
                 {this.state.essays.map((essay, index) => 
                     <div key={index}>
-                        <span className='bulletpoint mr-2'>-</span>
                         <a href={essay.url}>{essay.title}</a>
                     </div>
                 )}

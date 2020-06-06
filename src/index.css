@@ -1,8 +1,23 @@
 h1,h2,h3,h4,h5,h6 {
     color: #000;
+    font-family: 'Lato', sans-serif;
+}
+
+h1,h2 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 34px;
+    letter-spacing: -0.7px;
+}
+
+h6 {
     font-size: 15px;
     letter-spacing: 0.8px;
-    font-family: 'Lato', sans-serif;
 }
 
 p {
@@ -26,4 +41,16 @@ a:hover {
 
 .active {
     color: #000;
+}
+
+mark {
+    background-color: #E9FDF0;
+}
+mark:hover {
+    background-color: #7DFFB3;
+    cursor: pointer;
+}
+
+#essays {
+    font-size: 21px;
 }

@@ -19,7 +19,8 @@ class BenjaminFranklin extends Component {
         const { title, publishedAt, readingTime } = this.state;
         return (
             <Essay title={title} publishedAt={publishedAt} readingTime={readingTime}>
-                <p>I'll update once I'm finished reading the book.</p>
+                <p>I'll update once I'm <mark>finished</mark> reading the book.</p>
+                <h2>Entrepreneur</h2>
             </Essay>
         )
     }
