@@ -10,7 +10,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className='row'>
-                <div className='col-lg-6'>
+                <div className='col-lg-7'>
                     <img className='mb-3' alt='me.png' src='/me.png' height='75' width='75' style={{borderRadius: '50%'}}></img>
                     <p>
                         I was born in the Philippines, grew up in Ireland and previously studied applied computing at WIT.

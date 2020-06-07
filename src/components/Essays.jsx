@@ -5,7 +5,8 @@ class Essays extends React.Component {
 
     state = {
         essays: [
-            {'url': '/benjamin-franklin', 'title': 'Benjamin Franklin: An American Life'}
+            {'url': '/benjamin-franklin', 'title': 'Benjamin Franklin: An American Life', 'date': 'Jan 19, 2020'},
+            {'url': '/benjamin-franklin', 'title': 'Some long ass name here like really really long', 'date': 'Jan 19, 2020'},
         ]
     }
     
@@ -17,8 +18,13 @@ class Essays extends React.Component {
         return (
             <div id='essays'>
                 {this.state.essays.map((essay, index) => 
-                    <div key={index}>
-                        <a href={essay.url}>{essay.title}</a>
+                    <div className='row' key={index}>
+                        <div className='col-lg-2 text-lg-right'>
+                            <span>{essay.date}</span>
+                        </div>
+                        <div className='col-lg-10 my-auto'>
+                            <a href={essay.url}>{essay.title}</a>
+                        </div>
                     </div>
                 )}
             </div>
