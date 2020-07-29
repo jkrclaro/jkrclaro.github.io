@@ -5,7 +5,7 @@ class Essays extends React.Component {
 
     state = {
         essays: [
-            {'url': '/martin-luther-king', 'title': 'Martin Luther KIng', 'date': 'Jun 7, 2020'},
+            {'url': '/the-lean-startup', 'title': 'The Lean Startup', 'date': 'Jul 29, 2020'},
         ]
     }
     

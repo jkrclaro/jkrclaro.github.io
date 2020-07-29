@@ -5,7 +5,7 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
 import Essays from './components/Essays';
-import MartinLutherKing from './components/Essays/MartinLutherKing';
+import TheLeanStartup from './components/Essays/TheLeanStartup';
 
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
                     <Switch>
                         <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
                         <Route exact path={process.env.PUBLIC_URL + '/essays'} component={Essays} />
-                        <Route exact path={process.env.PUBLIC_URL + '/martin-luther-king'} component={MartinLutherKing} />
+                        <Route exact path={process.env.PUBLIC_URL + '/the-lean-startup'} component={TheLeanStartup} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>
