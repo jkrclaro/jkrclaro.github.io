@@ -10,18 +10,14 @@ class Essay extends Component {
     render() {
         const { publishedAt, title } = this.props;
         return (
-            <div className='row'>
-                <div className='col-lg-2'></div>
-                <div className='col-lg-8' id='essay'>
-                    <div className='mb-3'>
-                        <h1>{title}</h1>
-                        <span className='text-muted'>
-                            {publishedAt}
-                        </span>
-                    </div>
-                    {this.props.children}
+            <div>
+                <div className='mb-3'>
+                    <h1>{title}</h1>
+                    <span className='text-muted'>
+                        {publishedAt}
+                    </span>
                 </div>
-                <div className='col-lg-2'></div>
+                {this.props.children}
             </div>
         )
     }

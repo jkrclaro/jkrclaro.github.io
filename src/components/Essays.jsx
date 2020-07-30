@@ -17,13 +17,8 @@ class Essays extends React.Component {
         return (
             <div id='essays'>
                 {this.state.essays.map((essay, index) => 
-                    <div className='row' key={index}>
-                        <div className='col-lg-2 text-lg-right'>
-                            <span>{essay.date}</span>
-                        </div>
-                        <div className='col-lg-10 my-auto'>
-                            <a href={essay.url}>{essay.title}</a>
-                        </div>
+                    <div key={index}>
+                        <a href={essay.url}>{essay.title}</a>
                     </div>
                 )}
             </div>
