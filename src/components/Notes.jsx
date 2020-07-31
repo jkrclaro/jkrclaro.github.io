@@ -1,24 +1,24 @@
 import React from 'react';
 
 
-class Essays extends React.Component {
+class Notes extends React.Component {
 
     state = {
-        essays: [
+        notes: [
             {'url': '/notes/the-lean-startup', 'title': 'The Lean Startup'},
         ]
     }
     
     componentDidMount() {
-        document.title = 'Essays';
+        document.title = 'Notes';
     }
 
     render() {
         return (
-            <div id='essays'>
-                {this.state.essays.map((essay, index) => 
+            <div id='notes'>
+                {this.state.notes.map((note, index) => 
                     <div key={index}>
-                        <a href={essay.url}>{essay.title}</a>
+                        <a href={note.url}>{note.title}</a>
                     </div>
                 )}
             </div>
@@ -26,4 +26,4 @@ class Essays extends React.Component {
     }
 }
 
-export default Essays;
+export default Notes;

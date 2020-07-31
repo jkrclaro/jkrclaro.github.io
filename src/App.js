@@ -4,8 +4,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
-import Essays from './components/Essays';
-import TheLeanStartup from './components/Essays/TheLeanStartup';
+import Notes from './components/Notes';
+import TheLeanStartup from './components/Notes/TheLeanStartup';
 
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
                     <Navbar />
                     <Switch>
                         <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
-                        <Route exact path={process.env.PUBLIC_URL + '/notes'} component={Essays} />
+                        <Route exact path={process.env.PUBLIC_URL + '/notes'} component={Notes} />
                         <Route exact path={process.env.PUBLIC_URL + '/notes/the-lean-startup'} component={TheLeanStartup} />
                         <Route component={NotFound} />
                     </Switch>
