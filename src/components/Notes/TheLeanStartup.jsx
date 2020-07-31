@@ -11,7 +11,7 @@ class TheLeanStartup extends Component {
         return (
             <div>
                 <h1>The Lean Startup</h1>
-                <div style={{color: 'gray'}}>July 29, 2020</div>
+                <small style={{color: 'gray'}}>July 29, 2020</small>
                 <p>
                     Todo.
                 </p>
