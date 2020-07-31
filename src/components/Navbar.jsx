@@ -10,7 +10,6 @@ class Navbar extends React.Component {
 
     render() {
         const pathname = new URL(window.location.href).pathname;
-        console.log(pathname);
         return (
             <div style={{paddingBottom: 10}}>
                 <li style={{display: 'inline'}}>
