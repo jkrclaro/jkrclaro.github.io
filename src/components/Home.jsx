@@ -9,7 +9,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div style={{maxWidth: 768}}>
+            <div style={{maxWidth: 512}}>
                 <img alt='me.png' src='/me.png' height='100' width='100'></img>
                 <p>
                     I was born in the Philippines, grew up in Ireland and previously studied applied computing at WIT. 
