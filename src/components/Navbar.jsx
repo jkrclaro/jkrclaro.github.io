@@ -10,9 +10,11 @@ class Navbar extends React.Component {
 
     render() {
         return (
-            <div className='nav mt-3 mb-3'>
-                <h6 style={{paddingRight: 20}}><a href='/'>About</a></h6>
-                <h6><a href='/notes'>Notes</a></h6>
+            <div style={{paddingBottom: 10}}>
+                <li style={{display: 'inline'}}>
+                    <a href='/' style={{paddingRight: 15}}>About</a>
+                    <a href='/notes'>Notes</a>
+                </li>
             </div>
         )
     }

@@ -4,12 +4,12 @@ import React from 'react';
 class NotFound extends React.Component {
 
     componentDidMount() {
-        document.title = 'Page not found';
+        document.title = '404';
     }
 
     render() {
         return (
-            <h2>Page not found!</h2>
+            <h1>Page not found!</h1>
         )
     }
 }

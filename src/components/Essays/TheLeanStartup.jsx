@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
 
-import Essay from '../Essay';
-
 
 class TheLeanStartup extends Component {
 
-    state = {
-        title: 'The Lean Startup',
-        publishedAt: 'Jul 29, 2020'
-    }
-
     componentDidMount() {
-        document.title = this.state.title;
+        document.title = 'The Lean Startup';
     }
 
     render() {
-        const { title, publishedAt } = this.state;
         return (
-            <Essay title={title} publishedAt={publishedAt}>
+            <div>
+                <h1>The Lean Startup</h1>
+                <div style={{color: 'gray'}}>July 29, 2020</div>
                 <p>
                     Todo.
                 </p>
-            </Essay>
+            </div>
         )
     }
 }
