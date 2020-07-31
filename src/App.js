@@ -18,7 +18,7 @@ class App extends Component {
                     <Switch>
                         <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
                         <Route exact path={process.env.PUBLIC_URL + '/notes'} component={Essays} />
-                        <Route exact path={process.env.PUBLIC_URL + '/the-lean-startup'} component={TheLeanStartup} />
+                        <Route exact path={process.env.PUBLIC_URL + '/notes/the-lean-startup'} component={TheLeanStartup} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>
