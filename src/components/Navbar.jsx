@@ -4,10 +4,6 @@ import React from 'react';
 
 class Navbar extends React.Component {
 
-    state = {
-        pathname: new URL(window.location.href).pathname,
-    }
-
     render() {
         const pathname = new URL(window.location.href).pathname;
         return (

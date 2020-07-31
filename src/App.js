@@ -13,7 +13,7 @@ class App extends Component {
     render() {
         return(
             <BrowserRouter>
-                <div className='container'>
+                <div>
                     <Navbar />
                     <Switch>
                         <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />

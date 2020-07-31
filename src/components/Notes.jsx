@@ -15,7 +15,7 @@ class Notes extends React.Component {
 
     render() {
         return (
-            <div id='notes'>
+            <div>
                 {this.state.notes.map((note, index) => 
                     <div key={index}>
                         <a href={note.url}>{note.title}</a>
