@@ -5,7 +5,7 @@ class Notes extends React.Component {
 
     state = {
         notes: [
-            {'url': '/notes/the-lean-startup', 'title': 'The Lean Startup'},
+            {'url': '/notes/how-innovation-works', 'title': 'How Innovation Works'},
         ]
     }
     
