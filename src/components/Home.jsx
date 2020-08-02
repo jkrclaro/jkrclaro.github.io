@@ -15,7 +15,7 @@ class Home extends React.Component {
         const { latest } = this.state;
         return (
             <div style={{maxWidth: 512}}>
-                <img alt='me.png' src='/me.png' height='100' width='100'></img>
+                <img alt='me.png' src='/me.png' height='100' width='100' style={{borderRadius: 50}}></img>
                 <p>
                     I was born in the Philippines, grew up in Ireland and previously studied applied computing at WIT. 
                     I'm working on <a href='https://www.sloopback.com' target='_blank' rel='noopener noreferrer'>Sloopback</a>.
