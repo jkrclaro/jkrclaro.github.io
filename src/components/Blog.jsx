@@ -8,7 +8,7 @@ class Blog extends React.Component {
     }
     
     componentDidMount() {
-        document.title = 'Blog';
+        document.title = 'Blog - John Claro';
     }
 
     render() {

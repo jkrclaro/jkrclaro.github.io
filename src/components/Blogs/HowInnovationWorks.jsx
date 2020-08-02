@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class HowInnovationWorks extends Component {
 
     componentDidMount() {
-        document.title = 'How Innovation Works';
+        document.title = 'How Innovation Works - John Claro';
     }
 
     render() {
