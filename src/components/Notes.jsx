@@ -4,9 +4,7 @@ import React from 'react';
 class Notes extends React.Component {
 
     state = {
-        notes: [
-            {'url': '/notes/how-innovation-works', 'title': 'How Innovation Works'},
-        ]
+        notes: require('./notes.json')
     }
     
     componentDidMount() {
