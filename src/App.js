@@ -4,8 +4,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
-import Notes from './components/Notes';
-import HowInnovationWorks from './components/Notes/HowInnovationWorks';
+import Blog from './components/Blog';
+import HowInnovationWorks from './components/Blogs/HowInnovationWorks';
 
 
 class App extends Component {
@@ -17,8 +17,8 @@ class App extends Component {
                     <Navbar />
                     <Switch>
                         <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
-                        <Route exact path={process.env.PUBLIC_URL + '/notes'} component={Notes} />
-                        <Route exact path={process.env.PUBLIC_URL + '/notes/how-innovation-works'} component={HowInnovationWorks} />
+                        <Route exact path={process.env.PUBLIC_URL + '/blog'} component={Blog} />
+                        <Route exact path={process.env.PUBLIC_URL + '/blog/how-innovation-works'} component={HowInnovationWorks} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>

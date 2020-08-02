@@ -1,22 +1,22 @@
 import React from 'react';
 
 
-class Notes extends React.Component {
+class Blog extends React.Component {
 
     state = {
-        notes: require('./notes.json')
+        blogs: require('./blogs.json')
     }
     
     componentDidMount() {
-        document.title = 'Notes';
+        document.title = 'Blog';
     }
 
     render() {
         return (
             <div>
-                {this.state.notes.map((note, index) => 
+                {this.state.blogs.map((blog, index) => 
                     <div key={index}>
-                        <a href={note.url}>{note.title}</a>
+                        <a href={blog.url}>{blog.title}</a>
                     </div>
                 )}
             </div>
@@ -24,4 +24,4 @@ class Notes extends React.Component {
     }
 }
 
-export default Notes;
+export default Blog;

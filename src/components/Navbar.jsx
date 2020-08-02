@@ -10,7 +10,7 @@ class Navbar extends React.Component {
             <div style={{paddingBottom: 10}}>
                 <li style={{display: 'inline'}}>
                     <a href='/' className={pathname === '/' ? 'active' : ''} style={{paddingRight: 15}}>About</a>
-                    <a href='/notes' className={pathname === '/notes' || pathname.includes('/notes/') ? 'active' : ''}>Notes</a>
+                    <a href='/blog' className={pathname === '/blog' || pathname.includes('/blog/') ? 'active' : ''}>Blog</a>
                 </li>
             </div>
         )
