@@ -21,7 +21,7 @@ class About extends React.Component {
                     I'm working on <a href='https://www.sloopback.com' target='_blank' rel='noopener noreferrer'>Sloopback</a>. 
                 </p>
                 <p>
-                    Contact me at my <a href='mailto:jkrclaro@gmail.com'>email</a>, <a href='https://www.linkedin.com/in/johnclaro' target='_blank' rel='noopener noreferrer'>linkedin</a>, <a href='https://www.twitter.com/johnclaro_' target='_blank' rel='noopener noreferrer'>twitter</a> or <a href='https://github.com/johnclaro' target='_blank' rel='noopener noreferrer'>github</a>.
+                    Contact me at my <a href='mailto:jkrclaro@gmail.com'>email</a>, <a href='https://www.linkedin.com/in/johnclaro' target='_blank' rel='noopener noreferrer'>linkedin</a>, <a href='https://www.twitter.com/jkrclaro' target='_blank' rel='noopener noreferrer'>twitter</a> or <a href='https://github.com/johnclaro' target='_blank' rel='noopener noreferrer'>github</a>.
                 </p>
                 <p>
                     My latest blog is <a href={latest.url}>{latest.title}</a>.
