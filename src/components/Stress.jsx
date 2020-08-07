@@ -10,7 +10,7 @@ class Stress extends React.Component {
     render() {
         return (
             <div>
-                <video width='320' height='240' controls autoplay='autoplay' loop>
+                <video width='640' height='360' loop muted controls autoplay='autoplay'>
                     <source src='/stress.mp4' type='video/mp4'></source>
                     Your browser does not support the video tag.
                 </video>
