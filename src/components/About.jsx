@@ -12,7 +12,7 @@ class About extends React.Component {
     }
 
     render() {
-        const { latest } = this.state;
+        // const { latest } = this.state;
         return (
             <div style={{maxWidth: 525}}>
                 <img alt='me.png' src='/me.png' height='100' width='100' style={{borderRadius: 50}}></img>
