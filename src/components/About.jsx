@@ -17,7 +17,7 @@ class About extends React.Component {
             <div style={{maxWidth: 525}}>
                 <img alt='me.png' src='/me.png' height='100' width='100' style={{borderRadius: 50}}></img>
                 <p>
-                    I was born in the Philippines, grew up in Ireland and previously studied applied computing at <a href='https://www.wit.ie' target='_blank' rel='noopener noreferrer'>WIT</a>.
+                    I was born in the Philippines, grew up in Ireland and studied applied computing at <a href='https://www.wit.ie' target='_blank' rel='noopener noreferrer'>WIT</a>.
                     I worked as data engineer for <a href='https://www.distilledsch.ie' target='_blank' rel='noopener noreferrer'>DistilledSCH</a> and left to work on <a href='https://www.trysloop.com' target='_blank' rel='noopener noreferrer'>Sloop</a>. 
                 </p>
                 <p>
