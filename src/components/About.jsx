@@ -14,7 +14,7 @@ class About extends React.Component {
     render() {
         // const { latest } = this.state;
         return (
-            <div style={{maxWidth: 525}}>
+            <div style={{maxWidth: 400}}>
                 <img alt='me.png' src='/me.png' height='100' width='100' style={{borderRadius: 50}}></img>
                 <p>
                     I was born in the Philippines, grew up in Ireland and studied applied computing at <a href='https://www.wit.ie' target='_blank' rel='noopener noreferrer'>WIT</a>.
