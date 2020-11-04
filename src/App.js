@@ -5,7 +5,6 @@ import About from './components/About';
 import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
 import Blog from './components/Blog';
-import Random from './components/Random';
 import HowInnovationWorks from './components/Blogs/HowInnovationWorks';
 
 
@@ -18,7 +17,6 @@ class App extends Component {
                     <Navbar />
                     <Switch>
                         <Route exact path={process.env.PUBLIC_URL + '/'} component={About} />
-                        <Route exact path={process.env.PUBLIC_URL + '/random'} component={Random} />
                         <Route exact path={process.env.PUBLIC_URL + '/blog'} component={Blog} />
                         <Route exact path={process.env.PUBLIC_URL + '/blog/how-innovation-works'} component={HowInnovationWorks} />
                         <Route component={NotFound} />
