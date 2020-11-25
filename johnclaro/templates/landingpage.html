@@ -1,10 +1,22 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel='stylesheet' type='text/css' href="{% static 'css/bio.css' %}"/>
 </head>
-<body>
-    <h1>Hello World</h1>
+<body style='max-width: 425px'>
+    <img alt='me.png' src="{% static 'img/me.png' %}" height='100' width='100' style='border-radius: 50%;'>
+    <p>
+        I was born in the Philippines, grew up in Ireland and studied computer science at <a href='https://www.wit.ie' target='_blank' rel='noopener noreferrer'>Waterford Institute of Technology</a>.
+        I worked as a data engineer for <a href='https://www.donedeal.ie' target='_blank' rel='noopener noreferrer'>DoneDeal</a> upon graduating.
+    </p>
+    <p>
+        Contact me at my <a href='mailto:jkrclaro@gmail.com'>email</a>,
+        <a href='https://www.linkedin.com/in/johnclaro' target='_blank' rel='noopener noreferrer'>linkedin</a>,
+        <a href='https://www.twitter.com/johnclaroo' target='_blank' rel='noopener noreferrer'>twitter</a> or
+        <a href='https://github.com/johnclaro' target='_blank' rel='noopener noreferrer'>github</a>.
+    </p>
 </body>
 </html>
