@@ -133,6 +133,5 @@ media/
 .DS_Store
 .idea/
 scripts/letsencrypt/letsencrypt/
-config/
 server/**/fixtures/*.json
 staticfiles/
