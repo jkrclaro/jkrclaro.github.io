@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='landingpage.html'), name='bio'),
     path('bookshelf/', include('johnclaro.bookshelf.urls', namespace='bookshelf')),
-    path('pace/', include('johnclaro.pace.urls', namespace='pace'))
+    path('health/', include('johnclaro.health.urls', namespace='health'))
 ]
 
 if settings.DEBUG:
