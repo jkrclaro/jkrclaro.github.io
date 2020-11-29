@@ -136,3 +136,4 @@ scripts/letsencrypt/letsencrypt/
 config/
 server/**/fixtures/*.json
 staticfiles/
+*.pem
