@@ -4,8 +4,8 @@ My website.
 # Initializing app
 
 ```
-mkdir johnclaro/books
-python manage.py startapp books johnclaro/books
+mkdir johnclaro/pace
+python manage.py startapp pace johnclaro/pace
 ```
 
 # Loading data

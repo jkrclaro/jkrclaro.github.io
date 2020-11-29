@@ -9,21 +9,21 @@
 <body style='max-width: 425px'>
     <img alt='me.png' src="{% static 'img/me.png' %}" height='100' width='100' style='border-radius: 50%;'>
     <p>
-        I was born in the Philippines, grew up in Ireland and studied computer science at <a href='https://www.wit.ie' target='_blank' rel='noopener noreferrer'>Waterford Institute of Technology</a>.
-        I worked as a data engineer for <a href='https://www.donedeal.ie' target='_blank' rel='noopener noreferrer'>DoneDeal</a> upon graduating.
+        I was born in the Philippines, grew up in Ireland and studied computer science at <a href='https://www.wit.ie'>Waterford Institute of Technology</a>.
+        I worked as a data engineer for <a href='https://www.donedeal.ie'>DoneDeal</a> upon graduating.
     </p>
     <p>
         Contact me at my <a href='mailto:jkrclaro@gmail.com'>email</a>,
-        <a href='https://www.linkedin.com/in/johnclaro' target='_blank' rel='noopener noreferrer'>linkedin</a>,
-        <a href='https://www.twitter.com/johnclaroo' target='_blank' rel='noopener noreferrer'>twitter</a> or
-        <a href='https://github.com/johnclaro' target='_blank' rel='noopener noreferrer'>github</a>.
+        <a href='https://www.linkedin.com/in/johnclaro'>linkedin</a>,
+        <a href='https://www.twitter.com/johnclaroo'>twitter</a> or
+        <a href='https://github.com/johnclaro'>github</a>.
     </p>
     <p>Projects</p>
     <ul>
-        <li><a href="{% url 'bookshelf' %}">Pace</a> - Running pace calculator</li>
-        <li><a href="{% url 'bookshelf' %}">Password</a> - Generate strong passwords</li>
-        <li><a href="{% url 'bookshelf' %}">Bookshelf</a> - Book recommendations by interesting people</li>
-        <li><a href="{% url 'bookshelf' %}">Wordcounter</a> - Count words</li>
+        <li><a href="{% url 'pace:index' %}">Pace</a> - Running pace calculator</li>
+        <li><a href="#">Password</a> - Generate strong passwords</li>
+        <li><a href="{% url 'bookshelf:index' %}">Bookshelf</a> - Book recommendations by interesting people</li>
+        <li><a href="#">Wordcounter</a> - Count words</li>
     </ul>
 </body>
 </html>
