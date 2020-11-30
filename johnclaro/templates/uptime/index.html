@@ -1,6 +1,61 @@
 {% extends 'uptime/layout.html' %}
 {% block content %}
-<div class='mt-3'>
-    <h1>Uptime!?!</h1>
+<div class='container mt-5'>
+    <div class='card'>
+        <div class='card-body'>
+            <ul class='nav nav-pills mb-3' id='protocol-tab' role='tablist'>
+                <li class='nav-item'>
+                    <a class='nav-link active' id='http-tab' data-toggle='pill' href='#http' role='tab' aria-controls='http' aria-selected='true'>HTTP</a>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' id='head-tab' data-toggle='pill' href='#head' role='tab' aria-controls='head' aria-selected='false'>HEAD</a>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' id='tcp-tab' data-toggle='pill' href='#tcp' role='tab' aria-controls='tcp' aria-selected='false'>TCP</a>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' id='dns-tab' data-toggle='pill' href='#dns' role='tab' aria-controls='dns' aria-selected='false'>DNS</a>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' id='smtp-tab' data-toggle='pill' href='#smtp' role='tab' aria-controls='smtp' aria-selected='false'>SMTP</a>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' id='ssh-tab' data-toggle='pill' href='#ssh' role='tab' aria-controls='ssh' aria-selected='false'>SSH</a>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' id='ping-tab' data-toggle='pill' href='#ping' role='tab' aria-controls='ping' aria-selected='false'>PING</a>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' id='push-tab' data-toggle='pill' href='#push' role='tab' aria-controls='push' aria-selected='false'>PUSH</a>
+                </li>
+            </ul>
+            <div class='tab-content' id='protocol-tab-content'>
+                <div class='tab-pane fade show active' id='http' role='tabpanel' aria-labelledby='http-tab'>
+                    HTTP
+                </div>
+                <div class='tab-pane fade' id='head' role='tabpanel' aria-labelledby='head-tab'>
+                    HEAD
+                </div>
+                <div class='tab-pane fade' id='tcp' role='tabpanel' aria-labelledby='tcp-tab'>
+                    TCP
+                </div>
+                <div class='tab-pane fade' id='dns' role='tabpanel' aria-labelledby='dns-tab'>
+                    DNS
+                </div>
+                <div class='tab-pane fade' id='smtp' role='tabpanel' aria-labelledby='smtp-tab'>
+                    SMTP
+                </div>
+                <div class='tab-pane fade' id='ssh' role='tabpanel' aria-labelledby='ssh-tab'>
+                    SSH
+                </div>
+                <div class='tab-pane fade' id='ping' role='tabpanel' aria-labelledby='ping-tab'>
+                    PING
+                </div>
+                <div class='tab-pane fade' id='push' role='tabpanel' aria-labelledby='push-tab'>
+                    PUSH
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
