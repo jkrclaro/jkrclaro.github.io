@@ -8,9 +8,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='landingpage.html'), name='bio'),
+    path('', TemplateView.as_view(template_name='bio.html'), name='bio'),
     path('bookshelf/', include('johnclaro.bookshelf.urls', namespace='bookshelf')),
-    path('health/', include('johnclaro.health.urls', namespace='health'))
+    path('health/', include('johnclaro.health.urls', namespace='health')),
+    path('uptime/', include('johnclaro.uptime.urls', namespace='uptime'))
 ]
 
 if settings.DEBUG:
