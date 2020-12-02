@@ -1,0 +1,102 @@
+<div class='tab-pane fade show active' id='http' role='tabpanel' aria-labelledby='http-tab'>
+    <div class='text-muted mb-3'>
+        HTTP tests are great for testing any standard website that you would access using your browser.
+        If you don't know what test type to use this one is likely the best option.
+    </div>
+    <form>
+        <h6><b>Details</b></h6>
+        <div class='card mb-3'>
+            <div class='card-body'>
+                <div class='row'>
+                    <label class='col-lg-2 col-form-label'>
+                        <b>Check Rate</b>
+                    </label>
+                    <div class='col-lg-10 my-auto'>
+                        <div class='form-check-inline'>
+                            <label class='form-check-label'>
+                                <input type='radio' class='form-check-input' name='check-rate' value='constant'>
+                                Constant
+                            </label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <label class='form-check-label'>
+                                <input type='radio' class='form-check-input' name='check-rate' value='30s'>
+                                30 sec
+                            </label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <label class='form-check-label'>
+                                <input type='radio' class='form-check-input' name='check-rate' value='1m'>
+                                1 min
+                            </label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <label class='form-check-label'>
+                                <input type='radio' class='form-check-input' name='check-rate' value='5m'>
+                                5 min
+                            </label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <label class='form-check-label'>
+                                <input type='radio' class='form-check-input' name='check-rate' value='15m'>
+                                15 min
+                            </label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <label class='form-check-label'>
+                                <input type='radio' class='form-check-input' name='check-rate' value='30m'>
+                                30 min
+                            </label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <label class='form-check-label'>
+                                <input type='radio' class='form-check-input' name='check-rate' value='1h'>
+                                1 hour
+                            </label>
+                        </div>
+                        <div class='form-check-inline'>
+                            <label class='form-check-label'>
+                                <input type='radio' class='form-check-input' name='check-rate' value='24h'>
+                                24 hours
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class='row'>
+                    <label for='url' class='col-lg-2 col-form-label'>
+                        <b>URL</b>
+                    </label>
+                    <div class='col-lg-7 mb-3'>
+                        <input type='text' class='form-control' id='url' placeholder='https://johnclaro.com'>
+                    </div>
+                    <div class='col-lg-1'>
+                        <span class='btn btn-success btn-block'>
+                            <i class='fas fa-arrow-up'></i>
+                        </span>
+                    </div>
+                    <div class='col-lg-2 text-center'>
+                        <button class='btn'>
+                            <b>UP (200)</b>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h6><b>Locations</b></h6>
+        <div class='card mb-3'>
+            <div class='card-body'>
+                <div class='row text-lg-center'>
+                    <div class='col-lg-6'>
+                        <div class='form-check-inline'>
+                            <label class='form-check-label'>
+                                <input type='radio' class='form-check-input' name='location' value='random' checked>
+                                Random
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type='submit' class='btn btn-primary btn-block'>Save</button>
+    </form>
+</div>
