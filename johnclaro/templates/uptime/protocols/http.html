@@ -3,7 +3,8 @@
         HTTP tests are great for testing any standard website that you would access using your browser.
         If you don't know what test type to use this one is likely the best option.
     </div>
-    <form>
+    <form method='post'>
+        {% csrf_token %}
         <h6><b>Details</b></h6>
         <div class='card mb-3'>
             <div class='card-body'>
@@ -38,7 +39,7 @@
                         </div>
                         <div class='form-check-inline'>
                             <label class='form-check-label'>
-                                <input type='radio' class='form-check-input' name='check-rate' value='15m'>
+                                <input type='radio' class='form-check-input' name='check-rate' value='15m' checked>
                                 15 min
                             </label>
                         </div>
@@ -67,15 +68,22 @@
                         <b>URL</b>
                     </label>
                     <div class='col-lg-7 mb-3'>
-                        <input type='text' class='form-control' id='url' placeholder='https://johnclaro.com'>
+                        <input type='text' class='form-control' id='url' name='url' placeholder='https://johnclaro.com'>
                     </div>
                     <div class='col-lg-1'>
                         <span class='btn btn-success btn-block'>
-                            <i class='fas fa-arrow-up'></i>
+                            {% if 200 <= status <= 399 %}
+                                <i class='fas fa-arrow-up'></i>
+                            {% endif %}
                         </span>
                     </div>
-                    <div class='col-lg-2 text-center mt-2'>
-                        <b>UP (200)</b>
+                    <div class='col-lg-2 mt-2'>
+                        <b>
+                            {% if 200 <= status <= 399 %}
+                                UP
+                            {% endif %}
+                            ({{ status }})
+                        </b>
                     </div>
                 </div>
             </div>
