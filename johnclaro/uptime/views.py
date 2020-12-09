@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from .helpers import ping
-from .forms import HTTPForm
+from .forms import HTTPForm, PingForm
 
 
 def get_http(request):
@@ -16,4 +16,11 @@ def get_http(request):
 
 
 def get_ping(request):
-    return render(request, 'uptime/ping.html')
+    form = PingForm()
+    if request.method == 'POST':
+        form = PingForm(request.POST)
+        if form.is_valid():
+            return redirect('uptime:get_ping')
+
+    context = {'form': form}
+    return render(request, 'uptime/ping.html', context)
