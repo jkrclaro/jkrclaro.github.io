@@ -13,54 +13,14 @@
                         <b>Check Rate</b>
                     </label>
                     <div class='col-lg-10 my-auto'>
-                        <div class='form-check-inline'>
-                            <label class='form-check-label'>
-                                <input type='radio' class='form-check-input' name='check-rate' value='constant'>
-                                Constant
-                            </label>
-                        </div>
-                        <div class='form-check-inline'>
-                            <label class='form-check-label'>
-                                <input type='radio' class='form-check-input' name='check-rate' value='30s'>
-                                30 sec
-                            </label>
-                        </div>
-                        <div class='form-check-inline'>
-                            <label class='form-check-label'>
-                                <input type='radio' class='form-check-input' name='check-rate' value='1m'>
-                                1 min
-                            </label>
-                        </div>
-                        <div class='form-check-inline'>
-                            <label class='form-check-label'>
-                                <input type='radio' class='form-check-input' name='check-rate' value='5m'>
-                                5 min
-                            </label>
-                        </div>
-                        <div class='form-check-inline'>
-                            <label class='form-check-label'>
-                                <input type='radio' class='form-check-input' name='check-rate' value='15m' checked>
-                                15 min
-                            </label>
-                        </div>
-                        <div class='form-check-inline'>
-                            <label class='form-check-label'>
-                                <input type='radio' class='form-check-input' name='check-rate' value='30m'>
-                                30 min
-                            </label>
-                        </div>
-                        <div class='form-check-inline'>
-                            <label class='form-check-label'>
-                                <input type='radio' class='form-check-input' name='check-rate' value='1h'>
-                                1 hour
-                            </label>
-                        </div>
-                        <div class='form-check-inline'>
-                            <label class='form-check-label'>
-                                <input type='radio' class='form-check-input' name='check-rate' value='24h'>
-                                24 hours
-                            </label>
-                        </div>
+                        {% for value, text in form.check_rate.field.choices %}
+                            <div class='form-check-inline'>
+                                <label class='form-check-label'>
+                                    <input type='radio' class='form-check-input' name='check_rate' value='{{ value }}'>
+                                    {{ text }}
+                                </label>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class='row'>
@@ -68,7 +28,7 @@
                         <b>URL</b>
                     </label>
                     <div class='col-lg-7 mb-3'>
-                        <input type='text' class='form-control' id='url' name='url' placeholder='https://johnclaro.com'>
+                        <input type='url' class='form-control' id='url' name='url' placeholder='https://www.johnclaro.com' required>
                     </div>
                     <div class='col-lg-1'>
                         <span class='btn btn-success btn-block'>

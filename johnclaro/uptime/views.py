@@ -1,18 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 
 from .helpers import ping
+from .forms import HTTPForm
 
 
-def index(request):
-    status = 320
-    context = {
-        'status': status
-    }
+def get_http(request):
+    form = HTTPForm()
     if request.method == 'POST':
-        check_rate = request.POST.get('check-rate')
-        url = request.POST.get('url')
-        print(f'CR: {check_rate} | URL: {url}')
+        form = HTTPForm(request.POST)
+        if form.is_valid():
+            return redirect('uptime:get_http')
+
+    context = {'form': form}
     return render(request, 'uptime/index.html', context)
 
 
