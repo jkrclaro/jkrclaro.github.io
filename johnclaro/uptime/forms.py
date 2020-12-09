@@ -1,7 +1,7 @@
 from django import forms
 
 
-http_choices = [
+check_rate_choices = [
     (0, 'Constant'),
     (30, '30 Secs'),
     (60, '1 Min'),
@@ -14,5 +14,10 @@ http_choices = [
 
 
 class HTTPForm(forms.Form):
-    check_rate = forms.ChoiceField(label='Check rate', choices=http_choices, widget=forms.RadioSelect, initial=900)
+    check_rate = forms.ChoiceField(label='Check rate', choices=check_rate_choices, widget=forms.RadioSelect())
     url = forms.URLField(label='URL', max_length=255)
+
+
+class PingForm(forms.Form):
+    check_rate = forms.ChoiceField(label='Check rate', choices=check_rate_choices, widget=forms.RadioSelect())
+    url = forms.URLField(label='IPv4 or Domain', max_length=255)

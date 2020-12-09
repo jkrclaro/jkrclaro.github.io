@@ -1,10 +1,10 @@
 from django.urls import path, re_path
 
-from .views import get_http, do_ping
+from .views import get_http, get_ping
 
 app_name = 'johnclaro.uptime'
 
 urlpatterns = [
-    path('', get_http, name='get_http'),
-    path('ping/<host>', do_ping, name='ping'),
+    path('http', get_http, name='get_http'),
+    path('ping', get_ping, name='get_ping'),
 ]

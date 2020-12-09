@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
 
 from .helpers import ping
 from .forms import HTTPForm
@@ -13,9 +12,8 @@ def get_http(request):
             return redirect('uptime:get_http')
 
     context = {'form': form}
-    return render(request, 'uptime/index.html', context)
+    return render(request, 'uptime/http.html', context)
 
 
-def do_ping(request, host):
-    data = {'status': ping(host)}
-    return JsonResponse(data)
+def get_ping(request):
+    return render(request, 'uptime/ping.html')
