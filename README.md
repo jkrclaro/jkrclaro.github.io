@@ -2,7 +2,7 @@
 My website
 
 # Checklist
-[ ] Enable SSL
+- [ ] Enable SSL
 
 # Initializing app
 
