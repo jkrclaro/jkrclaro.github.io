@@ -40,9 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'johnclaro.health.apps.HealthConfig',
-    'johnclaro.bookshelf.apps.BookshelfConfig',
-    'johnclaro.uptime.apps.UptimeConfig',
 ]
 
 MIDDLEWARE = [
