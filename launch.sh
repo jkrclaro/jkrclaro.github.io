@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cp /home/bitnami/johnclaro-blog/conf/bitnami.conf /opt/bitnami/apache2/conf/bitnami/bitnami.conf
+cp /home/bitnami/website/conf/bitnami.conf /opt/bitnami/apache2/conf/bitnami/bitnami.conf
 /opt/bitnami/ctlscript.sh restart apache
