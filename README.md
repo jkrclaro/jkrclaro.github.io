@@ -2,7 +2,8 @@
 My website
 
 # Checklist
-- [ ] Enable SSL
+- [x] Enable SSL
+- [ ] Add Expires headers
 
 # Initializing app
 
