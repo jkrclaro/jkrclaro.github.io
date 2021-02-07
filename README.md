@@ -1,4 +1,4 @@
-# johnclaro-blog
+# website
 My website
 
 # Checklist
@@ -15,5 +15,5 @@ python manage.py startapp uptime johnclaro/uptime
 # SSH
 
 ```bash
-ssh -i johnclaro.pem bitnami@54.76.194.219
+ssh -i ls.pem bitnami@54.76.194.219
 ```
