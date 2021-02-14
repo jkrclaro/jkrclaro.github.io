@@ -8,8 +8,8 @@ My website
 # Initializing app
 
 ```
-mkdir johnclaro/uptime
-python manage.py startapp uptime johnclaro/uptime
+mkdir johnclaro/exam
+python manage.py startapp exam johnclaro/exam
 ```
 
 # SSH
