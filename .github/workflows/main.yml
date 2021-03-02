@@ -15,11 +15,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-    - name: Create identity file
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+    - name: Setup SSH Keys and known_hosts
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
-        echo "$SSH_PRIVATE_KEY" | base64 --decode > ssh_private.key
-        chmod 400 ssh_private.key
+        mkdir -p ~/.ssh
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
     - name: Update server
+      env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4
+        cd website && git pull
