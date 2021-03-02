@@ -45,4 +45,4 @@ jobs:
         chmod 400 deployment.pem
     - name: Update server
       run: |
-        ssh -i deployment.pem bitnami@54.76.194.219 sudo /home/bitnami/website/launch.sh
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.pem bitnami@54.76.194.219 sudo /home/bitnami/website/launch.sh
