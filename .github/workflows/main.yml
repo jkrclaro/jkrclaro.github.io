@@ -15,12 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       env:
-        DEPLOYMENTKEY: ${{ secrets.DEPLOYMENTKEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Create identity file
       run: |
-        echo "$DEPLOYMENTKEY" | base64 --decode > deployment.key
-        cat deployment.key
-        chmod 400 deployment.key
+        echo "$SSH_PRIVATE_KEY" | base64 --decode > ssh_private.key
+        chmod 400 ssh_private.key
     - name: Update server
       run: |
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key bitnami@63.33.13.4
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4
