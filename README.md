@@ -1,19 +1,29 @@
 # website
 My website
 
-# Checklist
-- [x] Enable SSL
-- [ ] Add Expires headers
-
-# Initializing app
+## Initializing app
 
 ```
 mkdir johnclaro/exam
 python manage.py startapp exam johnclaro/exam
 ```
 
-# SSH
+## SSH
 
 ```bash
 ssh -i lightsail.pem bitnami@54.76.194.219
+```
+
+## Lightsail
+
+Copy conf files then restart Apache
+```
+sudo cp /opt/bitnami/apache2/conf/vhosts/sample-vhost.conf.disabled /opt/bitnami/apache2/conf/vhosts/sample-vhost.conf
+sudo cp /opt/bitnami/apache2/conf/vhosts/sample-https-vhost.conf.disabled /opt/bitnami/apache2/conf/vhosts/sample-https-vhost.conf
+sudo /opt/bitnami/ctlscript.sh restart apache
+```
+
+Auto-configure SSL
+```bash
+sudo /opt/bitnami/bncert-tool
 ```
