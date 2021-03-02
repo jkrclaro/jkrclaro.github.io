@@ -5,10 +5,13 @@ from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 
+from .views import show_covid, upsert_covid
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='bio.html'), name='bio'),
-    path('covid', TemplateView.as_view(template_name='covid.html'), name='covid'),
+    path('covid', show_covid, name='covid'),
+    path('covid/upsert', upsert_covid, name='covid_upsert'),
 ]
 
 if settings.DEBUG:
