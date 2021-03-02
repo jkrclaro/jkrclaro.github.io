@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -34,3 +32,17 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update app
+      run: |
+        echo ${PEM} > bitnami.pem
+        chmod 400 bitnami.pem
+        ssh -i bitnami.pem ${BITNAMI} sudo website/launch.sh
+      env:
+        PEM: ${{ secrets.PEM }}
+        BITNAMI: ${{ secrets.BITNAMI }}
