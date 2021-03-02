@@ -19,6 +19,7 @@ jobs:
     - name: Create identity file
       run: |
         echo "$DEPLOYMENTKEY" | base64 --decode > deployment.key
+        cat deployment.key
         chmod 400 deployment.key
     - name: Update server
       run: |
