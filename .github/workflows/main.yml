@@ -43,7 +43,6 @@ jobs:
         touch bitnami.pem
         echo '${PEM}' > bitnami.pem
         chmod 400 bitnami.pem
-        ssh -i bitnami.pem ${{ secrets.BITNAMI }} sudo website/launch.sh
+        ssh -i bitnami.pem bitnami@54.76.194.219 sudo website/launch.sh
       env:
         PEM: ${{ secrets.PEM }}
-        BITNAMI: ${{ secrets.BITNAMI }}
