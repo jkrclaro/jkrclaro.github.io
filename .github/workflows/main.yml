@@ -45,4 +45,4 @@ jobs:
         chmod 400 deployment.key
     - name: Update server
       run: |
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key bitnami@63.33.13.4 sudo /home/bitnami/website/update.sh
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key bitnami@63.33.13.4
