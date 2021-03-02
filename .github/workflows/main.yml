@@ -40,9 +40,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Update app
       run: |
-        echo ${PEM} > bitnami.pem
+        echo '${PEM}' > bitnami.pem
         chmod 400 bitnami.pem
-        ssh -i bitnami.pem ${BITNAMI} sudo website/launch.sh
+        ssh -i bitnami.pem '${BITNAMI}' sudo website/launch.sh
       env:
         PEM: ${{ secrets.PEM }}
         BITNAMI: ${{ secrets.BITNAMI }}
