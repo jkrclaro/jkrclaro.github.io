@@ -28,3 +28,6 @@ def upsert_covid(request):
                 recoveries=row.recoveries
             )
         return JsonResponse({'status': 'Successfully upserted covid data'})
+    else:
+        return JsonResponse({'status': 'Got GET request'})
+
