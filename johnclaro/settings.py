@@ -124,6 +124,10 @@ USE_TZ = False
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
+LOGFILE_PATH = 'website.log'
+if os.path.exists('/opt/bitnami'):
+    LOGFILE_PATH = '/opt/bitnami/apache2/logs/error_log'
+
 if os.environ.get('LOGGING', True):
     LOGGING = {
         'version': 1,
@@ -137,7 +141,7 @@ if os.environ.get('LOGGING', True):
             'default': {
                 'level': 'INFO',
                 'class': 'logging.FileHandler',
-                'filename': 'website.log',
+                'filename': LOGFILE_PATH,
                 'formatter': 'default'
             },
         },
