@@ -124,13 +124,13 @@ USE_TZ = False
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-try:
-    os.path.exists('/opt/bitnami')
-    LOGFILE_PATH = '/tmp/django_log'
-except PermissionError:
-    LOGFILE_PATH = 'website.log'
-
 if os.environ.get('LOGGING', True):
+
+    if os.path.exists('/opt/bitnami'):
+        LOGFILE_PATH = '/tmp/django_log'
+    else:
+        LOGFILE_PATH = 'website.log'
+
     LOGGING = {
         'version': 1,
         'disable_existing_loggers': True,
