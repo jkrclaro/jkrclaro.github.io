@@ -1,7 +1,10 @@
+import logging
 from django.shortcuts import render
 from django.http import JsonResponse
 
 from .models import Covid
+
+logger = logging.getLogger(__name__)
 
 
 def show_covid(request):
@@ -10,6 +13,7 @@ def show_covid(request):
 
 
 def upsert_covid(request):
+    logger.info(request)
     if request.method == 'POST':
         Covid.objects.upsert_covid(
             date=request.POST.get('date'),
