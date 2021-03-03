@@ -4,7 +4,6 @@ import logging
 
 from django.shortcuts import render
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 
 from .models import Covid
 
@@ -16,7 +15,6 @@ def show_covid(request):
     return render(request, 'covid.html', {'covids': covids})
 
 
-@csrf_exempt
 def upsert_covid(request):
     logger.info(request)
     if request.method == 'POST':
