@@ -22,4 +22,4 @@ jobs:
         chmod 400 ssh_private.key
     - name: Update app
       run: |
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 cd website && bash update.sh
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 cd website && sudo bash update.sh
