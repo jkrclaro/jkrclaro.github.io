@@ -32,3 +32,9 @@ Create SSH public/private keys
 ```bash
 ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
 ```
+
+Set owner of db.sqlite3 to daemon
+```bash
+sudo chown daemon website/
+sudo chown daemon website/db.sqlite3
+```
