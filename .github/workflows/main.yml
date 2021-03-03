@@ -22,5 +22,5 @@ jobs:
         chmod 400 ssh_private.key
     - name: Update app
       run: |
-        ssh -i ssh_private.key bitnami@63.33.13.4 git -C /home/bitnami/website pull
-        ssh -i ssh_private.key bitnami@63.33.13.4 sudo /opt/bitnami/ctlscript.sh restart apache
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 git -C /home/bitnami/website pull
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo /opt/bitnami/ctlscript.sh restart apache
