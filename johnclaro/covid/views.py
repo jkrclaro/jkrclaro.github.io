@@ -1,11 +1,14 @@
 import pickle
 import base64
+import logging
 
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Covid
+
+log = logging.getLogger(__name__)
 
 
 def show_covid(request):
@@ -15,6 +18,7 @@ def show_covid(request):
 
 @csrf_exempt
 def upsert_covid(request):
+    log.debug(request)
     if request.method == 'POST':
         df_b64 = request.POST.get('df_b64')
         df = pickle.loads(base64.b64decode(df_b64.encode()))
