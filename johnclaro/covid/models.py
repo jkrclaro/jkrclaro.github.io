@@ -32,3 +32,4 @@ class Covid(models.Model):
     class Meta:
         db_table = 'covids'
         unique_together = ('date', 'country', 'cases', 'deaths', 'recoveries',)
+        ordering = ['-date']
