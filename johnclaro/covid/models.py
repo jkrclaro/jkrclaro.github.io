@@ -3,14 +3,14 @@ from django.db.utils import IntegrityError
 
 
 class CovidManager(models.Manager):
-    def upsert_covid(self, date, country, cases, deaths, recovered):
+    def upsert_covid(self, date, country, cases, deaths, recoveries):
         try:
             covid = self.create(
                 date=date,
                 country=country,
                 cases=cases,
                 deaths=deaths,
-                recovered=recovered
+                recoveries=recoveries
             )
             return covid
         except IntegrityError:
@@ -22,13 +22,13 @@ class Covid(models.Model):
     country = models.CharField(max_length=255)
     cases = models.IntegerField()
     deaths = models.IntegerField()
-    recovered = models.FloatField()
+    recoveries = models.FloatField()
     objects = CovidManager()
 
     def __str__(self):
         return f'{self.date}-{self.country}-{self.cases}-{self.deaths}-' \
-                f'{self.recovered}'
+                f'{self.recoveries}'
 
     class Meta:
         db_table = 'covids'
-        unique_together = ('date', 'country', 'cases', 'deaths', 'recovered',)
+        unique_together = ('date', 'country', 'cases', 'deaths', 'recoveries',)
