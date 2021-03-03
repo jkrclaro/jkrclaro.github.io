@@ -1,2 +1,0 @@
-# config
-Contains sensitive credentials!

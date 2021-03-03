@@ -1,7 +1,7 @@
 # website
 My website
 
-## Initializing app
+## App
 
 ```
 mkdir johnclaro/exam
