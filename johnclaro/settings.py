@@ -123,35 +123,3 @@ USE_TZ = False
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-
-if os.environ.get('LOGGING', True):
-
-    if os.path.exists('/opt/bitnami'):
-        LOGFILE_PATH = '/tmp/django_log'
-    else:
-        LOGFILE_PATH = 'website.log'
-
-    LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': True,
-        'formatters': {
-            'default': {
-                'format': '%(levelname)s %(asctime)s %(message)s'
-            }
-        },
-        'handlers': {
-            'default': {
-                'level': 'INFO',
-                'class': 'logging.FileHandler',
-                'filename': LOGFILE_PATH,
-                'formatter': 'default'
-            },
-        },
-        'loggers': {
-            'default': {
-                'handlers': ['default'],
-                'level': 'INFO',
-                'propagate': True,
-            },
-        },
-    }
