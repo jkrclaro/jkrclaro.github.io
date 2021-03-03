@@ -4,8 +4,8 @@ My website
 ## App
 
 ```
-mkdir johnclaro/exam
-python manage.py startapp exam johnclaro/exam
+mkdir johnclaro/covid
+python manage.py startapp covid johnclaro/covid
 ```
 
 ## SSH
