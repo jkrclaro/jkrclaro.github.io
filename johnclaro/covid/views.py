@@ -27,4 +27,4 @@ def upsert_covid(request):
                 recoveries=row.recoveries
             )
 
-    return JsonResponse({'status': 200})
+    return JsonResponse({'status': 'Successfully upserted covid data'})
