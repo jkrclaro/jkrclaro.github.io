@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 
 try:
     os.path.exists('/opt/bitnami')
-    LOGFILE_PATH = '/opt/bitnami/apache2/logs/error_log'
+    LOGFILE_PATH = '/opt/bitnami/apache2/logs/django_log'
 except PermissionError:
     LOGFILE_PATH = 'website.log'
 
