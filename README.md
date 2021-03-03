@@ -27,3 +27,8 @@ Auto-configure SSL
 ```bash
 sudo /opt/bitnami/bncert-tool
 ```
+
+Create SSH public/private keys
+```bash
+ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
+```
