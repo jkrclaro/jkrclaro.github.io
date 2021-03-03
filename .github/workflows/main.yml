@@ -11,15 +11,15 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-    - name: Create identity file
+    - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" | base64 --decode > ssh_private.key
+          chmod 400 ssh_private.key
+    - name: Update app
       run: |
-        echo "$SSH_PRIVATE_KEY" | base64 --decode > ssh_private.key
-        chmod 400 ssh_private.key
-    - name: Update server
-      run: |
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key bitnami@63.33.13.4
