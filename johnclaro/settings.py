@@ -124,9 +124,11 @@ USE_TZ = False
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-LOGFILE_PATH = 'website.log'
-if os.path.exists('/opt/bitnami'):
+try:
+    os.path.exists('/opt/bitnami')
     LOGFILE_PATH = '/opt/bitnami/apache2/logs/error_log'
+except PermissionError:
+    LOGFILE_PATH = 'website.log'
 
 if os.environ.get('LOGGING', True):
     LOGGING = {
