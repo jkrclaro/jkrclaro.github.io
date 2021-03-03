@@ -115,7 +115,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -123,3 +123,29 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
+if os.environ.get('LOGGING', True):
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': True,
+        'formatters': {
+            'default': {
+                'format': '%(levelname)s %(asctime)s %(message)s'
+            }
+        },
+        'handlers': {
+            'default': {
+                'level': 'INFO',
+                'class': 'logging.FileHandler',
+                'filename': 'website.log',
+                'formatter': 'default'
+            },
+        },
+        'loggers': {
+            'default': {
+                'handlers': ['default'],
+                'level': 'INFO',
+                'propagate': True,
+            },
+        },
+    }

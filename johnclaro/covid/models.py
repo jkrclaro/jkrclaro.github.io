@@ -1,5 +1,9 @@
+import logging
+
 from django.db import models
 from django.db.utils import IntegrityError
+
+logger = logging.getLogger('default')
 
 
 class CovidManager(models.Manager):
@@ -15,6 +19,8 @@ class CovidManager(models.Manager):
             return covid
         except IntegrityError:
             pass
+        except Exception as exception:
+            logger.error(exception)
 
 
 class Covid(models.Model):
