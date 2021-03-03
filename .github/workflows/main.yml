@@ -15,11 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup SSH
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          echo "$SSH_PRIVATE_KEY" | base64 --decode > ssh_private.key
-          chmod 400 ssh_private.key
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        echo "$SSH_PRIVATE_KEY" | base64 --decode > ssh_private.key
+        chmod 400 ssh_private.key
     - name: Update app
       run: |
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key bitnami@63.33.13.4
