@@ -9,7 +9,8 @@ from .models import Covid
 
 
 def show_covid(request):
-    return render(request, 'covid.html')
+    covids = Covid.objects.all()
+    return render(request, 'covid.html', {'covids': covids})
 
 
 @csrf_exempt
