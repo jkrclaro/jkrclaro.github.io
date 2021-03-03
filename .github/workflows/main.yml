@@ -23,5 +23,5 @@ jobs:
     - name: Update app
       run: |
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 git -C /home/bitnami/website pull
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 pip install -r requirements.txt
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 pip install -r website/requirements.txt
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo /opt/bitnami/ctlscript.sh restart apache
