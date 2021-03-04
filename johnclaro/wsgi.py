@@ -5,7 +5,7 @@ from django.core.wsgi import get_wsgi_application
 
 
 settings_module = 'johnclaro.environment.dev'
-if getpass.getuser() == 'daemon':
+if getpass.getuser() in ['daemon', 'bitnami']:
     settings_module = 'johnclaro.environment.prod'
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
