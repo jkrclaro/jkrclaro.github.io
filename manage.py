@@ -7,7 +7,7 @@ import getpass
 
 def main():
     settings_module = 'johnclaro.settings'
-    if getpass.getuser() == 'bitnami':
+    if getpass.getuser() != 'jc':
         settings_module = 'johnclaro.settings_prod'
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
