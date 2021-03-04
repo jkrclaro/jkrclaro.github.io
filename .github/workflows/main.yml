@@ -23,7 +23,7 @@ jobs:
     - name: Update app
       run: |
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown bitnami website/
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown bitnami website/db.sqlite3
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown bitnami website/johnclaro/db.sqlite3
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 git -C /home/bitnami/website pull
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python website/manage.py makemigrations
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python website/manage.py migrate

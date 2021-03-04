@@ -1,7 +1,9 @@
 import os
-from .settings import *
-from .settings import BASE_DIR
+from .base import *
+from .base import BASE_DIR
 
+
+DEBUG = True
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
