@@ -1,12 +1,9 @@
 import os
-from distutils.util import strtobool
-
-from django.utils.log import DEFAULT_LOGGING
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7-q@t8j&&irukf@&qmmst!k5g&j!jh^$ar&u3pj_g4c1myg8f#'
-DEBUG = bool(strtobool(os.environ.get('DEBUG', 'False')))
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '*'
@@ -59,18 +56,10 @@ DATABASES = {
 }
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 LANGUAGE_CODE = 'en-us'
@@ -81,9 +70,3 @@ USE_TZ = False
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-
-DEFAULT_LOGGING['loggers'][''] = {
-    'handlers': ['console'],
-    'level': 'INFO',
-    'propagate': True
-}
