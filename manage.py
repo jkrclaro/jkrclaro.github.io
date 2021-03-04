@@ -2,13 +2,12 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from distutils.util import strtobool
+import getpass
 
 
 def main():
-    DEBUG = bool(strtobool(os.environ.get('DEBUG', 'True')))
     settings_module = 'johnclaro.settings'
-    if not DEBUG:
+    if getpass.getuser() == 'bitnami':
         settings_module = 'johnclaro.settings_prod'
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 

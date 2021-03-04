@@ -1,13 +1,14 @@
 import os
-from distutils.util import strtobool
+import getpass
 
 from django.core.wsgi import get_wsgi_application
 
 
-DEBUG = bool(strtobool(os.environ.get('DEBUG', 'True')))
 settings_module = 'johnclaro.settings'
-if not DEBUG:
+if getpass.getuser() == 'bitnami':
     settings_module = 'johnclaro.settings_prod'
+
+print(f'manage.py => {settings_module}')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
 application = get_wsgi_application()
