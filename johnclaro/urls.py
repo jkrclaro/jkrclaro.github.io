@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from django.conf import settings
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 
 from .covid.views import show_covid, upsert_covid
@@ -15,5 +14,4 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    urlpatterns += staticfiles_urlpatterns()
-    urlpatterns += static('/media/', document_root='media')  # might be wrong
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

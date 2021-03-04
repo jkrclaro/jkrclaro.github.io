@@ -16,7 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'johnclaro.covid.apps.CovidConfig'
+    'johnclaro.covid.apps.CovidConfig',
 ]
 
 MIDDLEWARE = [
@@ -69,5 +69,4 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = False
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
