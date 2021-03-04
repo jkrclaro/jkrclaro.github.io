@@ -1,6 +1,6 @@
 import os
-from .base import *
-from .base import BASE_DIR
+from ..settings import *
+from ..settings import BASE_DIR
 
 
 DEBUG = True

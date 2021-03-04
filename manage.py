@@ -6,9 +6,9 @@ import getpass
 
 
 def main():
-    settings_module = 'johnclaro.settings.dev'
+    settings_module = 'johnclaro.environment.dev'
     if getpass.getuser() == 'daemon':
-        settings_module = 'johnclaro.settings.prod'
+        settings_module = 'johnclaro.environment.prod'
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
     try:
