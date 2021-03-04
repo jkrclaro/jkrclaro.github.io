@@ -5,7 +5,7 @@ from django.core.wsgi import get_wsgi_application
 
 
 settings_module = 'johnclaro.settings'
-if getpass.getuser() != 'jc':
+if getpass.getuser() == 'daemon':
     settings_module = 'johnclaro.settings_prod'
 
 print(f'manage.py => {settings_module}')
