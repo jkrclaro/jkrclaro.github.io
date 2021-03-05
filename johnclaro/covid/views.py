@@ -24,4 +24,4 @@ def upsert_covid(request):
         )
         return JsonResponse({'status': 'Successfully upserted covid data'})
     else:
-        return JsonResponse({'status': 'Got GET request'})
+        return JsonResponse(status=404)
