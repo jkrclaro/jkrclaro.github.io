@@ -2,20 +2,20 @@ import logging
 from django.shortcuts import render
 from django.http import JsonResponse
 
-from .models import Covid
+from .models import JohnHopkins
 
 logger = logging.getLogger(__name__)
 
 
 def show_covid(request):
-    covids = Covid.objects.all()
-    return render(request, 'covid.html', {'covids': covids})
+    john_hopkins = JohnHopkins.objects.all()
+    return render(request, 'covid.html', {'covids': john_hopkins})
 
 
-def upsert_covid(request):
+def john_hopkins_upsert(request):
     logger.info(request)
     if request.method == 'POST':
-        Covid.objects.upsert_covid(
+        JohnHopkins.objects.upsert_covid(
             date=request.POST.get('date'),
             country=request.POST.get('country'),
             cases=request.POST.get('cases'),
