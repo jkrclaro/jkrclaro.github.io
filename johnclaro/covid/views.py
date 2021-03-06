@@ -2,26 +2,26 @@ import logging
 from django.shortcuts import render
 from django.http import JsonResponse
 
-from .models import JohnHopkins
+from .models import Case
 
 logger = logging.getLogger(__name__)
 
 
 def show_covid(request):
-    john_hopkins = JohnHopkins.objects.all()
-    return render(request, 'covid.html', {'covids': john_hopkins})
+    cases = Case.objects.all()
+    return render(request, 'covid.html', {'cases': cases})
 
 
-def john_hopkins_upsert(request):
+def case_upsert(request):
     logger.info(request)
     if request.method == 'POST':
-        JohnHopkins.objects.upsert_covid(
+        Case.objects.upsert_covid(
             date=request.POST.get('date'),
             country=request.POST.get('country'),
             cases=request.POST.get('cases'),
             deaths=request.POST.get('deaths'),
             recoveries=request.POST.get('recoveries')
         )
-        return JsonResponse({'status': 'Successfully upserted covid data'})
+        return JsonResponse({'status': 'Case upserted'})
     else:
         return JsonResponse(status=404)
