@@ -13,7 +13,6 @@ def show_covid(request):
     cases = []
     for case_qs in HSECase.objects.order_by('date'):
         date = int(case_qs.date.strftime('%s')) * 1000
-        print(date)
         confirmedcovidcases = case_qs.confirmedcovidcases
         case = [date, confirmedcovidcases]
         cases.append(case)
