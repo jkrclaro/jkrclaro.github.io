@@ -9,16 +9,19 @@ logger = logging.getLogger(__name__)
 
 
 def show_covid(request):
-    first_case = HSECase.objects.first()
     cases = []
+    deaths = []
     for case_qs in HSECase.objects.order_by('date'):
         date = int(case_qs.date.strftime('%s')) * 1000
-        confirmedcovidcases = case_qs.confirmedcovidcases
-        case = [date, confirmedcovidcases]
+        case = [date, case_qs.confirmedcovidcases]
+        death = [date, case_qs.confirmedcoviddeaths]
         cases.append(case)
+        deaths.append(death)
+    print(deaths)
     context = {
-        'first_case': first_case,
-        'cases': cases
+        'first_case': HSECase.objects.first(),
+        'cases': cases,
+        'deaths': deaths
     }
     return render(request, 'covid.html', context)
 

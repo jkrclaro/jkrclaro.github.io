@@ -58,6 +58,7 @@
             </div>
         </div>
         <div class='mt-3' id='cases-chart'></div>
+        <div class='mt-3' id='deaths-chart'></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
@@ -65,7 +66,7 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script type='text/javascript'>
         var casesData = {{ cases | safe }};
-        console.log(casesData);
+        var deathsData = {{ deaths | safe }};
         Highcharts.chart('cases-chart', {
             chart: {
                 type: 'area',
@@ -123,7 +124,72 @@
                 lineColor: Highcharts.getOptions().colors[1],
                 color: Highcharts.getOptions().colors[2],
                 fillOpacity: 1,
-                name: 'Elevation',
+                name: 'Cases',
+                marker: {
+                    enabled: false
+                },
+                threshold: null
+            }]
+        });
+
+                Highcharts.chart('deaths-chart', {
+            chart: {
+                type: 'area',
+                zoomType: 'x',
+                panning: true,
+                panKey: 'shift',
+                scrollablePlotArea: {
+                    minWidth: 768
+                }
+            },
+            title: {
+                text: 'Confirmed deaths of COVID-19 in Ireland'
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                type: 'datetime',
+                labels: {
+                    formatter: function() {
+                        return Highcharts.dateFormat('%b \'%y', this.value)
+                    }
+                },
+                dateTimeLabelFormats: {
+                    day: '%d %b %Y'
+                },
+                title: {
+                    text: 'Date'
+                },
+            },
+            yAxis: {
+                startOnTick: true,
+                endOnTick: false,
+                maxPadding: 0.35,
+                title: {
+                    text: 'Deaths'
+                },
+                labels: {
+                    format: '{value}'
+                },
+            },
+            tooltip: {
+                headerFormat: 'Date: {point.x}<br>',
+                pointFormat: 'Deaths: {point.y}',
+                formatter: function() {
+                    return `<b>Date</b>: ${Highcharts.dateFormat('%d %b %Y', this.x)} <br> <b>Deaths</b>: ${this.y}`
+                },
+                shared: true
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                data: deathsData,
+                lineColor: Highcharts.getOptions().colors[1],
+                color: Highcharts.getOptions().colors[5],
+                fillOpacity: 1,
+                name: 'Deaths',
                 marker: {
                     enabled: false
                 },
