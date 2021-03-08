@@ -7,15 +7,19 @@ from django.db.utils import IntegrityError
 
 class CaseManager(models.Manager):
     def upsert_case(self, **kwargs):
+        # kwargs['date'] = make_aware(
+        #     datetime.strptime(
+        #         kwargs['date'],
+        #         '%Y-%m-%d %H:%M:%S'
+        #     )
+        # )
         try:
-            kwargs['date'] = make_aware(
-                datetime.strptime(kwargs['date'], '%Y-%m-%d %H:%M:%S')
-            )
-            print(kwargs['date'], type(kwargs['date']))
-            print('---')
+            item = HSECase.objects.get(date=kwargs['date'])
+            for key, value in kwargs.items():
+                setattr(item, key, value)
+            item.save()
+        except HSECase.DoesNotExist:
             self.create(**kwargs)
-        except IntegrityError:
-            pass
 
 
 class Case(models.Model):
@@ -43,31 +47,31 @@ class HSECase(models.Model):
     confirmedcoviddeaths = models.IntegerField()
     totalcoviddeaths = models.IntegerField()
     statisticsprofiledate = models.DateTimeField()
-    covidcasesconfirmed = models.IntegerField()
-    hospitalisedcovidcases = models.IntegerField()
-    requiringicucovidcases = models.IntegerField()
-    healthcareworkerscovidcases = models.IntegerField()
-    clustersnotified = models.IntegerField()
-    hospitalisedaged5 = models.IntegerField()
-    hospitalisedaged5to14 = models.IntegerField()
-    hospitalisedaged15to24 = models.IntegerField()
-    hospitalisedaged25to34 = models.IntegerField()
-    hospitalisedaged35to44 = models.IntegerField()
-    hospitalisedaged45to54 = models.IntegerField()
-    hospitalisedaged55to64 = models.IntegerField()
-    hospitalisedaged65up = models.IntegerField()
-    male = models.IntegerField()
-    female = models.IntegerField()
-    unknown = models.IntegerField()
-    aged1to4 = models.IntegerField()
-    aged5to14 = models.IntegerField()
-    aged15to24 = models.IntegerField()
-    aged25to34 = models.IntegerField()
-    aged35to44 = models.IntegerField()
-    aged45to54 = models.IntegerField()
-    aged55to64 = models.IntegerField()
-    aged65up = models.IntegerField()
-    median_age = models.IntegerField()
+    covidcasesconfirmed = models.IntegerField(null=True, blank=True)
+    hospitalisedcovidcases = models.IntegerField(null=True, blank=True)
+    requiringicucovidcases = models.IntegerField(null=True, blank=True)
+    healthcareworkerscovidcases = models.IntegerField(null=True, blank=True)
+    clustersnotified = models.IntegerField(null=True, blank=True)
+    hospitalisedaged5 = models.IntegerField(null=True, blank=True)
+    hospitalisedaged5to14 = models.IntegerField(null=True, blank=True)
+    hospitalisedaged15to24 = models.IntegerField(null=True, blank=True)
+    hospitalisedaged25to34 = models.IntegerField(null=True, blank=True)
+    hospitalisedaged35to44 = models.IntegerField(null=True, blank=True)
+    hospitalisedaged45to54 = models.IntegerField(null=True, blank=True)
+    hospitalisedaged55to64 = models.IntegerField(null=True, blank=True)
+    hospitalisedaged65up = models.IntegerField(null=True, blank=True)
+    male = models.IntegerField(null=True, blank=True)
+    female = models.IntegerField(null=True, blank=True)
+    unknown = models.IntegerField(null=True, blank=True)
+    aged1to4 = models.IntegerField(null=True, blank=True)
+    aged5to14 = models.IntegerField(null=True, blank=True)
+    aged15to24 = models.IntegerField(null=True, blank=True)
+    aged25to34 = models.IntegerField(null=True, blank=True)
+    aged35to44 = models.IntegerField(null=True, blank=True)
+    aged45to54 = models.IntegerField(null=True, blank=True)
+    aged55to64 = models.IntegerField(null=True, blank=True)
+    aged65up = models.IntegerField(null=True, blank=True)
+    median_age = models.IntegerField(null=True, blank=True)
     communitytransmission = models.IntegerField()
     closecontact = models.IntegerField()
     travelabroad = models.IntegerField()
@@ -75,7 +79,8 @@ class HSECase(models.Model):
     objects = CaseManager()
 
     def __str__(self):
-        return self.date.strftime('%Y-%m-%d %H:%M:%S')
+        output = self.date.strftime('%Y-%m-%d %H:%M:%S') if self.date else ''
+        return output
 
     class Meta:
         db_table = 'hse_cases'
