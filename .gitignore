@@ -137,3 +137,4 @@ config/
 server/**/fixtures/*.json
 staticfiles/
 *.pem
+.vscode/
