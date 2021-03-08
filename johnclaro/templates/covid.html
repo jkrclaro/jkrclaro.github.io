@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load humanize %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,38 +10,35 @@
 <body>
     <div class='container'>
         <div class='text-center mt-3 mb-5'>
-            <h1>Covid</h1>
+            <h1>Covid in Ireland</h1>
+            <h2 class='text-muted'>{{ case.date }}</h2>
         </div>
-        <div class='row'>
-            <div class='col-lg-6'>
-                <div class='row'>
-                    <div class='col-lg-6'>
+        <div class='card'>
+            <div class='card-body'>
+                <div class='row text-center'>
+                    <div class='col-lg-3'>
                         New cases
-                        <h1>
-                            {{ case.confirmedcovidcases }}
-                        </h1>
+                        <h3>
+                            {{ case.confirmedcovidcases | intcomma }}
+                        </h3>
                     </div>
-                    <div class='col-lg-6'>
+                    <div class='col-lg-3'>
                         New deaths
-                        <h1>
-                            {{ case.confirmedcoviddeaths }}
-                        </h1>
+                        <h3>
+                            {{ case.confirmedcoviddeaths | intcomma }}
+                        </h3>
                     </div>
-                </div>
-            </div>
-            <div class='col-lg-6'>
-                <div class='row'>
-                    <div class='col-lg-6'>
+                    <div class='col-lg-3'>
                         Total cases
-                        <h1>
-                            {{ case.totalconfirmedcovidcases }}
-                        </h1>
+                        <h3>
+                            {{ case.totalconfirmedcovidcases | intcomma }}
+                        </h3>
                     </div>
-                    <div class='col-lg-6'>
+                    <div class='col-lg-3'>
                         Total deaths
-                        <h1>
-                            {{ case.totalcoviddeaths }}
-                        </h1>
+                        <h3>
+                            {{ case.totalcoviddeaths | intcomma }}
+                        </h3>
                     </div>
                 </div>
             </div>
