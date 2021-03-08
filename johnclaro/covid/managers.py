@@ -2,10 +2,6 @@ from datetime import datetime
 
 from django.db import models
 from django.db.utils import IntegrityError
-from django.utils.timezone import make_aware
-
-
-TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 
 
 class JohnHopkinsCaseManager(models.Manager):
@@ -26,7 +22,7 @@ class JohnHopkinsCaseManager(models.Manager):
 class HSECaseManager(models.Manager):
     def upsert_case(self, **kwargs):
         try:
-            item = self.objects.filter(date=kwargs['date'])
+            item = self.get(date=kwargs['date'])
             for key, value in kwargs.items():
                 setattr(item, key, value)
             item.save()

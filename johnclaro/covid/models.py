@@ -63,7 +63,7 @@ class HSECase(models.Model):
     objects = managers.HSECaseManager()
 
     def __str__(self):
-        output = self.date.strftime('%Y-%m-%d %H:%M:%S') if self.date else ''
+        output = self.date.strftime('%Y-%m-%d') if self.date else ''
         return output
 
     class Meta:
