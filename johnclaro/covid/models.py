@@ -2,33 +2,17 @@ from datetime import datetime
 from django.utils.timezone import make_aware
 
 from django.db import models
-from django.db.utils import IntegrityError
+
+from . import managers
 
 
-class CaseManager(models.Manager):
-    def upsert_case(self, **kwargs):
-        # kwargs['date'] = make_aware(
-        #     datetime.strptime(
-        #         kwargs['date'],
-        #         '%Y-%m-%d %H:%M:%S'
-        #     )
-        # )
-        try:
-            item = HSECase.objects.get(date=kwargs['date'])
-            for key, value in kwargs.items():
-                setattr(item, key, value)
-            item.save()
-        except HSECase.DoesNotExist:
-            self.create(**kwargs)
-
-
-class Case(models.Model):
+class JohnHopkinsCase(models.Model):
     date = models.DateTimeField()
     country = models.CharField(max_length=255)
     cases = models.IntegerField()
     deaths = models.IntegerField()
     recoveries = models.FloatField()
-    objects = CaseManager()
+    objects = managers.JohnHopkinsCaseManager()
 
     def __str__(self):
         return f'{self.date}-{self.country}-{self.cases}-{self.deaths}-' \
@@ -76,7 +60,7 @@ class HSECase(models.Model):
     closecontact = models.IntegerField()
     travelabroad = models.IntegerField()
     fid = models.IntegerField()
-    objects = CaseManager()
+    objects = managers.HSECaseManager()
 
     def __str__(self):
         output = self.date.strftime('%Y-%m-%d %H:%M:%S') if self.date else ''

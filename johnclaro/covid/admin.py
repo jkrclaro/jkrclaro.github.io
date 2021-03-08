@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Case, HSECase
+from .models import JohnHopkinsCase, HSECase
 
-admin.site.register(Case)
+admin.site.register(JohnHopkinsCase)
 admin.site.register(HSECase)

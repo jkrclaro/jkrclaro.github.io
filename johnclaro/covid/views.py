@@ -3,28 +3,30 @@ import json
 from django.shortcuts import render
 from django.http import JsonResponse
 
-from .models import Case, HSECase
+from .models import JohnHopkinsCase, HSECase
 
 logger = logging.getLogger(__name__)
 
 
 def show_covid(request):
-    cases = Case.objects.all()
+    cases = []
     return render(request, 'covid.html', {'cases': cases})
 
 
 def johnhopkins_cases_upsert(request):
     if request.method == 'POST':
-        if not request.POST:
-            return JsonResponse({'status': 'Data cannot be empty'}, status=400)
+        items = json.loads(request.body.decode('utf-8'))
+        if not items:
+            return JsonResponse({'status': 'Body cannot be empty'}, status=400)
 
-        Case.objects.upsert_case(
-            date=request.POST.get('date'),
-            country=request.POST.get('country'),
-            cases=request.POST.get('cases'),
-            deaths=request.POST.get('deaths'),
-            recoveries=request.POST.get('recoveries')
-        )
+        for item in items:
+            JohnHopkinsCase.objects.upsert_case(
+                date=item['date'],
+                country=item['country'],
+                cases=item['cases'],
+                deaths=item['deaths'],
+                recoveries=item['recoveries']
+            )
         return JsonResponse({'status': 'Case upserted'})
     else:
         return JsonResponse(status=404)
@@ -45,13 +47,10 @@ def hse_cases_upsert(request):
 
 def hse_swabs_upsert(request):
     if request.method == 'POST':
-        Case.objects.upsert_case(
-            date=request.POST.get('date'),
-            country=request.POST.get('country'),
-            cases=request.POST.get('cases'),
-            deaths=request.POST.get('deaths'),
-            recoveries=request.POST.get('recoveries')
-        )
-        return JsonResponse({'status': 'Case upserted'})
+        items = json.loads(request.body.decode('utf-8'))
+        if not items:
+            return JsonResponse({'status': 'Body cannot be empty'}, status=400)
+
+        return JsonResponse({'status': 'Swabs upserted'})
     else:
         return JsonResponse(status=404)
