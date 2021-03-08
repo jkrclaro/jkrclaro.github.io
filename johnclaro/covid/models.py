@@ -71,8 +71,11 @@ class HSECase(models.Model):
     communitytransmission = models.IntegerField()
     closecontact = models.IntegerField()
     travelabroad = models.IntegerField()
-    fid = models.DateTimeField()
+    fid = models.IntegerField()
     objects = CaseManager()
+
+    def __str__(self):
+        return self.date.strftime('%Y-%m-%d %H:%M:%S')
 
     class Meta:
         db_table = 'hse_cases'
