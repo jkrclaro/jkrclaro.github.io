@@ -15,9 +15,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='bio.html'), name='bio'),
     path('covid', show_covid, name='covid'),
-    path('covid/johnhopkins/cases/upsert', johnhopkins_cases_upsert, name='johnhopkins_cases_upsert'),
-    path('covid/hse/cases/upsert', hse_cases_upsert, name='hse_cases_upsert'),
-    path('covid/hse/swabs/upsert', hse_swabs_upsert, name='hse_swabs_upsert'),
+    path('johnhopkins/cases/upsert', johnhopkins_cases_upsert, name='johnhopkins_cases_upsert'),
+    path('hse/cases/upsert', hse_cases_upsert, name='hse_cases_upsert'),
+    path('hse/swabs/upsert', hse_swabs_upsert, name='hse_swabs_upsert'),
 ]
 
 if settings.DEBUG:
