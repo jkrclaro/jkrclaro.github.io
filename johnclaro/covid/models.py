@@ -7,7 +7,7 @@ from . import managers
 
 
 class JohnHopkinsCase(models.Model):
-    date = models.DateTimeField()
+    date = models.DateField()
     country = models.CharField(max_length=255)
     cases = models.IntegerField()
     deaths = models.IntegerField()
@@ -19,18 +19,18 @@ class JohnHopkinsCase(models.Model):
                f'{self.recoveries}'
 
     class Meta:
-        db_table = 'cases'
+        db_table = 'john_hopkins_cases'
         unique_together = ('date', 'country', 'cases', 'deaths', 'recoveries',)
         ordering = ['-date']
 
 
 class HSECase(models.Model):
-    date = models.DateTimeField(primary_key=True)
+    date = models.DateField(primary_key=True)
     confirmedcovidcases = models.IntegerField()
     totalconfirmedcovidcases = models.IntegerField()
     confirmedcoviddeaths = models.IntegerField()
     totalcoviddeaths = models.IntegerField()
-    statisticsprofiledate = models.DateTimeField()
+    statisticsprofiledate = models.DateField()
     covidcasesconfirmed = models.IntegerField(null=True, blank=True)
     hospitalisedcovidcases = models.IntegerField(null=True, blank=True)
     requiringicucovidcases = models.IntegerField(null=True, blank=True)
