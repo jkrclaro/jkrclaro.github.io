@@ -9,8 +9,8 @@ logger = logging.getLogger(__name__)
 
 
 def show_covid(request):
-    cases = []
-    return render(request, 'covid.html', {'cases': cases})
+    case = HSECase.objects.first()
+    return render(request, 'covid.html', {'case': case})
 
 
 def johnhopkins_cases_upsert(request):
