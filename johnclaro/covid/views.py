@@ -9,8 +9,19 @@ logger = logging.getLogger(__name__)
 
 
 def show_covid(request):
-    case = HSECase.objects.first()
-    return render(request, 'covid.html', {'case': case})
+    first_case = HSECase.objects.first()
+    cases = []
+    for case_qs in HSECase.objects.order_by('date'):
+        date = int(case_qs.date.strftime('%s')) * 1000
+        print(date)
+        confirmedcovidcases = case_qs.confirmedcovidcases
+        case = [date, confirmedcovidcases]
+        cases.append(case)
+    context = {
+        'first_case': first_case,
+        'cases': cases
+    }
+    return render(request, 'covid.html', context)
 
 
 def johnhopkins_cases_upsert(request):

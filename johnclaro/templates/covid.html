@@ -10,24 +10,24 @@
 <body>
     <div class='container'>
         <div class='text-center mt-3 mb-5'>
-            <h1>Covid in Ireland</h1>
+            <h1>COVID-19 in Ireland</h1>
         </div>
         <div class='row'>
             <div class='col-lg-6'>
-                <small class='text-muted'>{{ case.date }}</small>
+                <small class='text-muted'>{{ first_case.date }}</small>
                 <div class='card'>
                     <div class='card-body'>
                         <div class='row text-center'>
                             <div class='col-lg-6'>
                                 Cases
                                 <h3>
-                                    {{ case.confirmedcovidcases | intcomma }}
+                                    {{ first_case.confirmedcovidcases | intcomma }}
                                 </h3>
                             </div>
                             <div class='col-lg-6'>
                                 Deaths
                                 <h3>
-                                    {{ case.confirmedcoviddeaths | intcomma }}
+                                    {{ first_case.confirmedcoviddeaths | intcomma }}
                                 </h3>
                             </div>
                         </div>
@@ -36,20 +36,20 @@
             </div>
 
             <div class='col-lg-6'>
-                <small class='text-muted'>February 29, 2020 - {{ case.date }}</small>
+                <small class='text-muted'>February 29, 2020 - {{ first_case.date }}</small>
                 <div class='card'>
                     <div class='card-body'>
                         <div class='row text-center'>
                             <div class='col-lg-6'>
                                 Cases
                                 <h3>
-                                    {{ case.totalconfirmedcovidcases | intcomma }}
+                                    {{ first_case.totalconfirmedcovidcases | intcomma }}
                                 </h3>
                             </div>
                             <div class='col-lg-6'>
                                 Deaths
                                 <h3>
-                                    {{ case.totalcoviddeaths | intcomma }}
+                                    {{ first_case.totalcoviddeaths | intcomma }}
                                 </h3>
                             </div>
                         </div>
@@ -57,10 +57,80 @@
                 </div>
             </div>
         </div>
+        <div class='mt-3' id='cases-chart'></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script type='text/javascript'>
+        var casesData = {{ cases | safe }};
+        console.log(casesData);
+        Highcharts.chart('cases-chart', {
+            chart: {
+                type: 'area',
+                zoomType: 'x',
+                panning: true,
+                panKey: 'shift',
+                scrollablePlotArea: {
+                    minWidth: 320
+                }
+            },
+            title: {
+                text: 'Confirmed cases of COVID-19 in Ireland'
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                type: 'datetime',
+                labels: {
+                    formatter: function() {
+                        return Highcharts.dateFormat('%b \'%y', this.value)
+                    }
+                },
+                dateTimeLabelFormats: {
+                    day: '%d %b %Y'
+                },
+                title: {
+                    text: 'Date'
+                },
+            },
+            yAxis: {
+                startOnTick: true,
+                endOnTick: false,
+                maxPadding: 0.35,
+                title: {
+                    text: 'Cases'
+                },
+                labels: {
+                    format: '{value}'
+                },
+            },
+            tooltip: {
+                headerFormat: 'Date: {point.x}<br>',
+                pointFormat: 'Cases: {point.y}',
+                formatter: function() {
+                    return `<b>Date</b>: ${Highcharts.dateFormat('%d %b %Y', this.x)} <br> <b>Cases</b>: ${this.y}`
+                },
+                shared: true
+            },
+            legend: {
+                enabled: false
+            },
+            series: [{
+                data: casesData,
+                lineColor: Highcharts.getOptions().colors[1],
+                color: Highcharts.getOptions().colors[2],
+                fillOpacity: 1,
+                name: 'Elevation',
+                marker: {
+                    enabled: false
+                },
+                threshold: null
+            }]
+        });
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156985230-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
