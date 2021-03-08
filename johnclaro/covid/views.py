@@ -29,7 +29,7 @@ def johnhopkins_cases_upsert(request):
             )
         return JsonResponse({'status': 'Case upserted'})
     else:
-        return JsonResponse(status=404)
+        return JsonResponse({'status': 'Error 404'}, status=404)
 
 
 def hse_cases_upsert(request):
@@ -42,7 +42,7 @@ def hse_cases_upsert(request):
                 HSECase.objects.upsert_case(**item)
         return JsonResponse({'status': 'Case upserted'})
     else:
-        return JsonResponse(status=404)
+        return JsonResponse({'status': 'Error 404'}, status=404)
 
 
 def hse_swabs_upsert(request):
@@ -53,4 +53,4 @@ def hse_swabs_upsert(request):
 
         return JsonResponse({'status': 'Swabs upserted'})
     else:
-        return JsonResponse(status=404)
+        return JsonResponse({'status': 'Error 404'}, status=404)

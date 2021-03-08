@@ -36,8 +36,8 @@ ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
 Set owner of db.sqlite3 to daemon
 ```bash
 # bitnami
-sudo chown daemon /home/bitnami/website/ && sudo chown daemon home/bitnami/website/db.sqlite3
+sudo chown bitnami /home/bitnami/website/ && sudo chown bitnami /home/bitnami/website/db.sqlite3
 
 # daemon
-sudo chown daemon /home/bitnami/website/ && sudo chown daemon home/bitnami/website/db.sqlite3
+sudo chown daemon /home/bitnami/website/ && sudo chown daemon /home/bitnami/website/db.sqlite3
 ```
