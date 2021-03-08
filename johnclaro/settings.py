@@ -54,18 +54,18 @@ DATABASES = {
     }
 }
 
-PASSWORD_VALIDATION_STRING = 'django.contrib.auth.password_validation'
+PV = 'django.contrib.auth.password_validation'
 AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': f'{PASSWORD_VALIDATION_STRING}.UserAttributeSimilarityValidator'},
-    {'NAME': f'{PASSWORD_VALIDATION_STRING}.MinimumLengthValidator'},
-    {'NAME': f'{PASSWORD_VALIDATION_STRING}.CommonPasswordValidator'},
-    {'NAME': f'{PASSWORD_VALIDATION_STRING}.NumericPasswordValidator'},
+    {'NAME': f'{PV}.UserAttributeSimilarityValidator'},
+    {'NAME': f'{PV}.MinimumLengthValidator'},
+    {'NAME': f'{PV}.CommonPasswordValidator'},
+    {'NAME': f'{PV}.NumericPasswordValidator'},
 ]
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
-USE_TZ = False
+USE_TZ = True
 
 STATIC_URL = '/static/'
