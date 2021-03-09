@@ -15,6 +15,12 @@ def show_covid(request):
         {'name': 'Female', 'y': covid.female, 'color': '#F06C6B'},
         {'name': 'Unknown', 'y': covid.unknown, 'color': '#696969'},
     ]
+    gender_highest = max([covid.male, covid.female, covid.unknown])
+    for gender in genders:
+        if gender['y'] == gender_highest:
+            gender['sliced'] = 1
+            gender['selected'] = 1
+
     cases = []
     deaths = []
     for case_qs in HSECase.objects.order_by('date'):
