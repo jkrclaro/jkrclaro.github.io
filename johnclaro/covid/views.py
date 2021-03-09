@@ -17,7 +17,6 @@ def show_covid(request):
         death = [date, case_qs.confirmedcoviddeaths]
         cases.append(case)
         deaths.append(death)
-    print(deaths)
     context = {
         'first_case': HSECase.objects.first(),
         'cases': cases,
