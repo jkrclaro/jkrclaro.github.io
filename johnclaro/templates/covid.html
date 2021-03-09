@@ -195,7 +195,24 @@
                 headerFormat: 'Date: {point.x}<br>',
                 pointFormat: 'Cases: {point.y}',
                 formatter: function() {
-                    return `<b>Date</b>: ${Highcharts.dateFormat('%d %b %Y', this.x)} <br> <b>Cases</b>: ${this.y}`
+                    var lockdownStatus = '';
+                    var lockdowns = {
+                        1585353600000: 'First lockdown',
+                        1589760000000: 'Phase 1',
+                        1591574400000: 'Phase 2',
+                        1593388800000: 'Phase 3',
+                        1600128000000: 'Level 2',
+                        1601856000000: 'Level 3',
+                        1603238400000: 'Level 5',
+                        1606780800000: 'Level 3+',
+                        1608768000000: 'Level 5+',
+                    }
+                    for (var lockdown in lockdowns) {
+                        if (lockdown == this.x) {
+                            lockdownStatus += `<br> <b>Lockdown:</b> ${lockdowns[lockdown]}</b>`
+                        }
+                    }
+                    return `<b>Date</b>: ${Highcharts.dateFormat('%d %b %Y', this.x)} <br> <b>Cases</b>: ${this.y} ${lockdownStatus}`
                 },
                 shared: true
             },
