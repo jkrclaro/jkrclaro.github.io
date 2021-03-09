@@ -9,6 +9,12 @@ logger = logging.getLogger(__name__)
 
 
 def show_covid(request):
+    covid = HSECase.objects.first()
+    genders = [
+        {'name': 'Male', 'y': covid.male, 'color': '#1C92D8'},
+        {'name': 'Female', 'y': covid.female, 'color': '#F06C6B'},
+        {'name': 'Unknown', 'y': covid.unknown, 'color': '#696969'},
+    ]
     cases = []
     deaths = []
     for case_qs in HSECase.objects.order_by('date'):
@@ -18,9 +24,10 @@ def show_covid(request):
         cases.append(case)
         deaths.append(death)
     context = {
-        'first_case': HSECase.objects.first(),
+        'covid': HSECase.objects.first(),
         'cases': cases,
-        'deaths': deaths
+        'deaths': deaths,
+        'genders': genders,
     }
     return render(request, 'covid.html', context)
 

@@ -14,20 +14,20 @@
         </div>
         <div class='row'>
             <div class='col-lg-6'>
-                <small class='text-muted'>{{ first_case.date }}</small>
+                <small class='text-muted'>{{ covid.date }}</small>
                 <div class='card'>
                     <div class='card-body'>
                         <div class='row text-lg-center'>
                             <div class='col-lg-6'>
                                 Cases
                                 <h3>
-                                    {{ first_case.confirmedcovidcases | intcomma }}
+                                    {{ covid.confirmedcovidcases | intcomma }}
                                 </h3>
                             </div>
                             <div class='col-lg-6'>
                                 Deaths
                                 <h3>
-                                    {{ first_case.confirmedcoviddeaths | intcomma }}
+                                    {{ covid.confirmedcoviddeaths | intcomma }}
                                 </h3>
                             </div>
                         </div>
@@ -36,20 +36,20 @@
             </div>
 
             <div class='col-lg-6'>
-                <small class='text-muted'>February 29, 2020 - {{ first_case.date }}</small>
+                <small class='text-muted'>February 29, 2020 - {{ covid.date }}</small>
                 <div class='card'>
                     <div class='card-body'>
                         <div class='row text-lg-center'>
                             <div class='col-lg-6'>
                                 Cases
                                 <h3>
-                                    {{ first_case.totalconfirmedcovidcases | intcomma }}
+                                    {{ covid.totalconfirmedcovidcases | intcomma }}
                                 </h3>
                             </div>
                             <div class='col-lg-6'>
                                 Deaths
                                 <h3>
-                                    {{ first_case.totalcoviddeaths | intcomma }}
+                                    {{ covid.totalcoviddeaths | intcomma }}
                                 </h3>
                             </div>
                         </div>
@@ -59,6 +59,14 @@
         </div>
         <div class='mt-3' id='cases-chart'></div>
         <div class='mt-3' id='deaths-chart'></div>
+        <div class='row'>
+            <div class='col-lg-6'>
+                <div class='mt-3' id='gender-chart'></div>
+            </div>
+            <div class='col-lg-6'>
+                <div class='mt-3' id='age-chart'></div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
@@ -66,8 +74,10 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/annotations.js"></script>
     <script type='text/javascript'>
-        var casesData = {{ cases | safe }};
-        var deathsData = {{ deaths | safe }};
+        var cases = {{ cases | safe }};
+        var deaths = {{ deaths | safe }};
+        var genders = {{ genders | safe }};
+
         Highcharts.chart('cases-chart', {
             chart: {
                 type: 'area',
@@ -220,8 +230,8 @@
                 enabled: false
             },
             series: [{
-                data: casesData,
-                lineColor: Highcharts.getOptions().colors[1],
+                data: cases,
+                lineColor: Highcharts.getOptions().colors[2],
                 color: Highcharts.getOptions().colors[2],
                 fillOpacity: 1,
                 name: 'Cases',
@@ -232,7 +242,7 @@
             }]
         });
 
-                Highcharts.chart('deaths-chart', {
+        Highcharts.chart('deaths-chart', {
             chart: {
                 type: 'area',
                 zoomType: 'x',
@@ -282,8 +292,8 @@
                 enabled: false
             },
             series: [{
-                data: deathsData,
-                lineColor: Highcharts.getOptions().colors[1],
+                data: deaths,
+                lineColor: Highcharts.getOptions().colors[5],
                 color: Highcharts.getOptions().colors[5],
                 fillOpacity: 1,
                 name: 'Deaths',
@@ -291,6 +301,37 @@
                     enabled: false
                 },
                 threshold: null
+            }]
+        });
+
+        Highcharts.chart('gender-chart', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Gender breakdown'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b> {point.percentage:.2f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.2f}%'
+                    }
+                }
+            },
+            series: [{
+                name: 'Gender',
+                showInLegend: true,
+                colorByPoint: true,
+                data: genders
             }]
         });
     </script>
