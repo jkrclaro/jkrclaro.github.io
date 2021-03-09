@@ -21,6 +21,31 @@ def show_covid(request):
             gender['sliced'] = 1
             gender['selected'] = 1
 
+    ages = [
+        {'name': '1-4', 'y': covid.aged1to4},
+        {'name': '5-14', 'y': covid.aged5to14},
+        {'name': '15-24', 'y': covid.aged15to24},
+        {'name': '25-34', 'y': covid.aged25to34},
+        {'name': '35-44', 'y': covid.aged35to44},
+        {'name': '45-54', 'y': covid.aged45to54},
+        {'name': '55-64', 'y': covid.aged55to64},
+        {'name': '65+', 'y': covid.aged65up}
+    ]
+    age_highest = max([
+        covid.aged1to4,
+        covid.aged5to14,
+        covid.aged15to24,
+        covid.aged25to34,
+        covid.aged35to44,
+        covid.aged45to54,
+        covid.aged55to64,
+        covid.aged65up
+    ])
+    for age in ages:
+        if age['y'] == age_highest:
+            age['sliced'] = 1
+            age['selected'] = 1
+
     cases = []
     deaths = []
     for case_qs in HSECase.objects.order_by('date'):
@@ -34,6 +59,7 @@ def show_covid(request):
         'cases': cases,
         'deaths': deaths,
         'genders': genders,
+        'ages': ages
     }
     return render(request, 'covid.html', context)
 
