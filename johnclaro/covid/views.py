@@ -3,7 +3,7 @@ import json
 from django.shortcuts import render
 from django.http import JsonResponse
 
-from .models import JohnHopkinsCase, HSECase
+from .models import JohnHopkinsCase, HSECase, HSECounty
 
 logger = logging.getLogger(__name__)
 
@@ -103,5 +103,18 @@ def hse_swabs_upsert(request):
             return JsonResponse({'status': 'Body cannot be empty'}, status=400)
 
         return JsonResponse({'status': 'Swabs upserted'})
+    else:
+        return JsonResponse({'status': 'Error 404'}, status=404)
+
+
+def hse_counties_upsert(request):
+    if request.method == 'POST':
+        items = json.loads(request.body.decode('utf-8'))
+        if not items:
+            return JsonResponse({'status': 'Body cannot be empty'}, status=400)
+        else:
+            for item in items:
+                HSECounty.objects.upsert_county(**item)
+        return JsonResponse({'status': 'County upserted'})
     else:
         return JsonResponse({'status': 'Error 404'}, status=404)

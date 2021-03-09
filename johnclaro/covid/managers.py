@@ -28,3 +28,14 @@ class HSECaseManager(models.Manager):
             item.save()
         except self.model.DoesNotExist:
             self.create(**kwargs)
+
+
+class HSECountyManager(models.Manager):
+    def upsert_county(self, **kwargs):
+        try:
+            item = self.get(countyname=kwargs['countyname'])
+            for key, value in kwargs.items():
+                setattr(item, key, value)
+            item.save()
+        except self.model.DoesNotExist:
+            self.create(**kwargs)

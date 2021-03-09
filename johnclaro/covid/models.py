@@ -69,3 +69,30 @@ class HSECase(models.Model):
     class Meta:
         db_table = 'hse_cases'
         ordering = ['-date']
+
+
+class HSECounty(models.Model):
+    origid = models.IntegerField(null=True, blank=True)
+    countyname = models.CharField(max_length=255)
+    populationcensus16 = models.IntegerField()
+    igeasting = models.IntegerField()
+    ignorthing = models.IntegerField()
+    lat = models.FloatField()
+    long = models.FloatField()
+    uniquegeographicidentifier = models.CharField(max_length=255)
+    confirmedcovidcases = models.IntegerField()
+    populationproportioncovidcases = models.FloatField()
+    confirmedcoviddeaths = models.CharField(max_length=255, null=True, blank=True)
+    confirmedcovidrecovered = models.CharField(max_length=255, null=True, blank=True)
+    x = models.FloatField()
+    y = models.FloatField()
+    fid = models.IntegerField()
+    timestampdate = models.DateField()
+    objects = managers.HSECountyManager()
+
+    def __str__(self):
+        return self.countyname
+
+    class Meta:
+        db_table = 'hse_counties'
+        ordering = ['countyname']

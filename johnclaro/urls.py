@@ -9,6 +9,7 @@ from .covid.views import (
     johnhopkins_cases_upsert,
     hse_cases_upsert,
     hse_swabs_upsert,
+    hse_counties_upsert,
 )
 
 urlpatterns = [
@@ -18,6 +19,7 @@ urlpatterns = [
     path('johnhopkins/cases/upsert', johnhopkins_cases_upsert, name='johnhopkins_cases_upsert'),
     path('hse/cases/upsert', hse_cases_upsert, name='hse_cases_upsert'),
     path('hse/swabs/upsert', hse_swabs_upsert, name='hse_swabs_upsert'),
+    path('hse/counties/upsert', hse_counties_upsert, name='hse_counties_upsert'),
 ]
 
 if settings.DEBUG:
