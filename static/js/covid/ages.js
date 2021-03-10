@@ -23,7 +23,6 @@ Highcharts.chart('age-chart', {
     },
     series: [{
         name: 'Age',
-        showInLegend: true,
         colorByPoint: true,
         data: AGES
     }]

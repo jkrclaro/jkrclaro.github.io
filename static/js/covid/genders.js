@@ -23,7 +23,6 @@ Highcharts.chart('gender-chart', {
     },
     series: [{
         name: 'Gender',
-        showInLegend: true,
         colorByPoint: true,
         data: GENDERS
     }]
