@@ -1,0 +1,13 @@
+{% extends 'covid/layout.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block content %}
+    <div class='container'>
+        <h1>Swabs</h1>
+    </div>
+
+    {% block scripts %}
+        {{ block.super }}
+    {% endblock %}
+{% endblock %}

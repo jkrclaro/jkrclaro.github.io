@@ -10,7 +10,7 @@ from .models import JohnHopkinsCase, HSECase, HSECounty
 logger = logging.getLogger(__name__)
 
 
-def show_covid(request):
+def show_cases(request):
     covid = HSECase.objects.first()
     genders = [
         {'name': 'Male', 'y': covid.male, 'color': '#95CEFF'},
@@ -74,7 +74,15 @@ def show_covid(request):
         'ages': ages,
         'counties': counties,
     }
-    return render(request, 'covid.html', context)
+    return render(request, 'covid/cases.html', context)
+
+
+def show_swabs(request):
+    return render(request, 'covid/swabs.html')
+
+
+def show_vaccines(request):
+    return render(request, 'covid/vaccines.html')
 
 
 def johnhopkins_cases_upsert(request):
