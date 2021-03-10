@@ -96,3 +96,40 @@ class HSECounty(models.Model):
     class Meta:
         db_table = 'hse_counties'
         ordering = ['countyname']
+
+    def get_hc_keys(self):
+        codes = {
+            # 'None': 'ie-5551',
+            'Mayo': ('ie-mo',),
+            'Kerry': ('ie-ky',),
+            'Donegal': ('ie-dl',),
+            'Clare': ('ie-ce',),
+            'Longford': ('ie-ld',),
+            'Cavan': ('ie-cn',),
+            'Monaghan': ('ie-mn',),
+            'Galway': ('ie-gy', 'ie-1510',),
+            'Cork': ('ie-ck', 'ie-491',),
+            'Waterford': ('ie-wd', 'ie-2363',),
+            'Dublin': ('ie-dn', 'ie-1528', 'ie-7034', 'ie-7035',),
+            'Louth': ('ie-lh',),
+            'Meath': ('ie-mh',),
+            'Offaly': ('ie-oy',),
+            'Westmeath': ('ie-wh',),
+            'Wexford': ('ie-wx',),
+            'Carlow': ('ie-cw',),
+            'Wicklow': ('ie-ww',),
+            'Kildare': ('ie-ke',),
+            'Kilkenny': ('ie-kk',),
+            'Laoighis': ('ie-ls',),
+            'Tipperary': ('ie-ty', 'ie-7033',),
+            'Limerick': ('ie-lk', 'ie-1533',),
+            'Roscommon': ('ie-rn',),
+            'Sligo': ('ie-so',),
+            'Leitrim': ('ie-lm',),
+        }
+
+        # Change key names based on HSE dataset
+        codes['Laois'] = codes.pop('Laoighis')
+
+        code = codes[self.countyname]
+        return code

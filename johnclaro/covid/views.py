@@ -54,12 +54,23 @@ def show_covid(request):
         death = [date, case_qs.confirmedcoviddeaths]
         cases.append(case)
         deaths.append(death)
+
+    county_names = []
+    county_cases = []
+    counties = {}
+    for county_qs in HSECounty.objects.all():
+        county_names.append(county_qs.countyname)
+        county_cases.append(county_qs.confirmedcovidcases)
+    counties['names'] = county_names
+    counties['cases'] = county_cases
+
     context = {
         'covid': HSECase.objects.first(),
         'cases': cases,
         'deaths': deaths,
         'genders': genders,
-        'ages': ages
+        'ages': ages,
+        'counties': counties,
     }
     return render(request, 'covid.html', context)
 

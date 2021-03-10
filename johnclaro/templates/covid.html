@@ -82,43 +82,8 @@
         var DEATHS = {{ deaths | safe }};
         var GENDERS = {{ genders | safe }};
         var AGES = {{ ages | safe }};
-        var COUNTIES = [
-            ['ie-5551', 0],
-            ['ie-1510', 1],
-            ['ie-mo', 2],
-            ['ie-ky', 3],
-            ['ie-dl', 4],
-            ['ie-491', 5],
-            ['ie-ce', 6],
-            ['ie-7034', 7],
-            ['ie-7035', 8],
-            ['ie-ld', 9],
-            ['ie-cn', 10],
-            ['ie-2363', 11],
-            ['ie-mn', 12],
-            ['ie-gy', 13],
-            ['ie-ck', 14],
-            ['ie-wd', 15],
-            ['ie-7033', 16],
-            ['ie-1528', 17],
-            ['ie-dn', 18],
-            ['ie-lh', 19],
-            ['ie-mh', 20],
-            ['ie-oy', 21],
-            ['ie-wh', 22],
-            ['ie-wx', 23],
-            ['ie-cw', 24],
-            ['ie-ww', 25],
-            ['ie-ke', 26],
-            ['ie-kk', 27],
-            ['ie-ls', 28],
-            ['ie-ty', 29],
-            ['ie-1533', 30],
-            ['ie-lk', 31],
-            ['ie-rn', 32],
-            ['ie-so', 33],
-            ['ie-lm', 34]
-        ];
+        var COUNTY_NAMES = {{ counties.names | safe }};
+        var COUNTY_CASES = {{ counties.cases | safe }};
     </script>
     <script src="{% static 'js/covid/cases.js' %}" type='text/javascript'></script> 
     <script src="{% static 'js/covid/deaths.js' %}" type='text/javascript'></script> 
