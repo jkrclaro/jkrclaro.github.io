@@ -79,6 +79,7 @@
             </div>
         </div>
         <div class='mt-3' id='cases-chart'></div>
+        <div class='mt-3' id='deaths-chart'></div>
         <div class='mt-3' id='counties-chart'></div>
         <div class='row mb-3'>
             <div class='col-lg-6'>
@@ -103,9 +104,102 @@
         var AGES = {{ ages | safe }};
         var COUNTY_NAMES = {{ counties.names | safe }};
         var COUNTY_CASES = {{ counties.cases | safe }};
-        var TODAY = {{ today | safe }};
+        var PLOT_BANDS = [
+            {
+                from: Date.UTC(2020, 2, 28, 0, 0, 0),
+                to: Date.UTC(2020, 4, 18, 0, 0, 0),
+                color: '#DDD',
+                label: {
+                    text: 'First lockdown',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 4, 18, 0, 0, 0),
+                to: Date.UTC(2020, 5, 8, 0, 0, 0),
+                color: '#EEE',
+                label: {
+                    text: 'Phase 1',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 5, 8, 0, 0, 0),
+                to: Date.UTC(2020, 5, 29, 0, 0, 0),
+                color: '#DDD',
+                label: {
+                    text: 'Phase 2',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 5, 29, 10, 0, 0),
+                to: Date.UTC(2020, 8, 15, 0, 0, 0),
+                color: '#EEE',
+                label: {
+                    text: 'Phase 3',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 8, 15, 10, 0, 0),
+                to: Date.UTC(2020, 9, 5, 0, 0, 0),
+                color: '#DDD',
+                label: {
+                    text: 'Level 2',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 9, 5, 0, 0, 0),
+                to: Date.UTC(2020, 9, 21, 0, 0, 0),
+                color: '#EEE',
+                label: {
+                    text: 'Level 3',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 9, 21, 0, 0, 0),
+                to: Date.UTC(2020, 11, 1, 0, 0, 0),
+                color: '#DDD',
+                label: {
+                    text: 'Level 5',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 11, 1, 0, 0, 0),
+                to: Date.UTC(2020, 11, 24, 0, 0, 0),
+                color: '#EEE',
+                label: {
+                    text: 'Level 3+',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 11, 24, 0, 0, 0),
+                to: Date.now(),
+                color: '#DDD',
+                label: {
+                    text: 'Level 5+',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }
+        ]
     </script>
     <script src="{% static 'js/covid/cases.js' %}" type='text/javascript'></script>
+    <script src="{% static 'js/covid/deaths.js' %}" type='text/javascript'></script>
     <script src="{% static 'js/covid/genders.js' %}" type='text/javascript'></script> 
     <script src="{% static 'js/covid/ages.js' %}" type='text/javascript'></script> 
     <script src="{% static 'js/covid/counties.js' %}" type='text/javascript'></script> 

@@ -1,4 +1,4 @@
-Highcharts.chart('cases-chart', {
+Highcharts.chart('deaths-chart', {
     chart: {
         type: 'line',
         zoomType: 'x',
@@ -9,7 +9,7 @@ Highcharts.chart('cases-chart', {
         }
     },
     title: {
-        text: 'Confirmed cases of COVID-19 in Ireland'
+        text: 'Confirmed deaths of COVID-19 in Ireland'
     },
     credits: {
         enabled: false
@@ -43,7 +43,7 @@ Highcharts.chart('cases-chart', {
         endOnTick: false,
         maxPadding: 0.35,
         title: {
-            text: 'Cases'
+            text: 'Deaths'
         },
         labels: {
             format: '{value}'
@@ -51,7 +51,7 @@ Highcharts.chart('cases-chart', {
     },
     tooltip: {
         headerFormat: 'Date: {point.x}<br>',
-        pointFormat: 'Cases: {point.y}',
+        pointFormat: 'Deaths: {point.y}',
         formatter: function() {
             var lockdownStatus = '';
             var lockdowns = {
@@ -70,7 +70,7 @@ Highcharts.chart('cases-chart', {
                     lockdownStatus += `<br> <b>Lockdown:</b> ${lockdowns[lockdown]}</b>`
                 }
             }
-            return `<b>Date</b>: ${Highcharts.dateFormat('%d %b %Y', this.x)} <br> <b>Cases</b>: ${this.y} ${lockdownStatus}`
+            return `<b>Date</b>: ${Highcharts.dateFormat('%d %b %Y', this.x)} <br> <b>Deaths</b>: ${this.y} ${lockdownStatus}`
         },
         shared: true
     },
@@ -78,11 +78,11 @@ Highcharts.chart('cases-chart', {
         enabled: false
     },
     series: [{
-        data: CASES,
-        lineColor: '#5DC2C2',
-        color: '#5DC2C2',
+        data: DEATHS,
+        lineColor: Highcharts.getOptions().colors[5],
+        color: Highcharts.getOptions().colors[5],
         fillOpacity: 1,
-        name: 'Cases',
+        name: 'Deaths',
         marker: {
             enabled: false
         },

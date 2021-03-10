@@ -51,8 +51,9 @@ def show_covid(request):
     cases = []
     deaths = []
     for case_qs in HSECase.objects.order_by('date'):
-        case = [case_qs.confirmedcovidcases]
-        death = [case_qs.confirmedcoviddeaths]
+        date = int(case_qs.date.strftime('%s')) * 1000
+        case = [date, case_qs.confirmedcovidcases]
+        death = [date, case_qs.confirmedcoviddeaths]
         cases.append(case)
         deaths.append(death)
 
@@ -65,7 +66,6 @@ def show_covid(request):
     counties['names'] = county_names
     counties['cases'] = county_cases
 
-    now = datetime.datetime.now()
     context = {
         'covid': HSECase.objects.first(),
         'cases': cases,
@@ -73,14 +73,6 @@ def show_covid(request):
         'genders': genders,
         'ages': ages,
         'counties': counties,
-        'today': {
-            'year': now.year,
-            'month': now.month,
-            'day': now.day,
-            'hour': now.hour,
-            'minute': now.minute,
-            'second': now.second
-        }
     }
     return render(request, 'covid.html', context)
 
