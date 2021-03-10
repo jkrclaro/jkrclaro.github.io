@@ -17,7 +17,7 @@ Highcharts.chart('age-chart', {
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                format: '{point.name}: {point.percentage:.2f}%'
+                format: 'Ages {point.name}: <span style="font-weight: 400 !important;">{point.percentage:.2f}%</span>'
             }
         }
     },

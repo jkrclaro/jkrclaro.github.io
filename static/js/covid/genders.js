@@ -17,7 +17,7 @@ Highcharts.chart('gender-chart', {
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.2f}%'
+                format: '<b>{point.name}</b>: <span style="font-weight: 400 !important;">{point.percentage:.2f}%</span>'
             }
         }
     },
