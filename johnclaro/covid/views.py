@@ -78,7 +78,9 @@ def show_cases(request):
 
 
 def show_swabs(request):
-    return render(request, 'covid/swabs.html')
+    swabs = HSESwab.objects.all()
+    context = {'swabs': swabs}
+    return render(request, 'covid/swabs.html', context)
 
 
 def show_vaccines(request):
