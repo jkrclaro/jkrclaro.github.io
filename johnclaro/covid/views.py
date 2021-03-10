@@ -1,5 +1,7 @@
 import logging
 import json
+import datetime
+
 from django.shortcuts import render
 from django.http import JsonResponse
 
@@ -63,6 +65,7 @@ def show_covid(request):
     counties['names'] = county_names
     counties['cases'] = county_cases
 
+    now = datetime.datetime.now()
     context = {
         'covid': HSECase.objects.first(),
         'cases': cases,
@@ -70,6 +73,14 @@ def show_covid(request):
         'genders': genders,
         'ages': ages,
         'counties': counties,
+        'today': {
+            'year': now.year,
+            'month': now.month,
+            'day': now.day,
+            'hour': now.hour,
+            'minute': now.minute,
+            'second': now.second
+        }
     }
     return render(request, 'covid.html', context)
 

@@ -16,8 +16,8 @@ Highcharts.chart('cases-chart', {
             overflow: 'justify'
         },
         plotBands: [{
-            from: Date.UTC(2020, 3, 28, 0, 0, 0),
-            to: Date.UTC(2020, 5, 18, 0, 0, 0),
+            from: Date.UTC(2020, 2, 28, 0, 0, 0),
+            to: Date.UTC(2020, 4, 18, 0, 0, 0),
             color: '#DDD',
             label: {
                 text: 'First <br> lockdown',
@@ -26,8 +26,8 @@ Highcharts.chart('cases-chart', {
                 }
             }
         }, {
-            from: Date.UTC(2020, 5, 18, 0, 0, 0),
-            to: Date.UTC(2020, 6, 8, 0, 0, 0),
+            from: Date.UTC(2020, 4, 18, 0, 0, 0),
+            to: Date.UTC(2020, 5, 8, 0, 0, 0),
             color: '#EEE',
             label: {
                 text: 'Phase 1',
@@ -36,8 +36,8 @@ Highcharts.chart('cases-chart', {
                 }
             }
         }, {
-            from: Date.UTC(2020, 6, 8, 0, 0, 0),
-            to: Date.UTC(2020, 6, 29, 0, 0, 0),
+            from: Date.UTC(2020, 5, 8, 0, 0, 0),
+            to: Date.UTC(2020, 5, 29, 0, 0, 0),
             color: '#DDD',
             label: {
                 text: 'Phase 2',
@@ -46,8 +46,8 @@ Highcharts.chart('cases-chart', {
                 }
             }
         }, {
-            from: Date.UTC(2020, 6, 29, 10, 0, 0),
-            to: Date.UTC(2020, 9, 15, 0, 0, 0),
+            from: Date.UTC(2020, 5, 29, 10, 0, 0),
+            to: Date.UTC(2020, 8, 15, 0, 0, 0),
             color: '#EEE',
             label: {
                 text: 'Phase 3',
@@ -56,8 +56,8 @@ Highcharts.chart('cases-chart', {
                 }
             }
         }, {
-            from: Date.UTC(2020, 9, 15, 10, 0, 0),
-            to: Date.UTC(2020, 10, 5, 0, 0, 0),
+            from: Date.UTC(2020, 8, 15, 10, 0, 0),
+            to: Date.UTC(2020, 9, 5, 0, 0, 0),
             color: '#DDD',
             label: {
                 text: 'Level 2',
@@ -66,8 +66,8 @@ Highcharts.chart('cases-chart', {
                 }
             }
         }, {
-            from: Date.UTC(2020, 10, 5, 0, 0, 0),
-            to: Date.UTC(2020, 10, 21, 0, 0, 0),
+            from: Date.UTC(2020, 9, 5, 0, 0, 0),
+            to: Date.UTC(2020, 9, 21, 0, 0, 0),
             color: '#EEE',
             label: {
                 text: 'Level 3',
@@ -76,8 +76,8 @@ Highcharts.chart('cases-chart', {
                 }
             }
         }, {
-            from: Date.UTC(2020, 10, 21, 0, 0, 0),
-            to: Date.UTC(2020, 12, 1, 0, 0, 0),
+            from: Date.UTC(2020, 9, 21, 0, 0, 0),
+            to: Date.UTC(2020, 11, 1, 0, 0, 0),
             color: '#DDD',
             label: {
                 text: 'Level 5',
@@ -86,8 +86,8 @@ Highcharts.chart('cases-chart', {
                 }
             }
         }, {
-            from: Date.UTC(2020, 12, 1, 0, 0, 0),
-            to: Date.UTC(2020, 12, 24, 0, 0, 0),
+            from: Date.UTC(2020, 11, 1, 0, 0, 0),
+            to: Date.UTC(2020, 11, 24, 0, 0, 0),
             color: '#EEE',
             label: {
                 text: 'Level 3+',
@@ -96,7 +96,7 @@ Highcharts.chart('cases-chart', {
                 }
             }
         }, {
-            from: Date.UTC(2020, 12, 24, 0, 0, 0),
+            from: Date.UTC(2020, 11, 24, 0, 0, 0),
             to: Date.now(),
             color: '#DDD',
             label: {
