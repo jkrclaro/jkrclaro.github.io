@@ -5,7 +5,7 @@ import datetime
 from django.shortcuts import render
 from django.http import JsonResponse
 
-from .models import JohnHopkinsCase, HSECase, HSECounty
+from .models import JohnHopkinsCase, HSECase, HSECounty, HSESwab
 
 logger = logging.getLogger(__name__)
 
@@ -122,6 +122,9 @@ def hse_swabs_upsert(request):
         items = json.loads(request.body.decode('utf-8'))
         if not items:
             return JsonResponse({'status': 'Body cannot be empty'}, status=400)
+        else:
+            for item in items:
+                HSESwab.objects.upsert_swab(**item)
 
         return JsonResponse({'status': 'Swabs upserted'})
     else:

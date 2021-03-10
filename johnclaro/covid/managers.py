@@ -39,3 +39,14 @@ class HSECountyManager(models.Manager):
             item.save()
         except self.model.DoesNotExist:
             self.create(**kwargs)
+
+
+class HSESwabManager(models.Manager):
+    def upsert_swab(self, **kwargs):
+        try:
+            item = self.get(date_hpsc=kwargs['date_hpsc'])
+            for key, value in kwargs.items():
+                setattr(item, key, value)
+            item.save()
+        except self.model.DoesNotExist:
+            self.create(**kwargs)

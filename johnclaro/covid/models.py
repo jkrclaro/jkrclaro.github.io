@@ -63,8 +63,8 @@ class HSECase(models.Model):
     objects = managers.HSECaseManager()
 
     def __str__(self):
-        output = self.date.strftime('%Y-%m-%d') if self.date else ''
-        return output
+        date = self.date.strftime('%d %b %Y')
+        return date
 
     class Meta:
         db_table = 'hse_cases'
@@ -133,3 +133,26 @@ class HSECounty(models.Model):
 
         code = codes[self.countyname]
         return code
+
+
+class HSESwab(models.Model):
+    date_hpsc = models.DateField()
+    hospitals = models.IntegerField()
+    totallabs = models.IntegerField()
+    nonhospitals = models.IntegerField()
+    positive = models.IntegerField()
+    prate = models.FloatField()
+    test24 = models.IntegerField()
+    test7 = models.IntegerField()
+    pos7 = models.IntegerField()
+    posr7 = models.FloatField()
+    fid = models.IntegerField()
+    objects = managers.HSESwabManager()
+
+    def __str__(self):
+        date = self.date_hpsc.strftime('%d %b %Y')
+        return date
+
+    class Meta:
+        db_table = 'hse_swabs'
+        ordering = ['-date_hpsc']
