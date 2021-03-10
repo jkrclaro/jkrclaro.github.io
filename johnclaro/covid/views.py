@@ -11,8 +11,8 @@ logger = logging.getLogger(__name__)
 def show_covid(request):
     covid = HSECase.objects.first()
     genders = [
-        {'name': 'Male', 'y': covid.male, 'color': '#1C92D8'},
-        {'name': 'Female', 'y': covid.female, 'color': '#F06C6B'},
+        {'name': 'Male', 'y': covid.male, 'color': '#95CEFF'},
+        {'name': 'Female', 'y': covid.female, 'color': '#F15C80'},
         {'name': 'Unknown', 'y': covid.unknown, 'color': '#696969'},
     ]
     gender_highest = max([covid.male, covid.female, covid.unknown])
@@ -49,9 +49,8 @@ def show_covid(request):
     cases = []
     deaths = []
     for case_qs in HSECase.objects.order_by('date'):
-        date = int(case_qs.date.strftime('%s')) * 1000
-        case = [date, case_qs.confirmedcovidcases]
-        death = [date, case_qs.confirmedcoviddeaths]
+        case = [case_qs.confirmedcovidcases]
+        death = [case_qs.confirmedcoviddeaths]
         cases.append(case)
         deaths.append(death)
 

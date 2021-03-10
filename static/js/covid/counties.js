@@ -47,6 +47,6 @@ Highcharts.chart('counties-chart', {
     series: [{
         name: 'Cases',
         data: COUNTY_CASES,
-        color: '#90ED7D'
+        color: '#44A9A8'
     }]
 });

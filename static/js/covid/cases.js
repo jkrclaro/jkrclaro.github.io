@@ -1,163 +1,151 @@
 Highcharts.chart('cases-chart', {
     chart: {
-        type: 'area',
-        zoomType: 'x',
-        panning: true,
-        panKey: 'shift',
+        type: 'spline',
         scrollablePlotArea: {
-            minWidth: 768
+            minWidth: 600,
+            scrollPositionX: 1
         }
     },
     title: {
-        text: 'Confirmed cases of COVID-19 in Ireland'
+        text: 'Cases vs Deaths',
+        align: 'left'
     },
-    credits: {
-        enabled: false
-    },
-    annotations: [{
-        draggable: '',
-        labelOptions: {
-            shape: 'connector',
-            justify: false,
-            crop: true,
-            style: {
-                fontSize: '0.7em',
-                textOutline: '1px'
-            }
-        },
-        labels: [{
-            point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1585353600000, // 28 Mar 2020
-                y: 294
-            },
-            text: 'First lockdown'
-        }, {
-            point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1589760000000, // 18 May 2020
-                y: 88
-            },
-            text: 'Phase 1'
-        }, {
-            point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1591574400000, // 8 Jun 2020
-                y: 9
-            },
-            text: 'Phase 2'
-        }, {
-            point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1593388800000, // 29 Jun 2020
-                y: 24
-            },
-            text: 'Phase 3'
-        }, {
-            point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1600128000000, // 15 Sep 2020
-                y: 357
-            },
-            text: 'Level 2'
-        }, {
-            point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1601856000000, // 05 Oct 2020
-                y: 518
-            },
-            text: 'Level 3'
-        }, {
-            point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1603238400000, // 21 Oct 2020
-                y: 1167
-            },
-            text: 'Level 5'
-        }, {
-            point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1606780800000, // 1 Dec 2020
-                y: 269
-            },
-            text: 'Level 3+'
-        }, {
-            point: {
-                xAxis: 0,
-                yAxis: 0,
-                x: 1608768000000, // 24 Dec 2020
-                y: 922
-            },
-            text: 'Level 5+'
-        }]
-    }],
     xAxis: {
         type: 'datetime',
         labels: {
-            formatter: function() {
-                return Highcharts.dateFormat('%b \'%y', this.value)
-            }
+            overflow: 'justify'
         },
-        title: {
-            text: 'Date'
-        },
-    },
-    yAxis: {
-        startOnTick: true,
-        endOnTick: false,
-        maxPadding: 0.35,
-        title: {
-            text: 'Cases'
-        },
-        labels: {
-            format: '{value}'
-        },
-    },
-    tooltip: {
-        headerFormat: 'Date: {point.x}<br>',
-        pointFormat: 'Cases: {point.y}',
-        formatter: function() {
-            var lockdownStatus = '';
-            var lockdowns = {
-                1585353600000: 'First lockdown',
-                1589760000000: 'Phase 1',
-                1591574400000: 'Phase 2',
-                1593388800000: 'Phase 3',
-                1600128000000: 'Level 2',
-                1601856000000: 'Level 3',
-                1603238400000: 'Level 5',
-                1606780800000: 'Level 3+',
-                1608768000000: 'Level 5+',
-            }
-            for (var lockdown in lockdowns) {
-                if (lockdown == this.x) {
-                    lockdownStatus += `<br> <b>Lockdown:</b> ${lockdowns[lockdown]}</b>`
+        plotBands: [{
+            from: Date.UTC(2020, 3, 28, 0, 0, 0),
+            to: Date.UTC(2020, 5, 18, 0, 0, 0),
+            color: '#EDF6FB',
+            label: {
+                text: 'First <br> lockdown',
+                style: {
+                    color: '#606060'
                 }
             }
-            return `<b>Date</b>: ${Highcharts.dateFormat('%d %b %Y', this.x)} <br> <b>Cases</b>: ${this.y} ${lockdownStatus}`
-        },
-        shared: true
+        }, {
+            from: Date.UTC(2020, 5, 18, 0, 0, 0),
+            to: Date.UTC(2020, 6, 8, 0, 0, 0),
+            color: '#EEE',
+            label: {
+                text: 'Phase 1',
+                style: {
+                    color: '#606060'
+                }
+            }
+        }, {
+            from: Date.UTC(2020, 6, 8, 0, 0, 0),
+            to: Date.UTC(2020, 6, 29, 0, 0, 0),
+            color: '#EDF6FB',
+            label: {
+                text: 'Phase 2',
+                style: {
+                    color: '#606060'
+                }
+            }
+        }, {
+            from: Date.UTC(2020, 6, 29, 10, 0, 0),
+            to: Date.UTC(2020, 9, 15, 0, 0, 0),
+            color: '#EEE',
+            label: {
+                text: 'Phase 3',
+                style: {
+                    color: '#606060'
+                }
+            }
+        }, {
+            from: Date.UTC(2020, 9, 15, 10, 0, 0),
+            to: Date.UTC(2020, 10, 5, 0, 0, 0),
+            color: '#EDF6FB',
+            label: {
+                text: 'Level 2',
+                style: {
+                    color: '#606060'
+                }
+            }
+        }, {
+            from: Date.UTC(2020, 10, 5, 0, 0, 0),
+            to: Date.UTC(2020, 10, 21, 0, 0, 0),
+            color: '#EEE',
+            label: {
+                text: 'Level 3',
+                style: {
+                    color: '#606060'
+                }
+            }
+        }, {
+            from: Date.UTC(2020, 10, 21, 0, 0, 0),
+            to: Date.UTC(2020, 12, 1, 0, 0, 0),
+            color: '#EDF6FB',
+            label: {
+                text: 'Level 5',
+                style: {
+                    color: '#606060'
+                }
+            }
+        }, {
+            from: Date.UTC(2020, 12, 1, 0, 0, 0),
+            to: Date.UTC(2020, 12, 24, 0, 0, 0),
+            color: '#EEE',
+            label: {
+                text: 'Level 3+',
+                style: {
+                    color: '#606060'
+                }
+            }
+        }, {
+            from: Date.UTC(2020, 12, 24, 0, 0, 0),
+            to: Date.now(),
+            color: '#EDF6FB',
+            label: {
+                text: 'Level 5+',
+                style: {
+                    color: '#606060'
+                }
+            }
+        }]
     },
-    legend: {
-        enabled: false
+    yAxis: {
+        title: {
+            text: 'Population'
+        },
+        minorGridLineWidth: 0,
+        gridLineWidth: 0,
+        alternateGridColor: null,
+    
+    },
+    tooltip: {
+        valueSuffix: ' m/s'
+    },
+    plotOptions: {
+        spline: {
+            lineWidth: 4,
+            states: {
+                hover: {
+                    lineWidth: 5
+                }
+            },
+            marker: {
+                enabled: false
+            },
+            pointInterval: 86400000, // 1 day
+            pointStart: Date.UTC(2020, 1, 29, 0, 0, 0)
+        }
     },
     series: [{
-        data: CASES,
-        lineColor: Highcharts.getOptions().colors[2],
-        color: Highcharts.getOptions().colors[2],
-        fillOpacity: 1,
         name: 'Cases',
-        marker: {
-            enabled: false
-        },
-        threshold: null
-    }]
+        color: '#44A9A8',
+        data: CASES
+    }, {
+        name: 'Deaths',
+        color: '#F15C80',
+        data: DEATHS
+    }],
+    navigation: {
+        menuItemStyle: {
+            fontSize: '10px'
+        }
+    }
 });
