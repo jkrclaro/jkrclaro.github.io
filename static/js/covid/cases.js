@@ -18,7 +18,7 @@ Highcharts.chart('cases-chart', {
         plotBands: [{
             from: Date.UTC(2020, 3, 28, 0, 0, 0),
             to: Date.UTC(2020, 5, 18, 0, 0, 0),
-            color: '#EDF6FB',
+            color: '#DDD',
             label: {
                 text: 'First <br> lockdown',
                 style: {
@@ -38,7 +38,7 @@ Highcharts.chart('cases-chart', {
         }, {
             from: Date.UTC(2020, 6, 8, 0, 0, 0),
             to: Date.UTC(2020, 6, 29, 0, 0, 0),
-            color: '#EDF6FB',
+            color: '#DDD',
             label: {
                 text: 'Phase 2',
                 style: {
@@ -58,7 +58,7 @@ Highcharts.chart('cases-chart', {
         }, {
             from: Date.UTC(2020, 9, 15, 10, 0, 0),
             to: Date.UTC(2020, 10, 5, 0, 0, 0),
-            color: '#EDF6FB',
+            color: '#DDD',
             label: {
                 text: 'Level 2',
                 style: {
@@ -78,7 +78,7 @@ Highcharts.chart('cases-chart', {
         }, {
             from: Date.UTC(2020, 10, 21, 0, 0, 0),
             to: Date.UTC(2020, 12, 1, 0, 0, 0),
-            color: '#EDF6FB',
+            color: '#DDD',
             label: {
                 text: 'Level 5',
                 style: {
@@ -98,7 +98,7 @@ Highcharts.chart('cases-chart', {
         }, {
             from: Date.UTC(2020, 12, 24, 0, 0, 0),
             to: Date.now(),
-            color: '#EDF6FB',
+            color: '#DDD',
             label: {
                 text: 'Level 5+',
                 style: {
