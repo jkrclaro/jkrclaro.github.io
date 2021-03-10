@@ -116,9 +116,6 @@ Highcharts.chart('cases-chart', {
         alternateGridColor: null,
     
     },
-    tooltip: {
-        valueSuffix: ' m/s'
-    },
     plotOptions: {
         spline: {
             lineWidth: 4,
