@@ -17,7 +17,7 @@ from .covid.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='bio.html'), name='bio'),
-    path('covid', show_cases, name='covid'),
+    path('covid', show_cases, name='cases'),
     path('covid/swabs', show_swabs, name='swabs'),
     path('covid/vaccines', show_vaccines, name='vaccines'),
     path('johnhopkins/cases/upsert', johnhopkins_cases_upsert, name='johnhopkins_cases_upsert'),
