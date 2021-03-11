@@ -11,7 +11,8 @@
 {% block scripts %}
     {{ block.super }}
     <script type='text/javascript'>
-        var SWABS = {{ swabs | safe }};
+        var POSITIVES = {{ positives | safe }};
+        var CASES = {{ cases | safe }};
     </script>
     <script src="{% static 'js/swabs/positives.js' %}" type='text/javascript'></script>
 {% endblock %}
