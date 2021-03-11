@@ -6,8 +6,8 @@ from django.db.utils import IntegrityError
 from rest_framework import decorators, permissions, status
 from rest_framework.response import Response
 
-from johnclaro.fireside.helpers import itunes, feed
-from johnclaro.fireside.models import Podcast, Episode, Subscription
+from johnclaro.podplayer.helpers import itunes, feed
+from johnclaro.podplayer.models import Podcast, Episode, Subscription
 from johnclaro.accounts.models import Account
 
 

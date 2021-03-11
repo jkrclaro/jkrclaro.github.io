@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('account', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='subscriptions', to='accounts.account')),
-                ('podcast', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='subscribers', to='fireside.podcast')),
+                ('podcast', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='subscribers', to='podplayer.podcast')),
             ],
             options={
                 'db_table': 'subscriptions',
@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
                 ('url', models.URLField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('podcast', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='episodes', to='fireside.podcast')),
+                ('podcast', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='episodes', to='podplayer.podcast')),
             ],
             options={
                 'db_table': 'episodes',

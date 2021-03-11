@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'johnclaro.accounts.apps.AccountsConfig',
     'johnclaro.covid.apps.CovidConfig',
-    'johnclaro.fireside.apps.FiresideConfig',
+    'johnclaro.podplayer.apps.PodplayerConfig',
     'rest_framework',
     'corsheaders',
 ]

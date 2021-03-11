@@ -1,6 +1,6 @@
 from django.db import models
 
-from johnclaro.fireside import managers
+from johnclaro.podplayer import managers
 from johnclaro.accounts.models import Account
 
 

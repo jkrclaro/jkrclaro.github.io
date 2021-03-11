@@ -26,7 +26,7 @@ urlpatterns = [
     path('hse/swabs/upsert', hse_swabs_upsert, name='hse_swabs_upsert'),
     path('hse/counties/upsert', hse_counties_upsert, name='hse_counties_upsert'),
 
-    path('', include('johnclaro.fireside.urls'), name='fireside'),
+    path('podplayer/', include('johnclaro.podplayer.urls'), name='podplayer'),
 
     path('accounts/', include('johnclaro.accounts.urls'), name='accounts'),
 ]
