@@ -35,7 +35,7 @@
         <h1>Covid in Ireland</h1>
         <a href='{% url "cases" %}' class='btn btn--template {% if request.resolver_match.view_name == "cases" %} primary--bg {% else %} light--bg {% endif %}'>Cases {% if request.resolver_match.view_name != 'cases' %} -> {% endif %}</a>
         {% comment %} <a href='{% url "swabs" %}' class='btn btn--template {% if request.resolver_match.view_name == "swabs" %} primary--bg {% else %} light--bg {% endif %}'>Swabs {% if request.resolver_match.view_name != 'swabs' %} -> {% endif %}</a> {% endcomment %}
-        <a href='{% url "vaccines" %}' class='btn btn--template {% if request.resolver_match.view_name == "vaccines" %} primary--bg {% else %} light--bg {% endif %}'>Vaccines {% if request.resolver_match.view_name != 'vaccines' %} -> {% endif %}</a>
+        {% comment %} <a href='{% url "vaccines" %}' class='btn btn--template {% if request.resolver_match.view_name == "vaccines" %} primary--bg {% else %} light--bg {% endif %}'>Vaccines {% if request.resolver_match.view_name != 'vaccines' %} -> {% endif %}</a> {% endcomment %}
     </div>
     {% block content %} {% endblock %}
     {% block scripts %}
