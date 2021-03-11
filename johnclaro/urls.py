@@ -3,6 +3,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import include
 
 from .covid.views import (
     show_cases,
@@ -24,6 +25,10 @@ urlpatterns = [
     path('hse/cases/upsert', hse_cases_upsert, name='hse_cases_upsert'),
     path('hse/swabs/upsert', hse_swabs_upsert, name='hse_swabs_upsert'),
     path('hse/counties/upsert', hse_counties_upsert, name='hse_counties_upsert'),
+
+    path('', include('johnclaro.fireside.urls'), name='fireside'),
+
+    path('accounts/', include('johnclaro.accounts.urls'), name='accounts'),
 ]
 
 if settings.DEBUG:
