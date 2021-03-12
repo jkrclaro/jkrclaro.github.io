@@ -6,10 +6,7 @@ import getpass
 
 
 def main():
-    settings_module = 'johnclaro.environment.dev'
-    if getpass.getuser() in ['daemon', 'bitnami']:
-        settings_module = 'johnclaro.environment.prod'
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'johnclaro.settings')
 
     try:
         from django.core.management import execute_from_command_line
