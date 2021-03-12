@@ -1,22 +1,21 @@
 import os
-import datetime
+import getpass
+import secrets
 from datetime import timedelta
-from distutils.util import strtobool
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEBUG = bool(strtobool(os.environ.get('DEBUG', 'True')))
-SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
+DEBUG = True
+SECRET_KEY = 'dev-secret-key'
 
-print(DEBUG, type(DEBUG))
-if DEBUG:
-    print('Debug')
+if getpass.getuser() not in ('daemon', 'bitnami',):
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
     CORS_ALLOW_ALL_ORIGINS = True
 else:
-    print('Prod')
+    DEBUG = True
+    SECRET_KEY = secrets.token_urlsafe(32)
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     CORS_ALLOWED_ORIGINS = (
         'https://podplayer.vercel.app',
