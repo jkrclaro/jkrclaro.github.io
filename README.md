@@ -12,7 +12,12 @@ python manage.py startapp covid johnclaro/covid
 
 ## SSH
 
-```bash
+Create SSH public/private keys
+```sh-session
+ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
+```
+
+```sh-session
 ssh -i lightsail.pem bitnami@54.76.194.219
 ```
 
@@ -24,17 +29,12 @@ sudo /opt/bitnami/ctlscript.sh restart apache
 ```
 
 Auto-configure SSL
-```bash
+```sh-session
 sudo /opt/bitnami/bncert-tool
 ```
 
-Create SSH public/private keys
-```bash
-ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
-```
-
 Set owner of db.sqlite3 to daemon
-```bash
+```sh-session
 # bitnami
 sudo chown bitnami /home/bitnami/website/ && sudo chown bitnami /home/bitnami/website/db.sqlite3
 
