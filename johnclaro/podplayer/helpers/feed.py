@@ -1,8 +1,9 @@
-import ssl
-import pytz
 from datetime import datetime, timedelta
 
 import feedparser
+import pytz
+import ssl
+from bs4 import BeautifulSoup
 
 
 if hasattr(ssl, '_create_unverified_context'):
