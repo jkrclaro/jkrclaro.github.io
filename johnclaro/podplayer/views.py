@@ -5,6 +5,8 @@ from django.db.utils import IntegrityError
 
 from rest_framework import decorators, permissions, status
 from rest_framework.response import Response
+from rest_framework.decorators import authentication_classes
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from johnclaro.podplayer.helpers import itunes, feed
 from johnclaro.podplayer.models import Podcast, Episode, Subscription
@@ -71,6 +73,7 @@ def episode_retrieve(request, itunes_id, pk):
 
 
 @decorators.api_view(['GET'])
+@authentication_classes(((JWTAuthentication,)))
 @decorators.permission_classes([permissions.IsAuthenticated])
 def podcast_subscriptions(request):
     fields = ('itunes_id', 'img')
