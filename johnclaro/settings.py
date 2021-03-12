@@ -8,6 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = bool(strtobool(os.environ.get('DEBUG', 'True')))
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
 
+print(DEBUG, type(DEBUG))
 if DEBUG:
     print('Debug')
     STATICFILES_DIRS = (
