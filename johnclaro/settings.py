@@ -8,6 +8,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = bool(strtobool(os.environ.get('DEBUG', 'True')))
 SECRET_KEY = os.environ.get('SECRET_KEY', 'Why4r3Y0uR34d1ngMyD3vS3cr3tK3y?!')
 
+if DEBUG:
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
+    CORS_ALLOW_ALL_ORIGINS = True
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    CORS_ALLOWED_ORIGINS = [
+        'https://podplayer.vercel.app'
+    ]
+
 ALLOWED_HOSTS = [
     '*'
 ]
@@ -88,17 +99,6 @@ REST_FRAMEWORK = {
     ],
     'DATETIME_FORMAT': '%b %m, %Y'
 }
-
-if DEBUG:
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
-    CORS_ALLOW_ALL_ORIGINS = True
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    CORS_ALLOWED_ORIGINS = [
-        'https://podplayer.vercel.app'
-    ]
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),

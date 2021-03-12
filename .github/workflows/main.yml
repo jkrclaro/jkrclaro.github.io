@@ -27,7 +27,7 @@ jobs:
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown bitnami website/
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown bitnami website/johnclaro/db.sqlite3
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 git -C /home/bitnami/website pull
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo pip install -r /home/bitnami/website/requirements.txt --target=/opt/bitnami/python/lib/python3.8/site-packages
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo pip install -r /home/bitnami/website/requirements.txt --target=/opt/bitnami/python/lib/python3.8/site-packages --upgrade
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python website/manage.py makemigrations
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python website/manage.py migrate
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python website/manage.py collectstatic --noinput
