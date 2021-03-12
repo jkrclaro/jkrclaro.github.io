@@ -1,4 +1,6 @@
 # website
+[![Website](https://github.com/johnclaro/website/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/johnclaro/website/actions/workflows/main.yml)
+
 My personal website
 
 ## App
