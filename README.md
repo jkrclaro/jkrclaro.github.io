@@ -26,20 +26,7 @@ mkdir johnclaro/covid
 python manage.py startapp covid johnclaro/covid
 ```
 
-## Github Actions
-
-Create SSH public/private keys
-```sh-session
-ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
-base64 -w0 id_rsa /home/bitnami/.ssh/id_rsa
-```
-
 ## Lightsail
-
-Restart Apache
-```sh-session
-sudo /opt/bitnami/ctlscript.sh restart apache
-```
 
 Auto-configure SSL
 ```sh-session
@@ -55,7 +42,20 @@ sudo chown bitnami /home/bitnami/website/ && sudo chown bitnami /home/bitnami/we
 sudo chown daemon /home/bitnami/website/ && sudo chown daemon /home/bitnami/website/db.sqlite3
 ```
 
+Restart Apache
+```sh-session
+sudo /opt/bitnami/ctlscript.sh restart apache
+```
+
 SSH as normal
 ```sh-session
 ssh -i lightsail.pem bitnami@54.76.194.219
+```
+
+## Github Actions
+
+Create SSH public/private keys
+```sh-session
+ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
+base64 -w0 /home/bitnami/.ssh/id_rsa
 ```
