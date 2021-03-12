@@ -9,17 +9,17 @@ DEBUG = bool(strtobool(os.environ.get('DEBUG', 'True')))
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
 
 if DEBUG:
+    print('Debug')
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
     CORS_ALLOW_ALL_ORIGINS = True
-    print('Debug')
 else:
+    print('Prod')
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     CORS_ALLOWED_ORIGINS = (
         'https://podplayer.vercel.app',
     )
-    print('Prod')
 
 ALLOWED_HOSTS = [
     '*'
