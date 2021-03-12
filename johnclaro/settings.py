@@ -14,7 +14,7 @@ if getpass.getuser() not in ('daemon', 'bitnami',):
     )
     CORS_ALLOW_ALL_ORIGINS = True
 else:
-    DEBUG = True
+    DEBUG = False
     SECRET_KEY = secrets.token_urlsafe(32)
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     CORS_ALLOWED_ORIGINS = (
