@@ -7,5 +7,5 @@ DEBUG = False
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CORS_ALLOWED_ORIGINS = [
-    'https://podplayer.vercel.app/'
+    'https://podplayer.vercel.app'
 ]
