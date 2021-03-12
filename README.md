@@ -16,10 +16,8 @@ ssh -i lightsail.pem bitnami@54.76.194.219
 
 ## Lightsail
 
-Copy conf files then restart Apache
+Restart Apache
 ```
-sudo cp /opt/bitnami/apache2/conf/vhosts/sample-vhost.conf.disabled /opt/bitnami/apache2/conf/vhosts/sample-vhost.conf
-sudo cp /opt/bitnami/apache2/conf/vhosts/sample-https-vhost.conf.disabled /opt/bitnami/apache2/conf/vhosts/sample-https-vhost.conf
 sudo /opt/bitnami/ctlscript.sh restart apache
 ```
 
