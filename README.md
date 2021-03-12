@@ -17,6 +17,7 @@ Create SSH public/private keys
 ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
 ```
 
+Then SSH as normal
 ```sh-session
 ssh -i lightsail.pem bitnami@54.76.194.219
 ```
@@ -24,7 +25,7 @@ ssh -i lightsail.pem bitnami@54.76.194.219
 ## Lightsail
 
 Restart Apache
-```
+```sh-session
 sudo /opt/bitnami/ctlscript.sh restart apache
 ```
 
