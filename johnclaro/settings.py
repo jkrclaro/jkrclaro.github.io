@@ -6,18 +6,20 @@ from distutils.util import strtobool
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = bool(strtobool(os.environ.get('DEBUG', 'True')))
-SECRET_KEY = os.environ.get('SECRET_KEY', 'Why4r3Y0uR34d1ngMyD3vS3cr3tK3y?!')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
 
 if DEBUG:
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
     CORS_ALLOW_ALL_ORIGINS = True
+    print('Debug')
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    CORS_ALLOWED_ORIGINS = [
-        'https://podplayer.vercel.app'
-    ]
+    CORS_ALLOWED_ORIGINS = (
+        'https://podplayer.vercel.app',
+    )
+    print('Prod')
 
 ALLOWED_HOSTS = [
     '*'
