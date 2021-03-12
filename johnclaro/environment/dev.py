@@ -1,6 +1,6 @@
 import os
 from ..settings import *
-from ..settings import BASE_DIR
+from ..settings import BASE_DIR, SIMPLE_JWT
 
 
 DEBUG = True
@@ -10,3 +10,5 @@ STATICFILES_DIRS = (
 )
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+SIMPLE_JWT['SIGNING_KEY'] = SECRET_KEY
