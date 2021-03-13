@@ -5,10 +5,10 @@ from datetime import timedelta
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEBUG = True
-SECRET_KEY = 'dev-secret-key'
 
 if getpass.getuser() not in ('daemon', 'bitnami',):
+    DEBUG = True
+    SECRET_KEY = 'dev-secret-key'
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
