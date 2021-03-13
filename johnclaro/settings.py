@@ -101,6 +101,7 @@ else:
     SECRET_KEY = secrets.token_urlsafe(32)
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     CORS_ALLOWED_ORIGINS = (
+        'http://podplayer.vercel.app',
         'https://podplayer.vercel.app',
     )
 
