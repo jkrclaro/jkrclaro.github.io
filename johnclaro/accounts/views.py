@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from rest_framework import decorators, permissions, status
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .serializers import UserCreateSerializer, CustomTokenObtainPairSerializer
 
@@ -25,6 +26,10 @@ def update_unique_error_messages(errors):
                 error.remove(exist)
                 error.append(f'An account already exists with this {field}.')
     return errors
+
+
+class LoginView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
 
 
 @decorators.api_view(['GET'])
