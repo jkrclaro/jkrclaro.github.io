@@ -94,6 +94,10 @@ else:
         'http://podplayer.vercel.app',
         'https://podplayer.vercel.app',
     )
+    CSRF_TRUSTED_ORIGINS = (
+        'http://podplayer.vercel.app',
+        'https://podplayer.vercel.app',
+    )
 
 AUTH_USER_MODEL = 'accounts.User'
 
