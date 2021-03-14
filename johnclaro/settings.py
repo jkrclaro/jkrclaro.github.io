@@ -101,7 +101,7 @@ if getpass.getuser() not in ('daemon', 'bitnami',):
     )
 else:
     DEBUG = False
-    SECRET_KEY = secrets.token_urlsafe(32)
+    SECRET_KEY = 'prod-secret-key'
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     CORS_ALLOW_CREDENTIALS = True
     CORS_REPLACE_HTTPS_REFERER = True
