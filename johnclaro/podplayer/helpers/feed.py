@@ -11,6 +11,9 @@ if hasattr(ssl, '_create_unverified_context'):
 
 
 def format_duration(duration: str) -> str:
+    if not duration:
+        return None
+
     if ':' in duration:
         try:
             duration = datetime.strptime(duration, '%H:%M:%S')
