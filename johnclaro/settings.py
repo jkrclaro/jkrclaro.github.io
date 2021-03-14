@@ -31,6 +31,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsPostCsrfMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -91,6 +92,7 @@ else:
     SECRET_KEY = secrets.token_urlsafe(32)
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     CORS_ALLOW_CREDENTIALS = True
+    CORS_REPLACE_HTTPS_REFERER = True
     CORS_ALLOWED_ORIGINS = (
         'http://podplayer.vercel.app',
         'https://podplayer.vercel.app',
