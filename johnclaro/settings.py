@@ -97,6 +97,7 @@ else:
     DEBUG = False
     SECRET_KEY = 'prod-secret-key'
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    CORS_ALLOW_CREDENTIALS = True
     CORS_ALLOWED_ORIGINS = (
         'https://podplayer.vercel.app',
     )
