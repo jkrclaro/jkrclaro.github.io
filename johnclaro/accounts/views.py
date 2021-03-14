@@ -17,7 +17,7 @@ def update_unique_error_messages(errors):
     """
     for field, error in errors.items():
         exists = (
-            f'user with this email address already exists.',
+            'user with this email address already exists.',
             f'user with this {field} already exists.',
             f'A user with that {field} already exists.'
         )

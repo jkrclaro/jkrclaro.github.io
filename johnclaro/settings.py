@@ -30,7 +30,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'corsheaders.middleware.CorsPostCsrfMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -80,24 +79,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-if getpass.getuser() not in ('daemon', 'bitnami',):
-    DEBUG = True
-    SECRET_KEY = 'dev-secret-key'
-    CORS_ALLOW_ALL_ORIGINS = True
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
-else:
-    DEBUG = False
-    SECRET_KEY = secrets.token_urlsafe(32)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    CORS_ALLOW_CREDENTIALS = True
-    CORS_ALLOW_ALL_ORIGINS = True
-    CSRF_TRUSTED_ORIGINS = (
-        'http://podplayer.vercel.app',
-        'https://podplayer.vercel.app',
-    )
-
 AUTH_USER_MODEL = 'accounts.User'
 
 REST_FRAMEWORK = {
@@ -109,6 +90,24 @@ REST_FRAMEWORK = {
     ],
     'DATETIME_FORMAT': '%b %m, %Y'
 }
+
+if getpass.getuser() not in ('daemon', 'bitnami',):
+    DEBUG = True
+    SECRET_KEY = 'dev-secret-key'
+    CORS_ALLOW_ALL_ORIGINS = True
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
+else:
+    DEBUG = False
+    SECRET_KEY = secrets.token_urlsafe(32)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    CORS_ALLOWED_ORIGINS = (
+        'https://podplayer.vercel.app',
+    )
+    CSRF_TRUSTED_ORIGINS = (
+        'https://podplayer.vercel.app',
+    )
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
