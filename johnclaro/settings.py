@@ -92,11 +92,7 @@ else:
     SECRET_KEY = secrets.token_urlsafe(32)
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     CORS_ALLOW_CREDENTIALS = True
-    CORS_REPLACE_HTTPS_REFERER = True
-    CORS_ALLOWED_ORIGINS = (
-        'http://podplayer.vercel.app',
-        'https://podplayer.vercel.app',
-    )
+    CORS_ALLOW_ALL_ORIGINS = True
     CSRF_TRUSTED_ORIGINS = (
         'http://podplayer.vercel.app',
         'https://podplayer.vercel.app',
@@ -105,6 +101,9 @@ else:
 AUTH_USER_MODEL = 'accounts.User'
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
