@@ -5,6 +5,8 @@ from django.db.utils import IntegrityError
 
 from rest_framework import decorators, permissions, status
 from rest_framework.response import Response
+from rest_framework.decorators import authentication_classes
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from johnclaro.podplayer.helpers import itunes, feed
 from johnclaro.podplayer.models import Podcast, Episode, Subscription
@@ -71,6 +73,7 @@ def episode_retrieve(request, itunes_id, pk):
 
 
 @decorators.api_view(['GET'])
+@authentication_classes([JWTAuthentication])
 @decorators.permission_classes([permissions.IsAuthenticated])
 def podcast_subscriptions(request):
     fields = ('itunes_id', 'img')
@@ -85,6 +88,7 @@ def podcast_subscriptions(request):
 
 
 @decorators.api_view(['POST'])
+@authentication_classes([JWTAuthentication])
 @decorators.permission_classes([permissions.IsAuthenticated])
 def podcast_subscription(request):
     payload = json.loads(request.body.decode('utf-8'))
@@ -99,6 +103,7 @@ def podcast_subscription(request):
 
 
 @decorators.api_view(['POST'])
+@authentication_classes([JWTAuthentication])
 @decorators.permission_classes([permissions.IsAuthenticated])
 def podcast_subscribe(request):
     payload = json.loads(request.body.decode('utf-8'))
@@ -110,6 +115,7 @@ def podcast_subscribe(request):
 
 
 @decorators.api_view(['POST'])
+@authentication_classes([JWTAuthentication])
 @decorators.permission_classes([permissions.IsAuthenticated])
 def podcast_unsubscribe(request):
     payload = json.loads(request.body.decode('utf-8'))
