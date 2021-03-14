@@ -112,5 +112,6 @@ else:
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=183),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=365),
+    'SIGNING_KEY': SECRET_KEY,
     'AUTH_HEADER_TYPES': ('JWT',),
 }
