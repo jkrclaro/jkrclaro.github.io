@@ -6,23 +6,6 @@ from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-if getpass.getuser() not in ('daemon', 'bitnami',):
-    DEBUG = True
-    SECRET_KEY = 'dev-secret-key'
-    CORS_ALLOW_ALL_ORIGINS = True
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
-else:
-    DEBUG = False
-    SECRET_KEY = secrets.token_urlsafe(32)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    CORS_ALLOW_CREDENTIALS = True
-    CORS_ALLOWED_ORIGINS = (
-        'http://podplayer.vercel.app',
-        'https://podplayer.vercel.app',
-    )
-
 ALLOWED_HOSTS = [
     '*'
 ]
@@ -95,6 +78,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+if getpass.getuser() not in ('daemon', 'bitnami',):
+    DEBUG = True
+    SECRET_KEY = 'dev-secret-key'
+    CORS_ALLOW_ALL_ORIGINS = True
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
+else:
+    DEBUG = False
+    SECRET_KEY = secrets.token_urlsafe(32)
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    CORS_ALLOW_CREDENTIALS = True
+    CORS_ALLOWED_ORIGINS = (
+        'http://podplayer.vercel.app',
+        'https://podplayer.vercel.app',
+    )
 
 AUTH_USER_MODEL = 'accounts.User'
 
