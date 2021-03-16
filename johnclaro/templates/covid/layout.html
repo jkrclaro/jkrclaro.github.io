@@ -33,9 +33,9 @@
 <body>
     <div class='text-center mt-3 mb-5'>
         <h1>Covid in Ireland</h1>
-        {% comment %} <a href='{% url "cases" %}' class='btn btn--template {% if request.resolver_match.view_name == "cases" %} primary--bg {% else %} light--bg {% endif %}'>Cases {% if request.resolver_match.view_name != 'cases' %} -> {% endif %}</a> {% endcomment %}
-        {% comment %} <a href='{% url "swabs" %}' class='btn btn--template {% if request.resolver_match.view_name == "swabs" %} primary--bg {% else %} light--bg {% endif %}'>Swabs {% if request.resolver_match.view_name != 'swabs' %} -> {% endif %}</a> {% endcomment %}
-        {% comment %} <a href='{% url "vaccines" %}' class='btn btn--template {% if request.resolver_match.view_name == "vaccines" %} primary--bg {% else %} light--bg {% endif %}'>Vaccines {% if request.resolver_match.view_name != 'vaccines' %} -> {% endif %}</a> {% endcomment %}
+        <a href='{% url "covid:cases" %}' class='btn btn--template {% if request.resolver_match.view_name == "covid:cases" %} primary--bg {% else %} light--bg {% endif %}'>Cases {% if request.resolver_match.view_name != 'covid:cases' %} -> {% endif %}</a>
+        <a href='{% url "covid:swabs" %}' class='btn btn--template {% if request.resolver_match.view_name == "covid:swabs" %} primary--bg {% else %} light--bg {% endif %}'>Swabs {% if request.resolver_match.view_name != 'covid:swabs' %} -> {% endif %}</a>
+        {% comment %} <a href='{% url "vaccines" %}' class='btn btn--template {% if request.resolver_match.view_name == "covid:vaccines" %} primary--bg {% else %} light--bg {% endif %}'>Vaccines {% if request.resolver_match.view_name != 'covid:vaccines' %} -> {% endif %}</a> {% endcomment %}
     </div>
     {% block content %} {% endblock %}
     {% block scripts %}
