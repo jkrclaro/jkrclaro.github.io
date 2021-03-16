@@ -96,7 +96,7 @@ def show_vaccines(request):
 
 
 @decorators.api_view(['POST'])
-@decorators.permission_classes([permissions.AllowAny])
+@decorators.permission_classes([permissions.IsAuthenticated])
 def johnhopkins_cases_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
     if not items:
@@ -114,7 +114,7 @@ def johnhopkins_cases_upsert(request):
 
 
 @decorators.api_view(['POST'])
-@decorators.permission_classes([permissions.AllowAny])
+@decorators.permission_classes([permissions.IsAuthenticated])
 def hse_cases_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
     if not items:
@@ -127,7 +127,7 @@ def hse_cases_upsert(request):
 
 
 @decorators.api_view(['POST'])
-@decorators.permission_classes([permissions.AllowAny])
+@decorators.permission_classes([permissions.IsAuthenticated])
 def hse_swabs_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
     if not items:
@@ -140,7 +140,7 @@ def hse_swabs_upsert(request):
 
 
 @decorators.api_view(['POST'])
-@decorators.permission_classes([permissions.AllowAny])
+@decorators.permission_classes([permissions.IsAuthenticated])
 def hse_counties_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
     if not items:
