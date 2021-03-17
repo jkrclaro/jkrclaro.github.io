@@ -64,7 +64,8 @@ def show_cases(request):
     counties['cases'] = county_cases
 
     context = {
-        'covid': HSECase.objects.first(),
+        'first_case': HSECase.objects.first(),
+        'last_case': HSECase.objects.last(),
         'cases': cases,
         'deaths': deaths,
         'genders': genders,
@@ -86,7 +87,8 @@ def show_swabs(request):
         positives.append(positive)
 
     context = {
-        'swab': HSESwab.objects.first(),
+        'first_swab': HSESwab.objects.first(),
+        'last_swab': HSESwab.objects.last(),
         'positives': positives,
         'cases': cases
     }
