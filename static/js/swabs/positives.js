@@ -1,25 +1,24 @@
 Highcharts.chart('positives-chart', {
 
     title: {
-        text: 'Solar Employment Growth by Sector, 2010-2016'
-    },
-
-    subtitle: {
-        text: 'Source: thesolarfoundation.com'
+        text: 'Reported positive swabs and confirmed cases by date, over the past 7 days.'
     },
 
     yAxis: {
         title: {
-            text: 'Number of Employees'
+            text: ''
         }
     },
 
-    xAxis: {},
+    xAxis: {
+        title: {
+            text: ''
+        }
+    },
 
     legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle'
+        layout: 'horizontal',
+        verticalAlign: 'bottom'
     },
 
     plotOptions: {
@@ -31,13 +30,16 @@ Highcharts.chart('positives-chart', {
         }
     },
 
-    series: [{
-        name: 'Confirmed positives',
-        data: POSITIVES
-    }, {
-        name: 'Confirmed cases',
-        data: CASES
-    },],
+    series: [
+        {
+            name: 'Confirmed positives',
+            data: POSITIVES
+        }, 
+        {
+            name: 'Confirmed cases',
+            data: CASES
+        },
+    ],
 
     responsive: {
         rules: [{

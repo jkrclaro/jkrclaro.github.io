@@ -145,6 +145,8 @@ class HSESwab(models.Model):
     test7 = models.IntegerField()
     pos7 = models.IntegerField()
     posr7 = models.FloatField()
+    pos1 = models.IntegerField()
+    posr1 = models.FloatField()
     fid = models.IntegerField()
     objects = managers.HSESwabManager()
 
