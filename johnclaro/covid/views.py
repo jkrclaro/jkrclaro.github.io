@@ -1,4 +1,5 @@
 import json
+from datetime import timedelta
 
 from django.shortcuts import render
 from rest_framework import decorators, permissions, status
@@ -76,8 +77,16 @@ def show_cases(request):
 
 
 def show_swabs(request):
+    first_swab = HSESwab.objects.first()
+    last_swab = HSESwab.objects.last()
+    seven_days_ago = first_swab.date_hpsc - timedelta(days=7)
+    thirty_one_days_ago = first_swab.date_hpsc - timedelta(days=31)
     cases = []
     positives = []
+    positives_7 = []
+    cases_7 = []
+    positives_31 = []
+    cases_31 = []
 
     for case_qs in HSECase.objects.order_by('date'):
         date = int(case_qs.date.strftime('%s')) * 1000
@@ -86,14 +95,32 @@ def show_swabs(request):
     for swab_qs in HSESwab.objects.order_by('date_hpsc'):
         date = int(swab_qs.date_hpsc.strftime('%s')) * 1000
         positives.append([date, swab_qs.pos1])
-    
-    
+
+    for swab_7 in HSESwab.objects.filter(date_hpsc__gte=seven_days_ago):
+        date = int(swab_7.date_hpsc.strftime('%s')) * 1000
+        positives_7.append([date, swab_7.pos1])
+
+    for case_7 in HSECase.objects.filter(date__gte=seven_days_ago):
+        date = int(case_7.date.strftime('%s')) * 1000
+        cases_7.append([date, case_7.confirmedcovidcases])
+
+    for swab_31 in HSESwab.objects.filter(date_hpsc__gte=thirty_one_days_ago):
+        date = int(swab_31.date_hpsc.strftime('%s')) * 1000
+        positives_31.append([date, swab_31.pos1])
+
+    for case_31 in HSECase.objects.filter(date__gte=thirty_one_days_ago):
+        date = int(case_31.date.strftime('%s')) * 1000
+        cases_31.append([date, case_31.confirmedcovidcases])
 
     context = {
-        'first_swab': HSESwab.objects.first(),
-        'last_swab': HSESwab.objects.last(),
+        'first_swab': first_swab,
+        'last_swab': last_swab,
         'positives': positives,
-        'cases': cases
+        'cases': cases,
+        'positives_7': positives_7,
+        'cases_7': cases_7,
+        'positives_31': positives_31,
+        'cases_31': cases_31,
     }
     return render(request, 'covid/swabs.html', context)
 
