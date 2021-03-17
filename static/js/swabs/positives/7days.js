@@ -52,7 +52,7 @@ Highcharts.chart('positives-7-chart', {
         headerFormat: 'Date: {point.x}<br>',
         pointFormat: 'Cases: {point.y}',
         formatter: function() {
-            return `<b>Date</b>: ${Highcharts.dateFormat('%d %b %Y', this.x)} <b>Value</b>: ${this.y}`
+            return `<b>Date</b>: ${Highcharts.dateFormat('%d %b %Y', this.x)} <br> <b>Value</b>: ${this.y}`
         },
         shared: true
     },
