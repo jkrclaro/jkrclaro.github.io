@@ -1,5 +1,4 @@
-from datetime import datetime
-from django.utils.timezone import make_aware
+from datetime import timedelta
 
 from django.db import models
 
@@ -146,6 +145,8 @@ class HSESwab(models.Model):
     test7 = models.IntegerField()
     pos7 = models.IntegerField()
     posr7 = models.FloatField()
+    pos1 = models.IntegerField()
+    posr1 = models.FloatField()
     fid = models.IntegerField()
     objects = managers.HSESwabManager()
 
@@ -156,3 +157,7 @@ class HSESwab(models.Model):
     class Meta:
         db_table = 'hse_swabs'
         ordering = ['-date_hpsc']
+
+    def subtract_7_days(self):
+        seven_days_ago = self.date_hpsc - timedelta(days=7)
+        return seven_days_ago

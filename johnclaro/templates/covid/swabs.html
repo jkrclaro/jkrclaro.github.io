@@ -4,7 +4,61 @@
 
 {% block content %}
     <div class='container'>
-        <div id='positives-chart'></div>
+        <div class='text-center mb-3'>
+            <small class='text-muted'>
+                The number of positive tests can be 
+                not equal to the number of cases, 
+                as one person may be tested more than once.
+            </small>
+        </div>
+        <div class='row mb-3'>
+            <div class='col-lg-6'>
+                <small class='text-muted'>{{ first_swab.date_hpsc }}</small>
+                <div class='card'>
+                    <div class='card-body'>
+                        <div class='row text-lg-center'>
+                            <div class='col-lg-6'>
+                                Positive Swabs
+                                <h3>
+                                    {{ first_swab.pos1 | intcomma }}
+                                </h3>
+                            </div>
+                            <div class='col-lg-6'>
+                                Positivity Rate
+                                <h3>
+                                    {{ first_swab.posr1 | intcomma }}%
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='col-lg-6'>
+                <small class='text-muted'>{{ last_swab.date_hpsc }} - {{ first_swab.date_hpsc }}</small>
+                <div class='card'>
+                    <div class='card-body'>
+                        <div class='row text-lg-center'>
+                            <div class='col-lg-6'>
+                                Positive Swabs
+                                <h3>
+                                    {{ first_swab.positive | intcomma }}
+                                </h3>
+                            </div>
+                            <div class='col-lg-6'>
+                                Positivity Rate
+                                <h3>
+                                    {{ first_swab.prate | intcomma }}%
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='positives-7-chart'></div>
+        <div id='positives-31-chart'></div>
+        <div id='positives-alltime-chart'></div>
     </div>
 {% endblock %}
 
@@ -13,6 +67,105 @@
     <script type='text/javascript'>
         var POSITIVES = {{ positives | safe }};
         var CASES = {{ cases | safe }};
+        var POSITIVES_7 = {{ positives_7 | safe }};
+        var CASES_7 = {{ cases_7 | safe }};
+        var POSITIVES_31 = {{ positives_31 | safe }};
+        var CASES_31 = {{ cases_31 | safe }};
+        var PLOT_BANDS = [
+            {
+                from: Date.UTC(2020, 2, 28, 0, 0, 0),
+                to: Date.UTC(2020, 4, 18, 0, 0, 0),
+                color: '#DDD',
+                label: {
+                    text: 'First lockdown',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 4, 18, 0, 0, 0),
+                to: Date.UTC(2020, 5, 8, 0, 0, 0),
+                color: '#EEE',
+                label: {
+                    text: 'Phase 1',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 5, 8, 0, 0, 0),
+                to: Date.UTC(2020, 5, 29, 0, 0, 0),
+                color: '#DDD',
+                label: {
+                    text: 'Phase 2',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 5, 29, 10, 0, 0),
+                to: Date.UTC(2020, 8, 15, 0, 0, 0),
+                color: '#EEE',
+                label: {
+                    text: 'Phase 3',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 8, 15, 10, 0, 0),
+                to: Date.UTC(2020, 9, 5, 0, 0, 0),
+                color: '#DDD',
+                label: {
+                    text: 'Level 2',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 9, 5, 0, 0, 0),
+                to: Date.UTC(2020, 9, 21, 0, 0, 0),
+                color: '#EEE',
+                label: {
+                    text: 'Level 3',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 9, 21, 0, 0, 0),
+                to: Date.UTC(2020, 11, 1, 0, 0, 0),
+                color: '#DDD',
+                label: {
+                    text: 'Level 5',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 11, 1, 0, 0, 0),
+                to: Date.UTC(2020, 11, 24, 0, 0, 0),
+                color: '#EEE',
+                label: {
+                    text: 'Level 3+',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }, {
+                from: Date.UTC(2020, 11, 24, 0, 0, 0),
+                to: Date.now(),
+                color: '#DDD',
+                label: {
+                    text: 'Level 5+',
+                    style: {
+                        color: '#606060'
+                    }
+                }
+            }
+        ]
     </script>
-    <script src="{% static 'js/swabs/positives.js' %}" type='text/javascript'></script>
+    <script src="{% static 'js/swabs/positives/alltime.js' %}" type='text/javascript'></script>
+    <script src="{% static 'js/swabs/positives/7days.js' %}" type='text/javascript'></script>
+    <script src="{% static 'js/swabs/positives/31days.js' %}" type='text/javascript'></script>
 {% endblock %}
