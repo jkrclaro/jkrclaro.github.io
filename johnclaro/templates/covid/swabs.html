@@ -4,6 +4,51 @@
 
 {% block content %}
     <div class='container'>
+        <div class='row'>
+            <div class='col-lg-6'>
+                <small class='text-muted'>{{ swab.subtract_7_days }} - {{ swab.date_hpsc }} (Last 7 days)</small>
+                <div class='card'>
+                    <div class='card-body'>
+                        <div class='row text-lg-center'>
+                            <div class='col-lg-6'>
+                                Positive Swabs
+                                <h3>
+                                    {{ swab.pos7 | intcomma }}
+                                </h3>
+                            </div>
+                            <div class='col-lg-6'>
+                                Positivity Rate
+                                <h3>
+                                    {{ swab.posr7 | intcomma }}%
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='col-lg-6'>
+                <small class='text-muted'>February 29, 2020 - {{ swab.date_hpsc }} (Alltime)</small>
+                <div class='card'>
+                    <div class='card-body'>
+                        <div class='row text-lg-center'>
+                            <div class='col-lg-6'>
+                                Positive Swabs
+                                <h3>
+                                    {{ swab.positive | intcomma }}
+                                </h3>
+                            </div>
+                            <div class='col-lg-6'>
+                                Positivity Rate
+                                <h3>
+                                    {{ swab.prate | intcomma }}%
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id='positives-chart'></div>
     </div>
 {% endblock %}
