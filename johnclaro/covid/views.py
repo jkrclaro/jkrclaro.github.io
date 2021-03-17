@@ -76,21 +76,24 @@ def show_cases(request):
 
 
 def show_swabs(request):
+    dates = []
     cases = []
-    for case_qs in HSECase.objects.order_by('date'):
-        case = [case_qs.confirmedcovidcases]
-        cases.append(case)
-
     positives = []
+
+    for case_qs in HSECase.objects.order_by('date'):
+        date = int(case_qs.date.strftime('%s')) * 1000
+        cases.append([date, case_qs.confirmedcovidcases])
+
     for swab_qs in HSESwab.objects.order_by('date_hpsc'):
-        positive = [swab_qs.pos1]
-        positives.append(positive)
+        date = int(swab_qs.date_hpsc.strftime('%s')) * 1000
+        positives.append([date, swab_qs.pos1])
 
     context = {
         'first_swab': HSESwab.objects.first(),
         'last_swab': HSESwab.objects.last(),
         'positives': positives,
-        'cases': cases
+        'cases': cases,
+        'dates': dates
     }
     return render(request, 'covid/swabs.html', context)
 
