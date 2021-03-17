@@ -1,4 +1,4 @@
-Highcharts.chart('positives-chart', {
+Highcharts.chart('positives-alltime-chart', {
     chart: {
         type: 'line',
         zoomType: 'x',
