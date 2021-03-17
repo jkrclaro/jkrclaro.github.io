@@ -30,7 +30,7 @@ Highcharts.chart('positives-7-chart', {
         type: 'datetime',
         labels: {
             formatter: function() {
-                return Highcharts.dateFormat('%b \'%y', this.value)
+                return Highcharts.dateFormat('%d %b', this.value)
             }
         },
         title: {
