@@ -4,22 +4,27 @@
 
 {% block content %}
     <div class='container'>
+        <div class='text-center mb-3'>
+            <small class='text-muted'>
+                The number of positive tests could be not equal to the number of cases, as one person may be tested more than once.
+            </small>
+        </div>
         <div class='row mb-3'>
             <div class='col-lg-6'>
-                <small class='text-muted'>{{ swab.subtract_7_days }} - {{ swab.date_hpsc }} (Last 7 days)</small>
+                <small class='text-muted'>{{ swab.date_hpsc }}</small>
                 <div class='card'>
                     <div class='card-body'>
                         <div class='row text-lg-center'>
                             <div class='col-lg-6'>
                                 Positive Swabs
                                 <h3>
-                                    {{ swab.pos7 | intcomma }}
+                                    {{ swab.pos1 | intcomma }}
                                 </h3>
                             </div>
                             <div class='col-lg-6'>
                                 Positivity Rate
                                 <h3>
-                                    {{ swab.posr7 | intcomma }}%
+                                    {{ swab.posr1 | intcomma }}%
                                 </h3>
                             </div>
                         </div>

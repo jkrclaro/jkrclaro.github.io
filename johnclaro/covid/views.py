@@ -82,7 +82,7 @@ def show_swabs(request):
 
     positives = []
     for swab_qs in HSESwab.objects.order_by('date_hpsc'):
-        positive = [int(swab_qs.pos7 / 7)]
+        positive = [swab_qs.pos1]
         positives.append(positive)
 
     context = {

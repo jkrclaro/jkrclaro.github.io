@@ -1,7 +1,7 @@
 Highcharts.chart('positives-chart', {
 
     title: {
-        text: 'Reported positive swabs and confirmed cases by date, over the past 7 days.'
+        text: 'Daily reported positive swabs and confirmed cases'
     },
 
     yAxis: {
