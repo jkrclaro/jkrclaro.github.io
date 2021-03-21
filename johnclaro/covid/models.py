@@ -13,14 +13,17 @@ class JohnHopkinsCase(models.Model):
     recoveries = models.FloatField()
     objects = managers.JohnHopkinsCaseManager()
 
-    def __str__(self):
-        return f'{self.date}-{self.country}-{self.cases}-{self.deaths}-' \
-               f'{self.recoveries}'
-
     class Meta:
         db_table = 'john_hopkins_cases'
         unique_together = ('date', 'country', 'cases', 'deaths', 'recoveries',)
         ordering = ['-date']
+
+    def __str__(self):
+        return f'{self.date}-{self.country}-{self.cases}-{self.deaths}-' \
+               f'{self.recoveries}'
+
+    def get_epoch(self):
+        return int(self.date.strftime('%s')) * 1000
 
 
 class HSECase(models.Model):
@@ -61,13 +64,16 @@ class HSECase(models.Model):
     fid = models.IntegerField()
     objects = managers.HSECaseManager()
 
+    class Meta:
+        db_table = 'hse_cases'
+        ordering = ['-date']
+
     def __str__(self):
         date = self.date.strftime('%d %b %Y')
         return date
 
-    class Meta:
-        db_table = 'hse_cases'
-        ordering = ['-date']
+    def get_epoch(self):
+        return int(self.date.strftime('%s')) * 1000
 
 
 class HSECounty(models.Model):
@@ -89,12 +95,12 @@ class HSECounty(models.Model):
     timestampdate = models.DateField()
     objects = managers.HSECountyManager()
 
-    def __str__(self):
-        return self.countyname
-
     class Meta:
         db_table = 'hse_counties'
         ordering = ['countyname']
+
+    def __str__(self):
+        return self.countyname
 
 
 class HSESwab(models.Model):
@@ -113,14 +119,17 @@ class HSESwab(models.Model):
     fid = models.IntegerField()
     objects = managers.HSESwabManager()
 
-    def __str__(self):
-        date = self.date_hpsc.strftime('%d %b %Y')
-        return date
-
     class Meta:
         db_table = 'hse_swabs'
         ordering = ['-date_hpsc']
 
+    def __str__(self):
+        date = self.date_hpsc.strftime('%d %b %Y')
+        return date
+
     def subtract_7_days(self):
         seven_days_ago = self.date_hpsc - timedelta(days=7)
         return seven_days_ago
+
+    def get_epoch(self):
+        return int(self.date_hpsc.strftime('%s')) * 1000
