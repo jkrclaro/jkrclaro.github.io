@@ -131,7 +131,7 @@ def show_vaccines(request):
 
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
-def johnhopkins_cases_upsert(request):
+def johnhopkins_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
     if not items:
         return Response(None, status.HTTP_400_BAD_REQUEST)
@@ -149,38 +149,22 @@ def johnhopkins_cases_upsert(request):
 
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
-def hse_cases_upsert(request):
+def hse_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
     if not items:
         return Response(None, status.HTTP_400_BAD_REQUEST)
 
-    for item in items:
-        HSECase.objects.upsert_case(**item)
-
-    return Response(None, status.HTTP_200_OK)
-
-
-@decorators.api_view(['POST'])
-@decorators.permission_classes([permissions.IsAuthenticated])
-def hse_swabs_upsert(request):
-    items = json.loads(request.body.decode('utf-8'))
-    if not items:
+    first_item = items[0]
+    if 'date' in first_item:
+        for item in items:
+            HSECase.objects.upsert_case(**item)
+    elif 'date_hpsc' in first_item:
+        for item in items:
+            HSESwab.objects.upsert_swab(**item)
+    elif 'countyname' in first_item:
+        for item in items:
+            HSECounty.objects.upsert_county(**item)
+    else:
         return Response(None, status.HTTP_400_BAD_REQUEST)
-
-    for item in items:
-        HSESwab.objects.upsert_swab(**item)
-
-    return Response(None, status.HTTP_200_OK)
-
-
-@decorators.api_view(['POST'])
-@decorators.permission_classes([permissions.IsAuthenticated])
-def hse_counties_upsert(request):
-    items = json.loads(request.body.decode('utf-8'))
-    if not items:
-        return Response(None, status.HTTP_400_BAD_REQUEST)
-
-    for item in items:
-        HSECounty.objects.upsert_county(**item)
 
     return Response(None, status.HTTP_200_OK)
