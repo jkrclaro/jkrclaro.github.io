@@ -80,9 +80,7 @@
                 let label = document.getElementById(`${this.id}-label`);
                 label.innerHTML = value;
                 if (id !== this.id) {
-                    const newValue = calculate(pct, this.max)
-                    label.innerHTML = newValue;
-                    this.value = newValue;
+                    this.value = calculate(pct, this.max);
                 }
             })
         }
