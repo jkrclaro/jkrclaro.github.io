@@ -49,9 +49,8 @@ def show_cases(request):
     cases = []
     deaths = []
     for case_qs in HSECase.objects.order_by('date'):
-        date = int(case_qs.date.strftime('%s')) * 1000
-        case = [date, case_qs.confirmedcovidcases]
-        death = [date, case_qs.confirmedcoviddeaths]
+        case = [case_qs.get_epoch(), case_qs.confirmedcovidcases]
+        death = [case_qs.get_epoch(), case_qs.confirmedcoviddeaths]
         cases.append(case)
         deaths.append(death)
 
@@ -89,28 +88,22 @@ def show_swabs(request):
     cases_31 = []
 
     for case_qs in HSECase.objects.order_by('date'):
-        date = int(case_qs.date.strftime('%s')) * 1000
-        cases.append([date, case_qs.confirmedcovidcases])
+        cases.append([case_qs.get_epoch(), case_qs.confirmedcovidcases])
 
     for swab_qs in HSESwab.objects.order_by('date_hpsc'):
-        date = int(swab_qs.date_hpsc.strftime('%s')) * 1000
-        positives.append([date, swab_qs.pos1])
+        positives.append([swab_qs.get_epoch(), swab_qs.pos1])
 
     for swab_7 in HSESwab.objects.filter(date_hpsc__gte=seven_days_ago):
-        date = int(swab_7.date_hpsc.strftime('%s')) * 1000
-        positives_7.append([date, swab_7.pos1])
+        positives_7.append([swab_7.get_epoch(), swab_7.pos1])
 
     for case_7 in HSECase.objects.filter(date__gte=seven_days_ago):
-        date = int(case_7.date.strftime('%s')) * 1000
-        cases_7.append([date, case_7.confirmedcovidcases])
+        cases_7.append([case_7.get_epoch(), case_7.confirmedcovidcases])
 
     for swab_31 in HSESwab.objects.filter(date_hpsc__gte=thirty_one_days_ago):
-        date = int(swab_31.date_hpsc.strftime('%s')) * 1000
-        positives_31.append([date, swab_31.pos1])
+        positives_31.append([swab_31.get_epoch(), swab_31.pos1])
 
     for case_31 in HSECase.objects.filter(date__gte=thirty_one_days_ago):
-        date = int(case_31.date.strftime('%s')) * 1000
-        cases_31.append([date, case_31.confirmedcovidcases])
+        cases_31.append([case_31.get_epoch(), case_31.confirmedcovidcases])
 
     context = {
         'first_swab': first_swab,
