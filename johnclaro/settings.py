@@ -100,9 +100,11 @@ else:
     CORS_ALLOW_CREDENTIALS = True
     CORS_ALLOWED_ORIGINS = (
         'https://podplayer.vercel.app',
+        'https://podplayer.johnclaro.com',
     )
     CSRF_TRUSTED_ORIGINS = (
         'https://podplayer.vercel.app',
+        'https://podplayer.johnclaro.com',
     )
 
 SIMPLE_JWT = {
