@@ -4,11 +4,19 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import include
+from django.shortcuts import redirect
+
+
+def landingpage(request):
+    url = 'http://localhost:3000'
+    if not settings.DEBUG:
+        url = 'https://johnclaro.vercel.app'
+    return redirect(url)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='bio.html'), name='bio'),
+    path('', landingpage, name='bio'),
     path('ironman', TemplateView.as_view(template_name='ironman.html'), name='ironman'),
     path('covid/', include('johnclaro.covid.urls'), name='covid'),
     path('podplayer/', include('johnclaro.podplayer.urls'), name='podplayer'),
