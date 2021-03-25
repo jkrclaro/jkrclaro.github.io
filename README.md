@@ -1,5 +1,6 @@
 # backend
-[![Backend](https://github.com/johnclaro/backend/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/johnclaro/backend/actions/workflows/main.yml)
+[![Test](https://github.com/johnclaro/backend/actions/workflows/test.yml/badge.svg)](https://github.com/johnclaro/backend/actions/workflows/test.yml)
+[![Deploy](https://github.com/johnclaro/backend/actions/workflows/deploy.yml/badge.svg)](https://github.com/johnclaro/backend/actions/workflows/deploy.yml)
 
 Backend for my personal website
 
