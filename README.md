@@ -1,7 +1,7 @@
-# website
-[![Website](https://github.com/johnclaro/website/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/johnclaro/website/actions/workflows/main.yml)
+# backend
+[![Backend](https://github.com/johnclaro/backend/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/johnclaro/backend/actions/workflows/main.yml)
 
-My personal website
+Backend for my personal website
 
 ## Installation
 
@@ -22,8 +22,8 @@ python manage.py runserver
 
 To create an app
 ```sh-session
-mkdir johnclaro/covid
-python manage.py startapp covid johnclaro/covid
+mkdir johnclaro/nike
+python manage.py startapp nike johnclaro/nike
 ```
 
 ## Lightsail
@@ -36,10 +36,10 @@ sudo /opt/bitnami/bncert-tool
 Set owner of db.sqlite3 to daemon
 ```sh-session
 # bitnami
-sudo chown bitnami /home/bitnami/website/ && sudo chown bitnami /home/bitnami/website/db.sqlite3
+sudo chown bitnami /home/bitnami/backend/ && sudo chown bitnami /home/bitnami/backend/db.sqlite3
 
 # daemon
-sudo chown daemon /home/bitnami/website/ && sudo chown daemon /home/bitnami/website/db.sqlite3
+sudo chown daemon /home/bitnami/backend/ && sudo chown daemon /home/bitnami/backend/db.sqlite3
 ```
 
 Restart Apache
@@ -57,5 +57,6 @@ ssh -i lightsail.pem bitnami@54.76.194.219
 Create SSH public/private keys
 ```sh-session
 ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
-base64 -w0 /home/bitnami/.ssh/id_rsa
+echo $(cat .ssh/id_rsa.pub) >> .ssh/authorized_keys
+base64 -w0 .ssh/id_rsa
 ```

@@ -17,15 +17,15 @@ jobs:
         chmod 400 ssh_private.key
     - name: Update app
       run: |
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown bitnami website/
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown bitnami website/db.sqlite3
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 git -C /home/bitnami/website pull --ff-only
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo pip install -r /home/bitnami/website/requirements.txt --target=/opt/bitnami/python/lib/python3.8/site-packages --upgrade
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python website/manage.py makemigrations
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python website/manage.py migrate
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python website/manage.py collectstatic --noinput
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown daemon website/
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown daemon website/db.sqlite3
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo cp /home/bitnami/website/conf/sample-vhost.conf /opt/bitnami/apache2/conf/vhosts/sample-vhost.conf
-        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo cp /home/bitnami/website/conf/sample-https-vhost.conf /opt/bitnami/apache2/conf/vhosts/sample-https-vhost.conf
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown bitnami backend/
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown bitnami backend/db.sqlite3
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 git -C /home/bitnami/backend pull --ff-only
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo pip install -r /home/bitnami/backend/requirements.txt --target=/opt/bitnami/python/lib/python3.8/site-packages --upgrade
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python backend/manage.py makemigrations
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python backend/manage.py migrate
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 python backend/manage.py collectstatic --noinput
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown daemon backend/
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo chown daemon backend/db.sqlite3
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo cp /home/bitnami/backend/conf/sample-vhost.conf /opt/bitnami/apache2/conf/vhosts/sample-vhost.conf
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo cp /home/bitnami/backend/conf/sample-https-vhost.conf /opt/bitnami/apache2/conf/vhosts/sample-https-vhost.conf
         ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ssh_private.key bitnami@63.33.13.4 sudo /opt/bitnami/ctlscript.sh restart apache
