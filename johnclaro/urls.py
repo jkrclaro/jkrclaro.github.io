@@ -8,7 +8,9 @@ from django.shortcuts import redirect
 
 
 def landingpage(request):
-    url = 'https://www.johnclaro.com' if settings.DEBUG 'http://localhost:3000'
+    localhost = 'http://localhost:3000'
+    frontend = 'https://www.johnclaro.com'
+    url = localhost if settings.DEBUG else frontend
     return redirect(url)
 
 
