@@ -98,14 +98,12 @@ else:
     SECRET_KEY = 'prod-secret-key'
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     CORS_ALLOW_CREDENTIALS = True
-    CORS_ALLOWED_ORIGINS = (
-        'https://podplayer.vercel.app',
+    ORIGINS = (
         'https://podplayer.johnclaro.com',
+        'https://covid.johnclaro.com',
     )
-    CSRF_TRUSTED_ORIGINS = (
-        'https://podplayer.vercel.app',
-        'https://podplayer.johnclaro.com',
-    )
+    CORS_ALLOWED_ORIGINS = ORIGINS
+    CSRF_TRUSTED_ORIGINS = ORIGINS
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=183),
