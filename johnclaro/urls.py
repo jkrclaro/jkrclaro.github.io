@@ -6,12 +6,14 @@ from django.conf.urls.static import static
 from django.conf.urls import include
 from django.shortcuts import redirect
 
+from rest_framework import decorators, permissions, status
+from rest_framework.response import Response
 
+
+@decorators.api_view(['GET'])
+@decorators.permission_classes([permissions.AllowAny])
 def landingpage(request):
-    url = 'http://localhost:3000'
-    if not settings.DEBUG:
-        url = 'https://johnclaro.vercel.app'
-    return redirect(url)
+    return Response(None, status.HTTP_200_OK)
 
 
 urlpatterns = [
