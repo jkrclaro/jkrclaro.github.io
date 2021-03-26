@@ -169,8 +169,8 @@ def hse_upsert(request):
 @decorators.permission_classes([permissions.IsAuthenticated])
 def get_hse_cases(request):
     cases = []
-    for case_qs in HSECase.objects.order_by('date'):
-        case = [case_qs.get_epoch(), case_qs.confirmedcovidcases]
+    for obj in HSECase.objects.order_by('date'):
+        case = [obj.get_epoch(), obj.confirmedcovidcases]
         cases.append(case)
     return Response(cases, status.HTTP_200_OK)
 
@@ -179,7 +179,17 @@ def get_hse_cases(request):
 @decorators.permission_classes([permissions.IsAuthenticated])
 def get_hse_deaths(request):
     deaths = []
-    for death_qs in HSECase.objects.order_by('date'):
-        death = [death_qs.get_epoch(), death_qs.confirmedcoviddeaths]
+    for obj in HSECase.objects.order_by('date'):
+        death = [obj.get_epoch(), obj.confirmedcoviddeaths]
         deaths.append(death)
     return Response(deaths, status.HTTP_200_OK)
+
+
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
+def get_hse_counties(request):
+    counties = (
+        {'name': obj.countyname, 'y': obj.confirmedcovidcases}
+        for obj in HSECounty.objects.all()
+    )
+    return Response(counties, status.HTTP_200_OK)

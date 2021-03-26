@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .models import HSECase
+from .models import HSECase, HSECounty
 
 
 class HSECaseTestCase(TestCase):
@@ -59,20 +59,45 @@ class HSECaseTestCase(TestCase):
             fid=1,
         )
 
+        HSECounty.objects.upsert_county(
+            origid=0,
+            countyname='Wexford',
+            populationcensus16=1,
+            igeasting=1,
+            ignorthing=1,
+            lat=1.2,
+            long=1.2,
+            uniquegeographicidentifier='http://data.geohive.ie/resource/county/2ae19629-143d-13a3-e055-000000000001',
+            confirmedcovidcases=1,
+            populationproportioncovidcases=1.2,
+            confirmedcoviddeaths=None,
+            confirmedcovidrecovered=None,
+            x=1.2,
+            y=1.2,
+            fid=1,
+            timestampdate='2020-02-09'
+        )
+
     def test_should_pass_when_get_epoch_matches_unix_timestamp(self):
         hse_case = HSECase.objects.get(date='2020-02-09')
         output = hse_case.get_epoch()
         expected = 1581206400000
         self.assertEqual(output, expected)
     
-    def test_should_pass_when_get_hse_cases_api_matches_expected_data(self):
+    def test_should_pass_when_get_hse_cases_response_matches_expected(self):
         response = self.client.post('/covid/hse/cases')
         output = response.json()
         expected = [[1581206400000, 1]]
         self.assertEqual(output, expected)
 
-    def test_should_pass_when_get_hse_deaths_api_matches_expected_data(self):
+    def test_should_pass_when_get_hse_deaths_response_matches_expected(self):
         response = self.client.post('/covid/hse/deaths')
         output = response.json()
         expected = [[1581206400000, 2]]
+        self.assertEqual(output, expected)
+    
+    def test_should_pass_when_get_hse_counties_response_matches_expected(self):
+        response = self.client.post('/covid/hse/counties')
+        output = response.json()
+        expected = [{'name': 'Wexford', 'y': 1}]
         self.assertEqual(output, expected)
