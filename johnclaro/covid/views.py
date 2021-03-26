@@ -8,6 +8,8 @@ from rest_framework.response import Response
 from .models import JohnHopkinsCase, HSECase, HSECounty, HSESwab
 
 
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
 def show_cases(request):
     covid = HSECase.objects.first()
     genders = [
@@ -161,3 +163,23 @@ def hse_upsert(request):
         return Response(None, status.HTTP_400_BAD_REQUEST)
 
     return Response(None, status.HTTP_200_OK)
+
+
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
+def get_hse_cases(request):
+    cases = []
+    for case_qs in HSECase.objects.order_by('date'):
+        case = [case_qs.get_epoch(), case_qs.confirmedcovidcases]
+        cases.append(case)
+    return Response(cases, status.HTTP_200_OK)
+
+
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
+def get_hse_deaths(request):
+    deaths = []
+    for death_qs in HSECase.objects.order_by('date'):
+        death = [death_qs.get_epoch(), death_qs.confirmedcoviddeaths]
+        deaths.append(death)
+    return Response(deaths, status.HTTP_200_OK)
