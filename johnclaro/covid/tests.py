@@ -101,3 +101,18 @@ class HSECaseTestCase(TestCase):
         output = response.json()
         expected = [{'name': 'Wexford', 'y': 1}]
         self.assertEqual(output, expected)
+    
+    def test_should_pass_when_get_hse_ages_response_matches_expected(self):
+        response = self.client.post('/covid/hse/ages')
+        output = response.json()
+        expected = [
+            {'name': '1-4', 'y': 0, 'sliced': 1, 'selected': 1},
+            {'name': '5-14', 'y': 0, 'sliced': 1, 'selected': 1},
+            {'name': '15-24', 'y': 0, 'sliced': 1, 'selected': 1},
+            {'name': '25-34', 'y': 0, 'sliced': 1, 'selected': 1},
+            {'name': '35-44', 'y': 0, 'sliced': 1, 'selected': 1},
+            {'name': '45-54', 'y': 0, 'sliced': 1, 'selected': 1}, 
+            {'name': '55-64', 'y': 0, 'sliced': 1, 'selected': 1},
+            {'name': '65+', 'y': 0, 'sliced': 1, 'selected': 1}
+        ]
+        self.assertEqual(output, expected)
