@@ -1,7 +1,6 @@
 from django.urls import path
 
 from .views import (
-    show_cases,
     show_swabs,
     show_vaccines,
     johnhopkins_upsert,
@@ -17,7 +16,6 @@ from .views import (
 app_name = 'covid'
 
 urlpatterns = [
-    path('', show_cases, name='cases'),
     path('hse', get_hse, name='hse'),
     path('hse/cases', get_hse_cases, name='get_hse_cases'),
     path('hse/deaths', get_hse_deaths, name='get_hse_deaths'),
