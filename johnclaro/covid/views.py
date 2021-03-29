@@ -224,3 +224,24 @@ def get_hse_ages(request):
             age['sliced'] = 1
             age['selected'] = 1
     return Response(ages, status.HTTP_200_OK)
+
+
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
+def get_hse_genders(request):
+    covid = HSECase.objects.first()
+    genders = [
+        {'name': 'Male', 'y': covid.male, 'color': '#95CEFF'},
+        {'name': 'Female', 'y': covid.female, 'color': '#F15C80'},
+        {'name': 'Unknown', 'y': covid.unknown, 'color': '#696969'},
+    ]
+    gender_highest = max([
+        covid.male,
+        covid.female,
+        covid.unknown
+    ])
+    for gender in genders:
+        if gender['y'] == gender_highest:
+            gender['sliced'] = 1
+            gender['selected'] = 1
+    return Response(genders, status.HTTP_200_OK)

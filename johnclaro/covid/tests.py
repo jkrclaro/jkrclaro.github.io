@@ -41,9 +41,9 @@ class HSECaseTestCase(TestCase):
             hospitalisedaged45to54=0,
             hospitalisedaged55to64=0,
             hospitalisedaged65up=0,
-            male=0,
-            female=0,
-            unknown=0,
+            male=3,
+            female=2,
+            unknown=1,
             aged1to4=0,
             aged5to14=0,
             aged15to24=0,
@@ -114,5 +114,29 @@ class HSECaseTestCase(TestCase):
             {'name': '45-54', 'y': 0, 'sliced': 1, 'selected': 1}, 
             {'name': '55-64', 'y': 0, 'sliced': 1, 'selected': 1},
             {'name': '65+', 'y': 0, 'sliced': 1, 'selected': 1}
+        ]
+        self.assertEqual(output, expected)
+
+    def test_should_pass_when_get_hse_genders_response_matches_expected(self):
+        response = self.client.post('/covid/hse/genders')
+        output = response.json()
+        expected = [
+            {
+                'name': 'Male',
+                'y': 3,
+                'color': '#95CEFF',
+                'sliced': 1,
+                'selected': 1
+            },
+            {
+                'name': 'Female',
+                'y': 2,
+                'color': '#F15C80'
+            },
+            {
+                'name': 'Unknown',
+                'y': 1,
+                'color': '#696969'
+            }
         ]
         self.assertEqual(output, expected)
