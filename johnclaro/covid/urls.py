@@ -9,15 +9,21 @@ from .views import (
     get_hse_cases,
     get_hse_deaths,
     get_hse_counties,
+    get_hse_ages,
+    get_hse_genders,
+    get_hse,
 )
 
 app_name = 'covid'
 
 urlpatterns = [
     path('', show_cases, name='cases'),
+    path('hse', get_hse, name='hse'),
     path('hse/cases', get_hse_cases, name='get_hse_cases'),
     path('hse/deaths', get_hse_deaths, name='get_hse_deaths'),
     path('hse/counties', get_hse_counties, name='get_hse_counties'),
+    path('hse/ages', get_hse_ages, name='get_hse_ages'),
+    path('hse/genders', get_hse_genders, name='get_hse_genders'),
     path('swabs', show_swabs, name='swabs'),
     path('vaccines', show_vaccines, name='vaccines'),
     path('johnhopkins/upsert', johnhopkins_upsert, name='johnhopkins_upsert'),
