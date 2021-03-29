@@ -245,3 +245,24 @@ def get_hse_genders(request):
             gender['sliced'] = 1
             gender['selected'] = 1
     return Response(genders, status.HTTP_200_OK)
+
+
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
+def get_hse(request):
+    print(request.POST)
+    first = HSECase.objects.first()
+    last = HSECase.objects.last()
+    data = {
+        'first': {
+            'date': first.date,
+            'confirmedcovidcases': first.confirmedcovidcases,
+            'confirmedcoviddeaths': first.confirmedcoviddeaths,
+        },
+        'last': {
+            'date': last.date,
+            'confirmedcovidcases': last.confirmedcovidcases,
+            'confirmedcoviddeaths': last.confirmedcoviddeaths,
+        },
+    }
+    return Response(data, status.HTTP_200_OK)
