@@ -2,6 +2,7 @@ import json
 from datetime import timedelta
 
 from django.shortcuts import render
+from django.contrib.humanize.templatetags.humanize import intcomma
 from rest_framework import decorators, permissions, status
 from rest_framework.response import Response
 
@@ -141,12 +142,12 @@ def get_hse_latest_case(request):
     case = HSECase.objects.first()
     oldest_case = HSECase.objects.last()
     data = {
-        'latest_date': case.date,
-        'confirmedcovidcases': case.confirmedcovidcases,
-        'confirmedcoviddeaths': case.confirmedcoviddeaths,
-        'totalconfirmedcovidcases': case.totalconfirmedcovidcases,
-        'totalcoviddeaths': case.totalcoviddeaths,
-        'oldest_date': oldest_case.date,
+        'latest_date': case.date.strftime('%d %b %Y'),
+        'confirmedcovidcases': intcomma(case.confirmedcovidcases),
+        'confirmedcoviddeaths': intcomma(case.confirmedcoviddeaths),
+        'totalconfirmedcovidcases': intcomma(case.totalconfirmedcovidcases),
+        'totalcoviddeaths': intcomma(case.totalcoviddeaths),
+        'oldest_date': oldest_case.date.strftime('%d %b %Y'),
     }
     return Response(data, status.HTTP_200_OK)
 
@@ -193,11 +194,11 @@ def get_hse_latest_swab(request):
     swab = HSESwab.objects.first()
     oldest_swab = HSESwab.objects.last()
     data = {
-        'latest_date': swab.date_hpsc,
-        'pos1': swab.pos1,
-        'posr1': swab.posr1,
-        'prate': swab.prate,
-        'positive': swab.positive,
-        'oldest_date': oldest_swab.date_hpsc,
+        'latest_date': swab.date_hpsc.strftime('%d %b %Y'),
+        'pos1': intcomma(swab.pos1),
+        'posr1': intcomma(swab.posr1),
+        'prate': intcomma(swab.prate),
+        'positive': intcomma(swab.positive),
+        'oldest_date': oldest_swab.date_hpsc.strftime('%d %b %Y'),
     }
     return Response(data, status.HTTP_200_OK)
