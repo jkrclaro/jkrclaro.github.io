@@ -28,7 +28,7 @@ def johnhopkins_upsert(request):
             deaths=item['deaths'],
             recoveries=item['recoveries']
         )
-    return Response(None, status.HTTP_200_OK)
+    return Response(None)
 
 
 @decorators.api_view(['POST'])
@@ -51,7 +51,7 @@ def hse_upsert(request):
     else:
         return Response(None, status.HTTP_400_BAD_REQUEST)
 
-    return Response(None, status.HTTP_200_OK)
+    return Response(None)
 
 
 @decorators.api_view(['POST'])
@@ -61,7 +61,7 @@ def get_hse_cases(request):
     for obj in HSECase.objects.order_by('date'):
         case = [obj.get_epoch(), obj.confirmedcovidcases]
         cases.append(case)
-    return Response(cases, status.HTTP_200_OK)
+    return Response(cases)
 
 
 @decorators.api_view(['POST'])
@@ -71,7 +71,7 @@ def get_hse_deaths(request):
     for obj in HSECase.objects.order_by('date'):
         death = [obj.get_epoch(), obj.confirmedcoviddeaths]
         deaths.append(death)
-    return Response(deaths, status.HTTP_200_OK)
+    return Response(deaths)
 
 
 @decorators.api_view(['POST'])
@@ -81,7 +81,7 @@ def get_hse_counties(request):
         {'name': obj.countyname, 'y': obj.confirmedcovidcases}
         for obj in HSECounty.objects.all()
     )
-    return Response(counties, status.HTTP_200_OK)
+    return Response(counties)
 
 
 @decorators.api_view(['POST'])
@@ -112,7 +112,7 @@ def get_hse_ages(request):
         if age['y'] == age_highest:
             age['sliced'] = 1
             age['selected'] = 1
-    return Response(ages, status.HTTP_200_OK)
+    return Response(ages)
 
 
 @decorators.api_view(['POST'])
@@ -133,7 +133,7 @@ def get_hse_genders(request):
         if gender['y'] == gender_highest:
             gender['sliced'] = 1
             gender['selected'] = 1
-    return Response(genders, status.HTTP_200_OK)
+    return Response(genders)
 
 
 @decorators.api_view(['POST'])
@@ -149,7 +149,7 @@ def get_hse_latest_case(request):
         'totalcoviddeaths': intcomma(case.totalcoviddeaths),
         'oldest_date': oldest_case.date.strftime('%d %b %Y'),
     }
-    return Response(data, status.HTTP_200_OK)
+    return Response(data)
 
 
 @decorators.api_view(['POST'])
@@ -185,7 +185,7 @@ def get_hse_swabs(request):
         'positives': positives,
         'cases': cases,
     }
-    return Response(data, status.HTTP_200_OK)
+    return Response(data)
 
 
 @decorators.api_view(['POST'])
@@ -201,4 +201,4 @@ def get_hse_latest_swab(request):
         'positive': intcomma(swab.positive),
         'oldest_date': oldest_swab.date_hpsc.strftime('%d %b %Y'),
     }
-    return Response(data, status.HTTP_200_OK)
+    return Response(data)
