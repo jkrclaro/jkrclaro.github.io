@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .models import HSECase, HSECounty
+from .models import HSECase, HSECounty, HSESwab
 
 
 class HSECaseTestCase(TestCase):
@@ -75,7 +75,23 @@ class HSECaseTestCase(TestCase):
             x=1.2,
             y=1.2,
             fid=1,
-            timestampdate='2020-02-09'
+            timestampdate='2020-02-09',
+        )
+    
+        HSESwab.objects.upsert_swab(
+            date_hpsc='2020-02-09',
+            hospitals=1,
+            totallabs=1,
+            nonhospitals=1,
+            positive=1,
+            prate=2.1,
+            test24=1,
+            test7=1,
+            pos7=1,
+            posr7=2.1,
+            pos1=1,
+            posr1=2.1,
+            fid=1,
         )
 
     def test_should_pass_when_get_epoch_matches_unix_timestamp(self):
@@ -139,4 +155,34 @@ class HSECaseTestCase(TestCase):
                 'color': '#696969'
             }
         ]
+        self.assertEqual(output, expected)
+
+    def test_should_pass_when_get_hse_swab_response_matches_expected(self):
+        response = self.client.post('/covid/hse/swab')
+        output = response.json()
+        expected = {
+            'first_swab': {
+                'date_hpsc': '2020-02-09',
+                'pos1': 1,
+                'posr1': 2.1
+            },
+            'last_swab': {
+                'date_hpsc': '2020-02-09',
+                'pos1': 1,
+                'posr1': 2.1
+            }
+        }
+        self.assertEqual(output, expected)
+
+    def test_should_pass_when_get_hse_swabs_response_matches_expected(self):
+        response = self.client.post('/covid/hse/swabs')
+        output = response.json()
+        expected = {
+            'positives': [
+                [1581206400000, 1]
+            ],
+            'cases': [
+                [1581206400000, 1]
+            ],
+        }
         self.assertEqual(output, expected)
