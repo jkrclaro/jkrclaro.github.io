@@ -23,10 +23,10 @@ class HSECaseTestCase(TestCase):
 
         HSECase.objects.upsert_case(
             date='2020-02-09',
-            confirmedcovidcases=1,
-            totalconfirmedcovidcases=1,
-            confirmedcoviddeaths=2,
-            totalcoviddeaths=1,
+            confirmedcovidcases=424242,
+            totalconfirmedcovidcases=424242,
+            confirmedcoviddeaths=424242,
+            totalcoviddeaths=424242,
             statisticsprofiledate='2020-02-09',
             covidcasesconfirmed=0,
             hospitalisedcovidcases=0,
@@ -83,13 +83,13 @@ class HSECaseTestCase(TestCase):
             hospitals=1,
             totallabs=1,
             nonhospitals=1,
-            positive=1,
+            positive=424242,
             prate=2.1,
             test24=1,
             test7=1,
             pos7=1,
             posr7=2.1,
-            pos1=1,
+            pos1=424242,
             posr1=2.1,
             fid=1,
         )
@@ -103,26 +103,26 @@ class HSECaseTestCase(TestCase):
     def test_should_pass_when_get_hse_cases_response_matches_expected(self):
         response = self.client.post('/covid/hse/cases')
         output = response.json()
-        expected = [[1581206400000, 1]]
+        expected = [[1581206400000, 424242]]
         self.assertEqual(output, expected)
     
     def test_should_pass_when_get_hse_latest_case_response_matches_expected(self):
         response = self.client.post('/covid/hse/cases/latest')
         output = response.json()
         expected = {
-            'confirmedcovidcases': 1,
-            'confirmedcoviddeaths': 2,
-            'latest_date': '2020-02-09',
-            'oldest_date': '2020-02-09',
-            'totalconfirmedcovidcases': 1,
-            'totalcoviddeaths': 1
+            'confirmedcovidcases': '424,242',
+            'confirmedcoviddeaths': '424,242',
+            'latest_date': '09 Feb 2020',
+            'oldest_date': '09 Feb 2020',
+            'totalconfirmedcovidcases': '424,242',
+            'totalcoviddeaths': '424,242'
         }
         self.assertEqual(output, expected)
 
     def test_should_pass_when_get_hse_deaths_response_matches_expected(self):
         response = self.client.post('/covid/hse/deaths')
         output = response.json()
-        expected = [[1581206400000, 2]]
+        expected = [[1581206400000, 424242]]
         self.assertEqual(output, expected)
     
     def test_should_pass_when_get_hse_counties_response_matches_expected(self):
@@ -177,10 +177,10 @@ class HSECaseTestCase(TestCase):
         output = response.json()
         expected = {
             'positives': [
-                [1581206400000, 1]
+                [1581206400000, 424242]
             ],
             'cases': [
-                [1581206400000, 1]
+                [1581206400000, 424242]
             ],
         }
         self.assertEqual(output, expected)
@@ -189,11 +189,11 @@ class HSECaseTestCase(TestCase):
         response = self.client.post('/covid/hse/swabs/latest')
         output = response.json()
         expected = {
-            'latest_date': '2020-02-09',
-            'oldest_date': '2020-02-09',
-            'pos1': 1,
-            'positive': 1,
-            'posr1': 2.1,
-            'prate': 2.1
+            'latest_date': '09 Feb 2020',
+            'oldest_date': '09 Feb 2020',
+            'pos1': '424,242',
+            'positive': '424,242',
+            'posr1': '2.1',
+            'prate': '2.1'
         }
         self.assertEqual(output, expected)
