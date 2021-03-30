@@ -9,10 +9,6 @@ from rest_framework.response import Response
 from .models import JohnHopkinsCase, HSECase, HSECounty, HSESwab
 
 
-def show_vaccines(request):
-    return render(request, 'covid/vaccines.html')
-
-
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
 def johnhopkins_upsert(request):
