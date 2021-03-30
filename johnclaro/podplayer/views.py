@@ -17,7 +17,7 @@ def podcast_list(request):
     payload = json.loads(request.body.decode('utf-8'))
     keywords = payload.get('keywords', None)
     podcasts = itunes.search_podcasts(keywords)
-    return Response(podcasts, status.HTTP_200_OK)
+    return Response(podcasts)
 
 
 @decorators.api_view(['GET'])
@@ -39,7 +39,7 @@ def podcast_retrieve(request, itunes_id):
 
     fields = ('img', 'name', 'author', 'summary', 'feed', 'website',)
     podcast = model_to_dict(podcast, fields=fields)
-    return Response(podcast, status.HTTP_200_OK)
+    return Response(podcast)
 
 
 @decorators.api_view(['GET'])
@@ -60,14 +60,14 @@ def episode_list(request, itunes_id):
     else:
         fields = ('name', 'published_at', 'duration', 'url',)
         episodes = podcast.episodes.all().values(*fields)
-    return Response(episodes, status.HTTP_200_OK)
+    return Response(episodes)
 
 
 @decorators.api_view(['GET'])
 @decorators.permission_classes([permissions.AllowAny])
 def episode_retrieve(request, itunes_id, pk):
     episode = None
-    return Response(episode, status.HTTP_200_OK)
+    return Response(episode)
 
 
 @decorators.api_view(['GET'])
@@ -81,7 +81,7 @@ def podcast_subscriptions(request):
         subscriptions = list(subscriptions)
     except Account.DoesNotExist:
         subscriptions = []
-    return Response(subscriptions, status.HTTP_200_OK)
+    return Response(subscriptions)
 
 
 @decorators.api_view(['POST'])
@@ -95,7 +95,7 @@ def podcast_subscription(request):
         subscription = subscription.exists()
     except Podcast.DoesNotExist:
         subscription = False
-    return Response(subscription, status.HTTP_200_OK)
+    return Response(subscription)
 
 
 @decorators.api_view(['POST'])
@@ -106,7 +106,7 @@ def podcast_subscribe(request):
     podcast = Podcast.objects.get(name=name)
     account = request.user.account
     Subscription.objects.create_subscription(podcast=podcast, account=account)
-    return Response(None, status.HTTP_200_OK)
+    return Response(None)
 
 
 @decorators.api_view(['POST'])
@@ -117,4 +117,4 @@ def podcast_unsubscribe(request):
     podcast = Podcast.objects.get(name=name)
     account = request.user.account
     Subscription.objects.filter(account=account, podcast=podcast).delete()
-    return Response(None, status.HTTP_200_OK)
+    return Response(None)

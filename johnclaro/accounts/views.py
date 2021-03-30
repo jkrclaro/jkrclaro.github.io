@@ -39,7 +39,7 @@ def user_retrieve(request):
         'username': request.user.username,
         'email': request.user.email
     }
-    return Response(user, status.HTTP_200_OK)
+    return Response(user)
 
 
 @decorators.api_view(['POST'])
