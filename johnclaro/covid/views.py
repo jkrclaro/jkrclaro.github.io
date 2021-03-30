@@ -8,49 +8,6 @@ from rest_framework.response import Response
 from .models import JohnHopkinsCase, HSECase, HSECounty, HSESwab
 
 
-def show_swabs(request):
-    first_swab = HSESwab.objects.first()
-    last_swab = HSESwab.objects.last()
-    seven_days_ago = first_swab.date_hpsc - timedelta(days=7)
-    thirty_one_days_ago = first_swab.date_hpsc - timedelta(days=31)
-    cases = []
-    positives = []
-    positives_7 = []
-    cases_7 = []
-    positives_31 = []
-    cases_31 = []
-
-    for case_qs in HSECase.objects.order_by('date'):
-        cases.append([case_qs.get_epoch(), case_qs.confirmedcovidcases])
-
-    for swab_qs in HSESwab.objects.order_by('date_hpsc'):
-        positives.append([swab_qs.get_epoch(), swab_qs.pos1])
-
-    for swab_7 in HSESwab.objects.filter(date_hpsc__gte=seven_days_ago):
-        positives_7.append([swab_7.get_epoch(), swab_7.pos1])
-
-    for case_7 in HSECase.objects.filter(date__gte=seven_days_ago):
-        cases_7.append([case_7.get_epoch(), case_7.confirmedcovidcases])
-
-    for swab_31 in HSESwab.objects.filter(date_hpsc__gte=thirty_one_days_ago):
-        positives_31.append([swab_31.get_epoch(), swab_31.pos1])
-
-    for case_31 in HSECase.objects.filter(date__gte=thirty_one_days_ago):
-        cases_31.append([case_31.get_epoch(), case_31.confirmedcovidcases])
-
-    context = {
-        'first_swab': first_swab,
-        'last_swab': last_swab,
-        'positives': positives,
-        'cases': cases,
-        'positives_7': positives_7,
-        'cases_7': cases_7,
-        'positives_31': positives_31,
-        'cases_31': cases_31,
-    }
-    return render(request, 'covid/swabs.html', context)
-
-
 def show_vaccines(request):
     return render(request, 'covid/vaccines.html')
 
@@ -181,19 +138,74 @@ def get_hse_genders(request):
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
 def get_hse(request):
-    print(request.POST)
-    first = HSECase.objects.first()
-    last = HSECase.objects.last()
+    first_case = HSECase.objects.first()
+    last_case = HSECase.objects.last()
     data = {
         'first': {
-            'date': first.date,
-            'confirmedcovidcases': first.confirmedcovidcases,
-            'confirmedcoviddeaths': first.confirmedcoviddeaths,
+            'date': first_case.date,
+            'confirmedcovidcases': first_case.confirmedcovidcases,
+            'confirmedcoviddeaths': first_case.confirmedcoviddeaths,
         },
         'last': {
-            'date': last.date,
-            'confirmedcovidcases': last.confirmedcovidcases,
-            'confirmedcoviddeaths': last.confirmedcoviddeaths,
+            'date': last_case.date,
+            'confirmedcovidcases': last_case.confirmedcovidcases,
+            'confirmedcoviddeaths': last_case.confirmedcoviddeaths,
+        },
+    }
+    return Response(data, status.HTTP_200_OK)
+
+
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
+def get_swabs(request):
+    cases = []
+    positives = []
+    days = request.data.get('days', 0)
+
+    cases_qs = HSECase.objects
+    swabs_qs = HSESwab.objects
+    if days:
+        first_swab = HSESwab.objects.first()
+        date = first_swab.date_hpsc - timedelta(days=days)
+        cases_qs = cases_qs.filter(date__gte=date)
+        swabs_qs = swabs_qs.filter(date_hpsc__gte=date)
+
+    for case_qs in cases_qs.order_by('date'):
+        case = (
+            case_qs.get_epoch(),
+            case_qs.confirmedcovidcases,
+        )
+        cases.append(case)
+
+    for swab_qs in swabs_qs.order_by('date_hpsc'):
+        swab = (
+            swab_qs.get_epoch(),
+            swab_qs.pos1,
+        )
+        positives.append(swab)
+
+    data = {
+        'positives': positives,
+        'cases': cases,
+    }
+    return Response(data, status.HTTP_200_OK)
+
+
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
+def get_swab(request):
+    first_swab = HSESwab.objects.first()
+    last_swab = HSESwab.objects.last()
+    data = {
+        'first_swab': {
+            'date_hpsc': first_swab.date_hpsc,
+            'pos1': first_swab.pos1,
+            'posr1': first_swab.posr1,
+        },
+        'last_swab': {
+            'date_hpsc': first_swab.date_hpsc,
+            'pos1': first_swab.pos1,
+            'posr1': first_swab.posr1,
         },
     }
     return Response(data, status.HTTP_200_OK)

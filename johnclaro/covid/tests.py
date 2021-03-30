@@ -140,3 +140,27 @@ class HSECaseTestCase(TestCase):
             }
         ]
         self.assertEqual(output, expected)
+
+    def test_should_pass_when_get_hse_swabs_response_matches_expected(self):
+        response = self.client.post('/covid/hse/genders')
+        output = response.json()
+        expected = [
+            {
+                'name': 'Male',
+                'y': 3,
+                'color': '#95CEFF',
+                'sliced': 1,
+                'selected': 1
+            },
+            {
+                'name': 'Female',
+                'y': 2,
+                'color': '#F15C80'
+            },
+            {
+                'name': 'Unknown',
+                'y': 1,
+                'color': '#696969'
+            }
+        ]
+        self.assertEqual(output, expected)
