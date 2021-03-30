@@ -137,20 +137,15 @@ def get_hse_genders(request):
 
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
-def get_hse(request):
-    first_case = HSECase.objects.first()
-    last_case = HSECase.objects.last()
+def get_hse_case(request):
+    newest_case = HSECase.objects.first()
     data = {
-        'first': {
-            'date': first_case.date,
-            'confirmedcovidcases': first_case.confirmedcovidcases,
-            'confirmedcoviddeaths': first_case.confirmedcoviddeaths,
-        },
-        'last': {
-            'date': last_case.date,
-            'confirmedcovidcases': last_case.confirmedcovidcases,
-            'confirmedcoviddeaths': last_case.confirmedcoviddeaths,
-        },
+        'newest_date': newest_case.date,
+        'confirmedcovidcases': newest_case.confirmedcovidcases,
+        'confirmedcoviddeaths': newest_case.confirmedcoviddeaths,
+        'totalconfirmedcovidcases': newest_case.totalconfirmedcovidcases,
+        'totalcoviddeaths': newest_case.totalcoviddeaths,
+        'oldest_date': HSECase.objects.last().date,
     }
     return Response(data, status.HTTP_200_OK)
 

@@ -5,11 +5,11 @@ from .views import (
     johnhopkins_upsert,
     hse_upsert,
     get_hse_cases,
+    get_hse_case,
     get_hse_deaths,
     get_hse_counties,
     get_hse_ages,
     get_hse_genders,
-    get_hse,
     get_swab,
     get_swabs,
 )
@@ -17,7 +17,7 @@ from .views import (
 app_name = 'covid'
 
 urlpatterns = [
-    path('hse/case', get_hse, name='hse'),
+    path('hse/case', get_hse_case, name='get_hse_case'),
     path('hse/cases', get_hse_cases, name='get_hse_cases'),
     path('hse/deaths', get_hse_deaths, name='get_hse_deaths'),
     path('hse/counties', get_hse_counties, name='get_hse_counties'),
