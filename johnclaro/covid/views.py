@@ -137,27 +137,23 @@ def get_hse_genders(request):
 
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
-def get_hse(request):
-    first_case = HSECase.objects.first()
-    last_case = HSECase.objects.last()
+def get_hse_latest_case(request):
+    case = HSECase.objects.first()
+    oldest_case = HSECase.objects.last()
     data = {
-        'first': {
-            'date': first_case.date,
-            'confirmedcovidcases': first_case.confirmedcovidcases,
-            'confirmedcoviddeaths': first_case.confirmedcoviddeaths,
-        },
-        'last': {
-            'date': last_case.date,
-            'confirmedcovidcases': last_case.confirmedcovidcases,
-            'confirmedcoviddeaths': last_case.confirmedcoviddeaths,
-        },
+        'latest_date': case.date,
+        'confirmedcovidcases': case.confirmedcovidcases,
+        'confirmedcoviddeaths': case.confirmedcoviddeaths,
+        'totalconfirmedcovidcases': case.totalconfirmedcovidcases,
+        'totalcoviddeaths': case.totalcoviddeaths,
+        'oldest_date': oldest_case.date,
     }
     return Response(data, status.HTTP_200_OK)
 
 
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
-def get_swabs(request):
+def get_hse_swabs(request):
     cases = []
     positives = []
     days = request.data.get('days', 0)
@@ -193,19 +189,15 @@ def get_swabs(request):
 
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
-def get_swab(request):
-    first_swab = HSESwab.objects.first()
-    last_swab = HSESwab.objects.last()
+def get_hse_latest_swab(request):
+    swab = HSESwab.objects.first()
+    oldest_swab = HSESwab.objects.last()
     data = {
-        'first_swab': {
-            'date_hpsc': first_swab.date_hpsc,
-            'pos1': first_swab.pos1,
-            'posr1': first_swab.posr1,
-        },
-        'last_swab': {
-            'date_hpsc': first_swab.date_hpsc,
-            'pos1': first_swab.pos1,
-            'posr1': first_swab.posr1,
-        },
+        'latest_date': swab.date_hpsc,
+        'pos1': swab.pos1,
+        'posr1': swab.posr1,
+        'prate': swab.prate,
+        'positive': swab.positive,
+        'oldest_date': oldest_swab.date_hpsc,
     }
     return Response(data, status.HTTP_200_OK)

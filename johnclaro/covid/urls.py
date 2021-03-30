@@ -5,26 +5,26 @@ from .views import (
     johnhopkins_upsert,
     hse_upsert,
     get_hse_cases,
+    get_hse_latest_case,
     get_hse_deaths,
     get_hse_counties,
     get_hse_ages,
     get_hse_genders,
-    get_hse,
-    get_swab,
-    get_swabs,
+    get_hse_swabs,
+    get_hse_latest_swab,
 )
 
 app_name = 'covid'
 
 urlpatterns = [
-    path('hse/case', get_hse, name='hse'),
     path('hse/cases', get_hse_cases, name='get_hse_cases'),
+    path('hse/cases/latest', get_hse_latest_case, name='get_hse_latest_case'),
     path('hse/deaths', get_hse_deaths, name='get_hse_deaths'),
     path('hse/counties', get_hse_counties, name='get_hse_counties'),
     path('hse/ages', get_hse_ages, name='get_hse_ages'),
     path('hse/genders', get_hse_genders, name='get_hse_genders'),
-    path('hse/swab', get_swab, name='get_swab'),
-    path('hse/swabs', get_swabs, name='get_swabs'),
+    path('hse/swabs', get_hse_swabs, name='get_hse_swabs'),
+    path('hse/swabs/latest', get_hse_latest_swab, name='get_hse_latest_swab'),
     path('vaccines', show_vaccines, name='vaccines'),
     path('johnhopkins/upsert', johnhopkins_upsert, name='johnhopkins_upsert'),
     path('hse/upsert', hse_upsert, name='hse_upsert'),
