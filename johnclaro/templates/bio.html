@@ -6,7 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>    
     <link rel='stylesheet' type='text/css' href="{% static 'css/bio.css' %}"/>
     <title>John Claro</title>
@@ -14,53 +14,59 @@
 <body>
     <div class='container'>
         <div class='row mt-5'>
-            <div class='col-lg-8'>
-                <div class='row' id='front-blogs'>
-                    <div class='col-lg-5'>
-                        <img class='img-fluid' alt='goat.png' src="https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/12/Goat-Problem_520x292-520x292.jpg">
+            <div class='col-lg-4 order-lg-last mb-3'>
+                <img alt='me.png' src="{% static 'img/me.png' %}" height='100' width='100' style='border-radius: 50%; margin-bottom: 10px;'>
+                <h4 id='about'>About</h4>
+                <p>
+                    I live in Ireland and hold a Bachelors's degree in Applied Computing at <a href='https://www.wit.ie'>WIT</a>.
+                    I worked as a data engineer for <a href='https://www.distilledsch.ie'>Distilled SCH</a>.
+                    I left to start a SaaS business for the next three years, but none worked out.
+                    Since then, I've been blogging about my data-related software projects. 
+                </p>
+                <h4 id='about'>Links</h4>
+                <div class='row'>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='far fa-envelope mr-3'></i>
+                        <a href='mailto:jkrclaro@gmail.com'>Email</a>
                     </div>
-                    <div class='col-lg-7'>
-                        <h4>After Centuries, a Seemingly Simple Math Problem Gets an Exact Solution</h4>
-                        <small class='text-muted'>April 2, 2021</small>
-                        <p>
-                            Mathematicians have long pondered the reach of a grazing goat tied to a fence, only finding approximate answers until now.
-                        </p>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='fab fa-linkedin mr-3'></i>
+                        <a href='https://linkedin.com/in/johnclaro'> Linkedin</a>
+                    </div>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='fab fa-twitter mr-3'></i>
+                        <a href='https://twitter.com/johnclaro_'> Twitter</a>
+                    </div>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='fab fa-github mr-3'></i>
+                        <a href='https://github.com/johnclaro'> Github</a>
+                    </div>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='fab fa-get-pocket mr-3'></i> 
+                        <a href='https://getpocket.com/@johnclaro'>Pocket</a>
                     </div>
                 </div>
             </div>
-            <div class='col-lg-4'>
-                <h4 id='about'>About</h4>
-                <p>
-                    I was born in the Philippines and grew up in Ireland since I was 10 years old.
-                    I studied Applied Computing at <a href='https://www.wit.ie'>WIT</a>.
-                    After graduation, I worked as data engineer at <a href='https://www.distilledsch.ie'>Distilled SCH</a>.
-                </p>
-                <h4 id='about'>Links</h4>
-                <div>
-                    <i class='far fa-envelope mr-3'></i>
-                    <a href='mailto:jkrclaro@gmail.com'>Email</a>
+            <div class='col-lg-8 order-lg-first'>
+                <h4 id='about'>Projects</h4>
+                <div class='row'>
+                    <div class='col-lg-5'>
+                        <img class='img-fluid' src='https://www.hpsc.ie/media/Corona-Ad-10-Twitter.jpg'>
+                    </div>
+                    <div class='col-lg-7 my-auto'>
+                        <h4><a href='#'>Covid</a></h4>
+                        <div>
+                            React, Highcharts, Apache Airflow, Django, Python, AWS Lambda, Javascript
+                        </div>
+                        <small>
+                            <a href='#'>Read the blog -></a>
+                        </small>
+                    </div>
                 </div>
-                <div class='mt-3'>
-                    <i class='fab fa-linkedin mr-3'></i>
-                    <a href='https://www.linkedin.com/in/johnclaro'> Linkedin</a>
-                </div>
-                <div class='mt-3'>
-                    <i class='fab fa-twitter mr-3'></i>
-                    <a href='https://www.twitter.com/johnclaro_'> Twitter</a>
-                </div>
-                <div class='mt-3'>
-                    <i class='fab fa-github mr-3'></i>
-                    <a href='https://www.github.com/johnclaro'> Github</a>
-                </div>
-                <div class='mt-3'>
-                    <i class='fab fa-get-pocket mr-3'></i> 
-                    <a href='https://getpocket.com/@johnclaro'>Pocket</a>
-                </div>
-                </p>
             </div>
         </div>
     </div>
-        <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'></script>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'  crossorigin='anonymous'></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156985230-1"></script>
