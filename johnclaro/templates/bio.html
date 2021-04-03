@@ -1,66 +1,74 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>    
+    <link rel='stylesheet' type='text/css' href="{% static 'css/bio.css' %}"/>
     <title>John Claro</title>
-    <style type='text/css'>
-        * {
-            font-family: 'Verdana';
-            font-size: 13px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        h3 {
-            margin: 0px;
-        }
-
-        p {
-            margin-top: 0px;
-        }
-
-        .active {
-            text-decoration: underline;
-        }
-    </style>
 </head>
-<body style='max-width: 768px'>
-    <img alt='me.png' src="/static/img/me.png" height='100' width='100' style='border-radius: 50%; margin-bottom: 10px;'>
-    <h3>About</h3>
-    <p>
-        I was born in the Philippines and grew up in Ireland since I was 10 years old.
-        I studied Applied Computing at <a href='https://www.wit.ie'>WIT</a>.
-        After graduation, I worked as data engineer at <a href='https://www.distilledsch.ie'>Distilled SCH</a>.
-    </p>
-    <h3>Projects</h3>
-    <ul style='margin-top: 0px;'>
-        <li>
-            <a href='https://covid.johnclaro.com'>Covid</a> - Data insights about Covid in Ireland
-        </li>
-        <li>
-            <a href='https://podplayer.johnclaro.com'>Podplayer</a> - Web-based podcast player
-        </li>
-        <li>
-            <a href='https://github.com/johnclaro/etl'>ETL</a> - A command line tool to perform ETLs
-        </li>
-        <li>
-            <a href='https://github.com/johnclaro/favicon'>Favicon</a> - Convert an image to its favicon formats
-        </li>
-        <li>
-            <a href='https://github.com/johnclaro/foobar'>Foobar</a> - Solutions to my Google Foobar challenges
-        </li>
-    </ul>
-    <h3>Links</h3>
-    <p>
-        <a href='mailto:jkrclaro@gmail.com'>Email</a>,
-        <a href='https://www.linkedin.com/in/johnclaro'>Linkedin</a>,
-        <a href='https://www.twitter.com/johnclaro_'>Twitter</a>,
-        <a href='https://github.com/johnclaro'>Github</a>,
-        <a href='https://getpocket.com/@johnclaro'>Pocket</a>
-    </p>
+<body>
+    <div class='container'>
+        <div class='row mt-5'>
+            <div class='col-lg-4 order-lg-last mb-3'>
+                <img alt='me.png' src="{% static 'img/me.png' %}" height='100' width='100' style='border-radius: 50%; margin-bottom: 10px;'>
+                <h4 id='about'>About</h4>
+                <p>
+                    I live in Ireland and hold a Bachelors's degree in Applied Computing at <a href='https://www.wit.ie'>WIT</a>.
+                    I worked as a data engineer for <a href='https://www.distilledsch.ie'>Distilled SCH</a>.
+                    I left to start a SaaS business for the next three years, but none worked out.
+                    Since then, I've been blogging about my data-related software projects. 
+                </p>
+                <h4 id='about'>Links</h4>
+                <div class='row'>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='far fa-envelope mr-3'></i>
+                        <a href='mailto:jkrclaro@gmail.com'>Email</a>
+                    </div>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='fab fa-linkedin mr-3'></i>
+                        <a href='https://linkedin.com/in/johnclaro'> Linkedin</a>
+                    </div>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='fab fa-twitter mr-3'></i>
+                        <a href='https://twitter.com/johnclaro_'> Twitter</a>
+                    </div>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='fab fa-github mr-3'></i>
+                        <a href='https://github.com/johnclaro'> Github</a>
+                    </div>
+                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                        <i class='fab fa-get-pocket mr-3'></i> 
+                        <a href='https://getpocket.com/@johnclaro'>Pocket</a>
+                    </div>
+                </div>
+            </div>
+            <div class='col-lg-8 order-lg-first'>
+                <h4 id='about'>Projects</h4>
+                <div class='row'>
+                    <div class='col-lg-5'>
+                        <img class='img-fluid' src='https://www.hpsc.ie/media/Corona-Ad-10-Twitter.jpg'>
+                    </div>
+                    <div class='col-lg-7 my-auto'>
+                        <h4><a href='#'>Covid</a></h4>
+                        <div>
+                            React, Highcharts, Apache Airflow, Django, Python, AWS Lambda, Javascript
+                        </div>
+                        <small>
+                            <a href='#'>Read the blog -></a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'  crossorigin='anonymous'></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156985230-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
