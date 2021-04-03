@@ -3,20 +3,13 @@
     color: #1A1A1A;
 }
 
-a {
+a, a:hover {
     text-decoration: none;
 }
 
 h4 {
+    font-family: 'Noto Serif JP';
     font-weight: 700;
-}
-
-p {
-    margin-top: 0px;
-}
-
-.active {
-    text-decoration: underline;
 }
 
 .fa-get-pocket {
