@@ -52,6 +52,19 @@ def hse_upsert(request):
 
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
+def hse_cases_upsert(request):
+    items = json.loads(request.body.decode('utf-8'))
+    if not items:
+        return Response(None, status.HTTP_400_BAD_REQUEST)
+
+    for item in items:
+        HSECase.objects.upsert_case(**item)
+
+    return Response(None)
+
+
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
 def get_hse_cases(request):
     cases = []
     for obj in HSECase.objects.order_by('date'):

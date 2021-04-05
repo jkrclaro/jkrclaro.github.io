@@ -11,6 +11,7 @@ from .views import (
     get_hse_genders,
     get_hse_swabs,
     get_hse_latest_swab,
+    hse_cases_upsert,
 )
 
 app_name = 'covid'
@@ -18,6 +19,7 @@ app_name = 'covid'
 urlpatterns = [
     path('hse/cases', get_hse_cases, name='get_hse_cases'),
     path('hse/cases/latest', get_hse_latest_case, name='get_hse_latest_case'),
+    path('hse/cases/upsert', hse_cases_upsert, name='hse_cases_upsert'),
     path('hse/deaths', get_hse_deaths, name='get_hse_deaths'),
     path('hse/counties', get_hse_counties, name='get_hse_counties'),
     path('hse/ages', get_hse_ages, name='get_hse_ages'),
