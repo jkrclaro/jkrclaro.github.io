@@ -5,27 +5,6 @@ from django.db import models
 from . import managers
 
 
-class JohnHopkinsCase(models.Model):
-    date = models.DateField()
-    country = models.CharField(max_length=255)
-    cases = models.IntegerField()
-    deaths = models.IntegerField()
-    recoveries = models.FloatField()
-    objects = managers.JohnHopkinsCaseManager()
-
-    class Meta:
-        db_table = 'john_hopkins_cases'
-        unique_together = ('date', 'country', 'cases', 'deaths', 'recoveries',)
-        ordering = ['-date']
-
-    def __str__(self):
-        return f'{self.date}-{self.country}-{self.cases}-{self.deaths}-' \
-               f'{self.recoveries}'
-
-    def get_epoch(self):
-        return int(self.date.strftime('%s')) * 1000
-
-
 class HSECase(models.Model):
     date = models.DateField(primary_key=True)
     confirmedcovidcases = models.IntegerField()
