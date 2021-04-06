@@ -101,13 +101,13 @@ class HSECaseTestCase(TestCase):
         self.assertEqual(output, expected)
     
     def test_should_pass_when_get_hse_cases_response_matches_expected(self):
-        response = self.client.post('/covid/hse/cases')
+        response = self.client.post('/hse/cases')
         output = response.json()
         expected = [[1581206400000, 424242]]
         self.assertEqual(output, expected)
     
     def test_should_pass_when_get_hse_latest_case_response_matches_expected(self):
-        response = self.client.post('/covid/hse/cases/latest')
+        response = self.client.post('/hse/cases/latest')
         output = response.json()
         expected = {
             'confirmedcovidcases': '424,242',
@@ -120,13 +120,13 @@ class HSECaseTestCase(TestCase):
         self.assertEqual(output, expected)
 
     def test_should_pass_when_get_hse_deaths_response_matches_expected(self):
-        response = self.client.post('/covid/hse/deaths')
+        response = self.client.post('/hse/deaths')
         output = response.json()
         expected = [[1581206400000, 424242]]
         self.assertEqual(output, expected)
     
     def test_should_pass_when_get_hse_counties_response_matches_expected(self):
-        response = self.client.post('/covid/hse/counties')
+        response = self.client.post('/hse/counties')
         output = response.json()
         expected = [
             {'name': 'Wexford', 'y': 1},
@@ -134,7 +134,7 @@ class HSECaseTestCase(TestCase):
         self.assertEqual(output, expected)
     
     def test_should_pass_when_get_hse_ages_response_matches_expected(self):
-        response = self.client.post('/covid/hse/ages')
+        response = self.client.post('/hse/ages')
         output = response.json()
         expected = [
             {'name': '1-4', 'y': 0, 'sliced': 1, 'selected': 1},
@@ -149,7 +149,7 @@ class HSECaseTestCase(TestCase):
         self.assertEqual(output, expected)
 
     def test_should_pass_when_get_hse_genders_response_matches_expected(self):
-        response = self.client.post('/covid/hse/genders')
+        response = self.client.post('/hse/genders')
         output = response.json()
         expected = [
             {
@@ -173,7 +173,7 @@ class HSECaseTestCase(TestCase):
         self.assertEqual(output, expected)
 
     def test_should_pass_when_get_hse_swabs_response_matches_expected(self):
-        response = self.client.post('/covid/hse/swabs')
+        response = self.client.post('/hse/swabs')
         output = response.json()
         expected = {
             'positives': [
@@ -186,7 +186,7 @@ class HSECaseTestCase(TestCase):
         self.assertEqual(output, expected)
 
     def test_should_pass_when_get_hse_swab_response_matches_expected(self):
-        response = self.client.post('/covid/hse/swabs/latest')
+        response = self.client.post('/hse/swabs/latest')
         output = response.json()
         expected = {
             'latest_date': '09 Feb 2020',
