@@ -9,7 +9,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='bio.html'), name='bio'),
     path('admin/', admin.site.urls),
     path('ironman', TemplateView.as_view(template_name='ironman.html'), name='ironman'),
-    path('covid/', include('johnclaro.covid.urls'), name='covid'),
+    path('', include('johnclaro.covid.urls'), name='covid'),
     path('podplayer/', include('johnclaro.podplayer.urls'), name='podplayer'),
     path('accounts/', include('johnclaro.accounts.urls'), name='accounts'),
 ]

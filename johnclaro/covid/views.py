@@ -1,30 +1,11 @@
 import json
 from datetime import timedelta
 
-from django.shortcuts import render
 from django.contrib.humanize.templatetags.humanize import intcomma
 from rest_framework import decorators, permissions, status
 from rest_framework.response import Response
 
-from .models import JohnHopkinsCase, HSECase, HSECounty, HSESwab
-
-
-@decorators.api_view(['POST'])
-@decorators.permission_classes([permissions.IsAuthenticated])
-def johnhopkins_upsert(request):
-    items = json.loads(request.body.decode('utf-8'))
-    if not items:
-        return Response(None, status.HTTP_400_BAD_REQUEST)
-
-    for item in items:
-        JohnHopkinsCase.objects.upsert_case(
-            date=item['date'],
-            country=item['country'],
-            cases=item['cases'],
-            deaths=item['deaths'],
-            recoveries=item['recoveries']
-        )
-    return Response(None)
+from .models import HSECase, HSECounty, HSESwab
 
 
 @decorators.api_view(['POST'])
