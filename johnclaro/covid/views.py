@@ -12,10 +12,11 @@ from .models import HSECase, HSECounty, HSESwab
 @decorators.permission_classes([permissions.IsAuthenticated])
 def hse_cases_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
+    if not items:
+        return Response(None, status.HTTP_400_BAD_REQUEST)
+
     for item in items:
         HSECase.objects.upsert_case(**item)
-    else:
-        return Response(None, status.HTTP_400_BAD_REQUEST)
 
     return Response(None)
 
@@ -24,10 +25,11 @@ def hse_cases_upsert(request):
 @decorators.permission_classes([permissions.IsAuthenticated])
 def hse_counties_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
+    if not items:
+        return Response(None, status.HTTP_400_BAD_REQUEST)
+
     for item in items:
         HSECounty.objects.upsert_county(**item)
-    else:
-        return Response(None, status.HTTP_400_BAD_REQUEST)
 
     return Response(None)
 
@@ -36,10 +38,11 @@ def hse_counties_upsert(request):
 @decorators.permission_classes([permissions.IsAuthenticated])
 def hse_swabs_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
+    if not items:
+        return Response(None, status.HTTP_400_BAD_REQUEST)
+
     for item in items:
         HSESwab.objects.upsert_swab(**item)
-    else:
-        return Response(None, status.HTTP_400_BAD_REQUEST)
 
     return Response(None)
 
