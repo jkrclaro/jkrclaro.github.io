@@ -1,49 +1,43 @@
 import json
 from datetime import timedelta
 
-from django.shortcuts import render
 from django.contrib.humanize.templatetags.humanize import intcomma
 from rest_framework import decorators, permissions, status
 from rest_framework.response import Response
 
-from .models import JohnHopkinsCase, HSECase, HSECounty, HSESwab
+from .models import HSECase, HSECounty, HSESwab
 
 
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
-def johnhopkins_upsert(request):
+def hse_cases_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
-    if not items:
+    for item in items:
+        HSECase.objects.upsert_case(**item)
+    else:
         return Response(None, status.HTTP_400_BAD_REQUEST)
 
-    for item in items:
-        JohnHopkinsCase.objects.upsert_case(
-            date=item['date'],
-            country=item['country'],
-            cases=item['cases'],
-            deaths=item['deaths'],
-            recoveries=item['recoveries']
-        )
     return Response(None)
 
 
 @decorators.api_view(['POST'])
 @decorators.permission_classes([permissions.IsAuthenticated])
-def hse_upsert(request):
+def hse_counties_upsert(request):
     items = json.loads(request.body.decode('utf-8'))
-    if not items:
+    for item in items:
+        HSECounty.objects.upsert_county(**item)
+    else:
         return Response(None, status.HTTP_400_BAD_REQUEST)
 
-    first_item = items[0]
-    if 'date' in first_item:
-        for item in items:
-            HSECase.objects.upsert_case(**item)
-    elif 'date_hpsc' in first_item:
-        for item in items:
-            HSESwab.objects.upsert_swab(**item)
-    elif 'countyname' in first_item:
-        for item in items:
-            HSECounty.objects.upsert_county(**item)
+    return Response(None)
+
+
+@decorators.api_view(['POST'])
+@decorators.permission_classes([permissions.IsAuthenticated])
+def hse_swabs_upsert(request):
+    items = json.loads(request.body.decode('utf-8'))
+    for item in items:
+        HSESwab.objects.upsert_swab(**item)
     else:
         return Response(None, status.HTTP_400_BAD_REQUEST)
 

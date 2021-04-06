@@ -5,27 +5,6 @@ from django.db import models
 from . import managers
 
 
-class JohnHopkinsCase(models.Model):
-    date = models.DateField()
-    country = models.CharField(max_length=255)
-    cases = models.IntegerField()
-    deaths = models.IntegerField()
-    recoveries = models.FloatField()
-    objects = managers.JohnHopkinsCaseManager()
-
-    class Meta:
-        db_table = 'john_hopkins_cases'
-        unique_together = ('date', 'country', 'cases', 'deaths', 'recoveries',)
-        ordering = ['-date']
-
-    def __str__(self):
-        return f'{self.date}-{self.country}-{self.cases}-{self.deaths}-' \
-               f'{self.recoveries}'
-
-    def get_epoch(self):
-        return int(self.date.strftime('%s')) * 1000
-
-
 class HSECase(models.Model):
     date = models.DateField(primary_key=True)
     confirmedcovidcases = models.IntegerField()
@@ -45,7 +24,10 @@ class HSECase(models.Model):
     hospitalisedaged35to44 = models.IntegerField(null=True, blank=True)
     hospitalisedaged45to54 = models.IntegerField(null=True, blank=True)
     hospitalisedaged55to64 = models.IntegerField(null=True, blank=True)
+    hospitalisedaged65to74 = models.IntegerField(null=True, blank=True)
+    hospitalisedaged75to84 = models.IntegerField(null=True, blank=True)
     hospitalisedaged65up = models.IntegerField(null=True, blank=True)
+    hospitalisedaged85up = models.IntegerField(null=True, blank=True)
     male = models.IntegerField(null=True, blank=True)
     female = models.IntegerField(null=True, blank=True)
     unknown = models.IntegerField(null=True, blank=True)
@@ -56,7 +38,10 @@ class HSECase(models.Model):
     aged35to44 = models.IntegerField(null=True, blank=True)
     aged45to54 = models.IntegerField(null=True, blank=True)
     aged55to64 = models.IntegerField(null=True, blank=True)
+    aged65to74 = models.IntegerField(null=True, blank=True)
+    aged75to84 = models.IntegerField(null=True, blank=True)
     aged65up = models.IntegerField(null=True, blank=True)
+    aged85up = models.IntegerField(null=True, blank=True)
     median_age = models.IntegerField(null=True, blank=True)
     communitytransmission = models.IntegerField()
     closecontact = models.IntegerField()
