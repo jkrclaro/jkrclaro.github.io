@@ -4,58 +4,69 @@
 {% block content %}
     <div class='container'>
         <div class='row mt-5'>
-            <div class='col-lg-4 order-lg-last mb-3'>
-                <img alt='me.png' src="{% static 'img/me.png' %}" height='100' width='100' style='border-radius: 50%; margin-bottom: 10px;'>
-                <h4 id='about'>About</h4>
+            <div class='col-lg-4 order-lg-last mb-2'>
+                <img alt='me.png' src="{% static 'img/me.png' %}" height='100' width='100' style='border-radius: 50%; margin-bottom: 16px;'>
+                <h5 id='about'>About</h5>
                 <p>
                     I live in Ireland and hold a Bachelors's degree in Applied Computing at <a href='https://www.wit.ie'>WIT</a>.
                     I worked as a data engineer for <a href='https://www.distilledsch.ie'>Distilled SCH</a>.
                     I left to start a SaaS business for the next three years, but none worked out.
-                    Since then, I've been making data engineering projects. 
+                    Since then, I've been playing around with data engineering.
                 </p>
-                <h4 id='about'>Links</h4>
+                <h5 id='about'>Links</h5>
                 <div class='row'>
-                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                    <div class='col-lg-12 col-md-3 col-6 mb-3'>
                         <i class='far fa-envelope mr-3'></i>
                         <a href='mailto:jkrclaro@gmail.com'>Email</a>
                     </div>
-                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
-                        <i class='fab fa-linkedin mr-3'></i>
+                    <div class='col-lg-12 col-md-3 col-6 mb-3'>
+                        <i class='fab fa-linkedin mr-3' style='padding-left: 3px;'></i>
                         <a href='https://linkedin.com/in/johnclaro'> Linkedin</a>
                     </div>
-                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                    <div class='col-lg-12 col-md-3 col-6 mb-3'>
                         <i class='fab fa-twitter mr-3'></i>
                         <a href='https://twitter.com/johnclaro_'> Twitter</a>
                     </div>
-                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                    <div class='col-lg-12 col-md-3 col-6 mb-3'>
                         <i class='fab fa-github mr-3'></i>
                         <a href='https://github.com/johnclaro'> Github</a>
                     </div>
-                    <div class='col-lg-12 col-md-3 col-6 mt-3'>
+                    <div class='col-lg-12 col-md-3 col-6 mb-3'>
                         <i class='fab fa-get-pocket mr-3'></i> 
                         <a href='https://getpocket.com/@johnclaro'>Pocket</a>
                     </div>
                 </div>
             </div>
             <div class='col-lg-8 order-lg-first'>
-                <h4 id='about'>Projects</h4>
+                <h5 id='about'>Projects</h5>
                 <div class='row'>
                     <div class='col-lg-3'>
                         <img class='img-fluid' src='https://www.hpsc.ie/media/Corona-Ad-10-Twitter.jpg'>
                     </div>
                     <div class='col-lg-9 my-auto'>
-                        <h4><a href='https://covid.johnclaro.com'>Covid</a></h4>
+                        <h5><a href='https://covid.johnclaro.com'>Covid</a></h5>
                         <div>
                             Developed data visualizations for a COVID-19 data tracker in Ireland.
                         </div>
                     </div>
+
                     <div class='col-lg-3 mt-4'>
                         <img class='img-fluid' src='https://upload.wikimedia.org/wikipedia/commons/d/de/AirflowLogo.png'>
                     </div>
                     <div class='col-lg-9 my-auto'>
-                        <h4><a href='https://github.com/johnclaro/etl'>ETL</a></h4>
+                        <h5><a href='https://github.com/johnclaro/etl'>DAGs</a></h5>
                         <div>
                             Used Apache Airflow to run and manage scheduled ETLs.
+                        </div>
+                    </div>
+
+                    <div class='col-lg-3 mt-4'>
+                        <img class='img-fluid' src='https://miro.medium.com/max/800/1*nPcdyVwgcuEZiEZiRqApug.jpeg'>
+                    </div>
+                    <div class='col-lg-9 my-auto'>
+                        <h5><a href='https://github.com/johnclaro/chess'>Chess</a></h5>
+                        <div>
+                            Performed data mining on over 1 million chess games using PySpark.
                         </div>
                     </div>
                 </div>
