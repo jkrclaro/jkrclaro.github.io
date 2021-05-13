@@ -40,7 +40,9 @@ class HSECaseTestCase(TestCase):
             hospitalisedaged35to44=0,
             hospitalisedaged45to54=0,
             hospitalisedaged55to64=0,
-            hospitalisedaged65up=0,
+            hospitalisedaged65to74=0,
+            hospitalisedaged75to84=0,
+            hospitalisedaged85up=0,
             male=3,
             female=2,
             unknown=1,
@@ -51,7 +53,9 @@ class HSECaseTestCase(TestCase):
             aged35to44=0,
             aged45to54=0,
             aged55to64=0,
-            aged65up=0,
+            aged65to74=0,
+            aged75to84=0,
+            aged85up=0,
             median_age=0,
             communitytransmission=1,
             closecontact=1,
@@ -144,7 +148,9 @@ class HSECaseTestCase(TestCase):
             {'name': '35-44', 'y': 0, 'sliced': 1, 'selected': 1},
             {'name': '45-54', 'y': 0, 'sliced': 1, 'selected': 1}, 
             {'name': '55-64', 'y': 0, 'sliced': 1, 'selected': 1},
-            {'name': '65+', 'y': 0, 'sliced': 1, 'selected': 1}
+            {'name': '65-74', 'y': 0, 'sliced': 1, 'selected': 1},
+            {'name': '75-84', 'y': 0, 'sliced': 1, 'selected': 1},
+            {'name': '85+', 'y': 0, 'sliced': 1, 'selected': 1},
         ]
         self.assertEqual(output, expected)
 
