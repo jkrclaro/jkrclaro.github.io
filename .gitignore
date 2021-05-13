@@ -138,3 +138,4 @@ server/**/fixtures/*.json
 staticfiles/
 *.pem
 .vscode/
+airflow.json

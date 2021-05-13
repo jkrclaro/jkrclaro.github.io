@@ -50,7 +50,7 @@ sudo /opt/bitnami/ctlscript.sh restart apache
 
 SSH as normal
 ```sh-session
-ssh -i lightsail.pem bitnami@54.76.194.219
+ssh -i bitnami.pem bitnami@54.170.19.198
 ```
 
 ## Github Actions
@@ -61,3 +61,24 @@ ssh-keygen -t rsa -C 'jkrclaro@gmail.com'
 echo $(cat .ssh/id_rsa.pub) >> .ssh/authorized_keys
 base64 -w0 .ssh/id_rsa
 ```
+
+## Terraform
+
+- Launch EC2
+  - Install [Git](https://cloudaffaire.com/how-to-install-git-in-aws-ec2-instance/)
+  - Install [Python & Pip](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-linux.html)
+  - Install [gcc](https://linuxhostsupport.com/blog/how-to-install-gcc-on-centos-7/)
+  - Update [SQLite version of Python](https://github.com/apache/airflow/issues/14208)
+- Create Elastic IP
+  - Associate Elastic IP to EC2
+- Initialize Airflow
+  - airflow db init
+  - airflow users create --username john --firstname John --lastname Claro --role Admin --email jkrclaro@gmail.com
+  - Modify airflow.cfg
+    - dags_folder
+    - load_examples = False
+    - load_default_connections = False
+    - default_timezone = Europe/Dublin
+    - default_ui_timezone = Europe/Dublin
+  - airflow webserver --port 8080 -D
+  - airflow scheduler
