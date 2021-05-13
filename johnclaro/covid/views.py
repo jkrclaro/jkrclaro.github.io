@@ -89,7 +89,9 @@ def get_hse_ages(request):
         {'name': '35-44', 'y': covid.aged35to44},
         {'name': '45-54', 'y': covid.aged45to54},
         {'name': '55-64', 'y': covid.aged55to64},
-        {'name': '65+', 'y': covid.aged65up},
+        {'name': '65-74', 'y': covid.aged65to74},
+        {'name': '75-84', 'y': covid.aged75to84},
+        {'name': '85+', 'y': covid.aged85up},
     ]
     age_highest = max([
         covid.aged1to4,
@@ -99,7 +101,9 @@ def get_hse_ages(request):
         covid.aged35to44,
         covid.aged45to54,
         covid.aged55to64,
-        covid.aged65up,
+        covid.aged65to74,
+        covid.aged75to84,
+        covid.aged85up,
     ])
     for age in ages:
         if age['y'] == age_highest:
